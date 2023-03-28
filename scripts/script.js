@@ -10,6 +10,9 @@
         let button = document.getElementById("submit-button");
         button.innerHTML = "Message sent!";
         button.setAttribute("disabled", "");
+        document.getElementById("name").setAttribute("disabled", "");
+        document.getElementById("email").setAttribute("disabled", "");
+        document.getElementById("textarea").setAttribute("disabled", "");
       });
 
       // Define what happens in case of error

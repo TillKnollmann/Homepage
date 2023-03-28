@@ -46,6 +46,14 @@
     margin-left: 10px;
 }
 
+#social-links {
+    margin-bottom: 10px;
+}
+
+#form-div {
+    max-width: 650px;
+}
+
 #form {
     margin-left: 15px;
     margin-right: 15px;

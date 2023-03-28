@@ -64,5 +64,6 @@
 }
 
 #submit-button {
-    width: 100px;
+    width: 180px;
+    margin-bottom: 15px;
 }

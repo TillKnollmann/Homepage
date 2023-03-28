@@ -6,10 +6,24 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
-    <link rel="manifest" href="favicon/site.webmanifest">
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="favicon/site.webmanifest" />
 
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
@@ -23,7 +37,11 @@
     />
     <link rel="stylesheet" href="styles/main.css" />
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
     <div class="container-fluid">
@@ -55,7 +73,7 @@
               ></a>
               <a
                 class="social-button"
-                href="mailto:till-knollmann@outlook.de"
+                href="mailto:mail@till-knollmann.com"
                 target="_blank"
                 ><i class="bi bi-envelope"></i
               ></a>
@@ -63,7 +81,63 @@
           </div>
         </div>
         <div class="col-md-8 content" id="content">
-          <p id="test">content</p>
+          <div class="container-fluid">
+            <div class="row">
+              <h1>About Me</h1>
+              <p>Some text about myself.</p>
+            </div>
+            <hr class="mt-4 mb-4 border-dark border-2 border-top" />
+            <div class="row">
+              <h1>My Publications</h1>
+              <div id="publications">Publications go here</div>
+            </div>
+            <hr class="mt-4 mb-4 border-dark border-2 border-top" />
+            <div class="row">
+              <h1>Contact</h1>
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="col-md-7">
+                    <form method="post" action="submit.php">
+                      <div class="form-group" id="form">
+                        <div class="row">
+                          <input
+                            type="text"
+                            name="name"
+                            class="form-control col"
+                            id="name"
+                            placeholder="Name"
+                            required
+                          />
+                          <input
+                            type="email"
+                            name="email"
+                            class="form-control col"
+                            id="email"
+                            placeholder="Email"
+                            required
+                          />
+                        </div>
+                        <div class="row">
+                          <textarea
+                            class="form-control"
+                            id="textarea"
+                            name="message"
+                            rows="5"
+                            placeholder="Message"
+                            required
+                          ></textarea>
+                        </div>
+                        <div class="row">
+                          <button type="submit" class="btn btn-primary" id="submit-button">Submit</button>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                  <div class="col-md-5">Contact details</div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

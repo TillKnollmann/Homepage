@@ -1,0 +1,42 @@
+#sidebar {
+    background: /* top, transparent black, faked with gradient */
+    linear-gradient(
+      rgba(0, 0, 0, 0.35),
+      rgba(0, 0, 0, 0.35)
+    ),
+    url("../assets/Grand-Canyon.jpg");
+    background-position: center;
+    background-size: 100% auto;
+    text-align: center;
+    color: white;
+    padding: 20px;
+    height: 100%;
+    max-height: calc(100vh);
+    margin-left: -20px;
+    margin-right: -20px;
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    #sidebar {
+        text-align: right;
+        padding: 100px 50px 100px 20px;
+        background-size: auto 100%;
+    }
+
+}
+
+#profile-picture {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 30px;
+}
+
+.social-button {
+    font-size: 2em;
+    margin-left: 10px;
+}
+
+#test {
+    height: 1000px;
+}

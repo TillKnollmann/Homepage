@@ -43,7 +43,8 @@
 
 .social-button {
     font-size: 2em;
-    margin-left: 10px;
+    margin-left: 9px;
+    margin-right: 9px;
 }
 
 #social-links {
@@ -74,4 +75,14 @@
 #submit-button {
     width: 180px;
     margin-bottom: 15px;
+}
+
+#lang-impr a {
+    width: 100px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+#impr-button {
+    margin-right: 0px !important;
 }

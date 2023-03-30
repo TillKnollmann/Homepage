@@ -115,6 +115,10 @@
     max-width: 650px;
 }
 
+#publications strong {
+    color: rgb(97, 97, 97);
+}
+
 h1 {
     margin-bottom: 10px;
 }

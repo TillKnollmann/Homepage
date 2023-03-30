@@ -1,0 +1,15 @@
+{
+    "$language$" : "de",
+    "$title$" : "Till Knollmanns Webseite",
+    "$description$" : "Willkommen auf meiner Seite! Mein Name ist Till Knollmann.",
+    "$lang-button$" : "English",
+    "$impr-button$" : "Impressum",
+    "$about-title$" : "Über mich",
+    "$about-text$" : "Kommt bald",
+    "$pub-title$" : "Meine Publikationen",
+    "$contact-title$" : "Kontakt",
+    "$contact-name-placeholder$" : "Name",
+    "$contact-email-placeholder$" : "E-Mail",
+    "$contact-message-placeholder$" : "Nachricht",
+    "$contact-submit$" : "Senden"
+}

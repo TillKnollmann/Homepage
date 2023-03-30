@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="$language$">
 
 <head>
-  <title>Till Knollmann's Website</title>
+  <title>$title$</title>
 
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -31,7 +31,7 @@
           <!-- Contains the sidebar with contact information -->
           <div class="flex-grow-1">
             <img id="profile-picture" src="../assets/profile-optim.png" alt="Profile of Till Knollmann" />
-            <p>Welcome to my homepage! My name is Till Knollmann.</p>
+            <p>$description$</p>
           </div>
           <div class="align-bottom mt-auto" id="social-links">
             <a class="social-button" href="https://www.linkedin.com/in/till-knollmann/" target="_blank"><i
@@ -43,39 +43,39 @@
             <a class="social-button" href="https://www.hni.uni-paderborn.de/alg/mitarbeiter/tillk/" id="work-button" target="_blank"><i class="bi bi-briefcase-fill"></i></a>
           </div>
           <div class="align-bottom mt-auto" id="lang-impr">
-            <a class="btn btn-secondary" href="../de/index.html">Deutsch</a> <a class="btn btn-secondary" href="../impressum.html" id="impr-button">Imprint</a>
+            <a class="btn btn-secondary" href="../de/index.html">$lang-button$</a> <a class="btn btn-secondary" href="../impressum.html" id="impr-button">$impr-button$</a>
           </div>
         </div>
       </div>
       <div class="col-md-8 content" id="content">
         <div class="container-fluid">
           <div class="row">
-            <h1>About Me</h1>
-            <p>Coming soon</p>
+            <h1>$about-title$</h1>
+            <p>$about-text$</p>
           </div>
           <hr class="mt-4 mb-4 border-dark border-2 border-top" />
           <div class="row">
-            <h1>My Publications</h1>
+            <h1>$pub-title$</h1>
             <div id="publications">TODO</div>
           </div>
           <hr class="mt-4 mb-4 border-dark border-2 border-top" />
           <div class="row">
-            <h1>Contact Me</h1>
+            <h1>$contact-title$</h1>
             <div class="container-fluid">
               <div id="form-div">
                 <form id="contact-form">
                   <div class="form-group" id="form">
                     <div class="row">
-                      <input type="text" name="name" class="form-control col" id="name" placeholder="Name" required />
-                      <input type="email" name="email" class="form-control col" id="email" placeholder="Email"
+                      <input type="text" name="name" class="form-control col" id="name" placeholder="$contact-name-placeholder$" required />
+                      <input type="email" name="email" class="form-control col" id="email" placeholder="$contact-email-placeholder$"
                         required />
                     </div>
                     <div class="row">
-                      <textarea class="form-control" id="textarea" name="message" rows="5" placeholder="Message"
+                      <textarea class="form-control" id="textarea" name="message" rows="5" placeholder="$contact-message-placeholder$"
                         required></textarea>
                     </div>
                     <div class="row">
-                      <button type="submit" class="btn btn-primary" id="submit-button">Submit</button>
+                      <button type="submit" class="btn btn-primary" id="submit-button">$contact-submit$</button>
                     </div>
                   </div>
                 </form>

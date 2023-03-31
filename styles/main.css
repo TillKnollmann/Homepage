@@ -5,8 +5,8 @@ html * {
 #sidebar {
     background: /* top, transparent black, faked with gradient */
     linear-gradient(
-      rgba(0, 0, 0, 0.35),
-      rgba(0, 0, 0, 0.35)
+      rgba(0, 0, 0, 0.4),
+      rgba(0, 0, 0, 0.4)
     ),
     url("../assets/Grand-Canyon-optim.jpg");
     background-position: center;
@@ -74,6 +74,7 @@ h3 {
 
 .social-button {
     font-size: 2em;
+    text-align: center;
     margin-left: 9px;
     margin-right: 9px;
     color: white;
@@ -81,6 +82,22 @@ h3 {
 
 #social-links {
     margin-bottom: 10px;
+}
+
+#linkedin-button:hover {
+    color: #0a66c2;
+}
+
+#github-button:hover {
+    color: black;
+}
+
+#mail-button:hover {
+    color: #e4a11b;
+}
+
+#work-button:hover {
+    color: #14a44d;
 }
 
 #form-div {

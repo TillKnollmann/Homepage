@@ -10,7 +10,7 @@ html * {
     ),
     url("../assets/Grand-Canyon-optim.jpg");
     background-position: center;
-    background-size: 140% auto;
+    background-size: auto auto;
     text-align: center;
     color: white;
     padding: 20px;
@@ -88,17 +88,17 @@ h3 {
     color: #0a66c2;
 }
 
-#github-button:hover {
-    color: black;
+#github-button:hover, #mail-button:hover, #work-button:hover {
+    color: rgb(150, 150, 150);
 }
 
-#mail-button:hover {
+ /* {
     color: #e4a11b;
 }
 
-#work-button:hover {
+ {
     color: #14a44d;
-}
+} */
 
 #form-div {
     max-width: 670px;

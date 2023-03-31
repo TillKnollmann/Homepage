@@ -2,7 +2,7 @@
     "$language$" : "de",
     "$title$" : "Till Knollmanns Webseite",
     "$profile-header$" : "Till Knollmann",
-    "$description$" : "Doktorand in der theore-<br>tischen Informatik und<br>Entwickler aus Begeisterung",
+    "$description$" : "Doktorand in der<br>theoretischen Informatik und<br>Entwickler aus Begeisterung",
     "$lang-button$" : "English",
     "$lang-button-target$" : "../en/index.html",
     "$impr-button$" : "Impressum",

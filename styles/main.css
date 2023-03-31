@@ -144,7 +144,7 @@ h3 {
     text-decoration: underline;
 }
 
-#publications col-md-1 {
+#publications .col-1 {
     text-align: right;
 }
 

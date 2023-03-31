@@ -128,6 +128,10 @@ h3 {
     color: rgb(97, 97, 97);
 }
 
+#publications col-md-1 {
+    text-align: right;
+}
+
 h1 {
     margin-bottom: 10px;
 }

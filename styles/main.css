@@ -151,3 +151,7 @@ h3 {
 h1 {
     margin-bottom: 10px;
 }
+
+#about-text {
+    text-align: justify;
+}

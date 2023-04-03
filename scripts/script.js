@@ -35,7 +35,7 @@
       });
 
       // Set up our request
-      XHR.open("POST", "submit.php");
+      XHR.open("POST", "../submit.php");
 
       // The data sent is what the user provided in the form
       XHR.send(FD);

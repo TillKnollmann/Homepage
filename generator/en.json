@@ -1,10 +1,12 @@
 {
     "$language$" : "en",
+    "$meta-keywords$" : "Research, Till Knollmann, Paderborn, Paderborn University, Docker, Kubernetes, Machine Learning, Computer Science, Python, Rust, Algorithms",
+    "$meta-description$": "Till Knollmann is a doctoral candidate in theoretical computer science at the University of Paderborn. His research focuses on online algorithms for managing heterogeneous resources in large networks.",
     "$title$" : "Till Knollmann's Website",
     "$profile-header$" : "Till Knollmann",
     "$description$" : "Researcher in theoretical<br>computer science and<br>developer out of passion",
     "$lang-button$" : "Deutsch",
-    "$lang-button-target$" : "../de/index.html",
+    "$lang-button-target$" : "../de/",
     "$work-button-target$" : "https://www.hni.uni-paderborn.de/en/algorithms-and-complexity/staff/tillk/",
     "$impr-button$" : "Imprint",
     "$about-title$" : "About Me",

@@ -1,5 +1,5 @@
 name: Deploy Webpage
-run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+run-name: Deploy Webpage
 on: [push]
 jobs:
   web-deploy:
@@ -11,7 +11,7 @@ jobs:
       
     - name: 🔧 Select Files
       run: > 
-        mkdir /publish 
+        sudo mkdir /publish 
         && cp /assets /publish/assets 
         && cp /de /publish/de 
         && cp /en /publish/en 

@@ -147,7 +147,11 @@ h3 {
 
 #publications .col-1 {
     text-align: right;
-    padding-right: 5px;
+}
+
+#publications .col-11 {
+    margin-left: 10px;
+    margin-right: -10px !important;
 }
 
 h1 {

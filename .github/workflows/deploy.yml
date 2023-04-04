@@ -2,17 +2,32 @@ name: Deploy Webpage
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 on: [push]
 jobs:
-  Explore-GitHub-Actions:
+  web-deploy:
+    name: 🚀 Deploy Website Every Commit
     runs-on: ubuntu-latest
     steps:
-      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
-      - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
-      - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
-      - name: Check out repository code
-        uses: actions/checkout@v3
-      - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
-      - run: echo "🖥️ The workflow is now ready to test your code on the runner."
-      - name: List files in the repository
-        run: |
-          ls ${{ github.workspace }}
-      - run: echo "🍏 This job's status is ${{ job.status }}."
+    - name: 🚚 Get Latest Code
+      uses: actions/checkout@v3
+      
+    - name: 🔧 Select Files
+      run: > 
+        mkdir /publish 
+        && cp /assets /publish/assets 
+        && cp /de /publish/de 
+        && cp /en /publish/en 
+        && cp /favicon /publish/favicon 
+        && cp /fonts /publish/fonts 
+        && cp /impr /publish/impr 
+        && cp /scripts /publish/scripts 
+        && cp /styles /publish/styles 
+        && cp index.php /publish/index.php 
+        && cp submit.php /publish/submit.php  
+    
+    - name: 📂 Sync Files
+      uses: SamKirkland/web-deploy@v1
+      with:
+        target-server: w011e4a4.kasserver.com
+        source-path: ./publish/
+        remote-user: ${{ secrets.SSH_USER }}
+        private-ssh-key: ${{ secrets.SSH_PRIVATE_KEY }}
+        destination-path: ~/till-knollmann.com/

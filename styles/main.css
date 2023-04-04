@@ -17,6 +17,7 @@
     min-width: 300px;
     min-height: 410px;
     z-index: 1;
+    overflow-y: auto;
 }
 
 #content {

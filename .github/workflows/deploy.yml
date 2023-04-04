@@ -12,16 +12,7 @@ jobs:
     - name: 🔧 Select Files
       run: > 
         sudo mkdir publish
-        && cp assets publish/assets 
-        && cp de publish/de 
-        && cp en publish/en 
-        && cp favicon publish/favicon 
-        && cp fonts publish/fonts 
-        && cp impr publish/impr 
-        && cp scripts publish/scripts 
-        && cp styles publish/styles 
-        && cp index.php /publish/index.php 
-        && cp submit.php /publish/submit.php  
+        && cp -r assets de en favicon fonts impr scripts styles index.php submit.php publish/ 
     
     - name: 📂 Sync Files
       uses: SamKirkland/web-deploy@v1

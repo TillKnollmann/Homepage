@@ -11,7 +11,8 @@ jobs:
       
     - name: 🔧 Select Files
       run: > 
-        sudo mkdir /publish 
+        sudo mkdir /publish
+        && ls
         && cp /assets /publish/assets 
         && cp /de /publish/de 
         && cp /en /publish/en 

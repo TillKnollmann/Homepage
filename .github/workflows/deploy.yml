@@ -1,6 +1,9 @@
 name: Deploy Webpage
 run-name: Deploy Webpage
-on: [push]
+on:
+  push:
+    branches:
+      - main
 jobs:
   web-deploy:
     name: 🚀 Deploy Website Every Commit

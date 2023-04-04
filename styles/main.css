@@ -15,6 +15,7 @@
     margin-left: -12px;
     margin-right: -12px;
     min-width: 300px;
+    min-height: 410px;
 }
 
 #content {
@@ -30,8 +31,27 @@ h3 {
     font-size: x-large;
 }
 
+@media (max-width: 768px) {
+    #sticky-header-mobile {
+        margin: auto;
+        margin-top: -155px;
+        margin-bottom: 100px;
+        margin-left: -29px;
+        margin-right: -29px;
+        background-color: rgb(150, 150, 150);
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0;
+        z-index: 0;
+        text-align: center;
+    }
+}
+
 /* Small devices (tablets, 768px and up) */
 @media (min-width: 768px) {
+    #sticky-header-mobile {
+        display: none;
+    }
     #sidebar {
         text-align: right;
         padding: 100px 45px 100px 30px;
@@ -77,7 +97,7 @@ h3 {
     color: white;
 }
 
-#social-links {
+.social-links {
     margin-bottom: 10px;
 }
 

@@ -13,6 +13,8 @@ jobs:
       run: > 
         sudo mkdir publish
         && sudo cp -r assets de en favicon fonts impr scripts styles index.php submit.php publish/ 
+        && cd publish
+        && ls
     
     - name: 📂 Sync Files
       uses: SamKirkland/web-deploy@v1

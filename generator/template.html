@@ -8,6 +8,9 @@
   <meta name="description" content="$meta-description$">
   <meta name="keywords" content="$meta-keywords$">
   <meta name="author" content="Till Knollmann">
+  <meta name="copyright" content="Till Knollmann" />
+  <meta name="robots" content="index, follow">
+  <base href="https://www.till-knollmann.com" />
   <link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-touch-icon.png" />
   <link rel="icon" type="image/png" sizes="32x32" href="../favicon/favicon-32x32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="../favicon/favicon-16x16.png" />
@@ -30,18 +33,19 @@
         <div class="sticky-top d-flex flex-column" id="sidebar">
           <!-- Contains the sidebar with contact information -->
           <div class="flex-grow-1">
-            <img id="profile-picture" width="240" height="240" src="../assets/profile-optim.png" alt="Profile of Till Knollmann" />
+            <img id="profile-picture" width="240" height="240" src="../assets/profile-optim.png"
+              alt="Profile of Till Knollmann" />
             <h3>$profile-header$</h3>
             <p>$description$</p>
           </div>
           <div class="align-bottom mt-auto social-links">
-            <a class="social-button" aria-label="Link to LinkedIn" href="https://www.linkedin.com/in/till-knollmann/" id="linkedin-button" target="_blank"><i
-                class="bi bi-linkedin"></i></a>
-            <a class="social-button" aria-label="Link to Github" href="https://github.com/TillKnollmann" id="github-button" target="_blank"><i
-                class="bi bi-github"></i></a>
-            <a class="social-button" aria-label="Link to E-Mail" href="mailto:mail@till-knollmann.com" id="mail-button" target="_blank"><i
-                class="bi bi-envelope-fill"></i></a>
-            <a class="social-button" aria-label="Link to work website" href="$work-button-target$" id="work-button"
+            <a class="social-button linkedin-button" aria-label="Link to LinkedIn"
+              href="https://www.linkedin.com/in/till-knollmann/" target="_blank"><i class="bi bi-linkedin"></i></a>
+            <a class="social-button github-button" aria-label="Link to Github" href="https://github.com/TillKnollmann"
+              target="_blank"><i class="bi bi-github"></i></a>
+            <a class="social-button mail-button" aria-label="Link to E-Mail" href="mailto:mail@till-knollmann.com"
+              target="_blank"><i class="bi bi-envelope-fill"></i></a>
+            <a class="social-button work-button" aria-label="Link to work website" href="$work-button-target$"
               target="_blank"><i class="bi bi-briefcase-fill"></i></a>
           </div>
           <div class="align-bottom mt-auto" id="lang-impr">
@@ -54,25 +58,25 @@
         <div class="container-fluid">
           <div id="sticky-header-mobile">
             <div class="align-bottom mt-auto social-links">
-              <a class="social-button" aria-label="Link to LinkedIn" href="https://www.linkedin.com/in/till-knollmann/" id="linkedin-button" target="_blank"><i
-                  class="bi bi-linkedin"></i></a>
-              <a class="social-button" aria-label="Link to Github" href="https://github.com/TillKnollmann" id="github-button" target="_blank"><i
-                  class="bi bi-github"></i></a>
-              <a class="social-button" aria-label="Link to E-Mail" href="mailto:mail@till-knollmann.com" id="mail-button" target="_blank"><i
-                  class="bi bi-envelope-fill"></i></a>
-              <a class="social-button" aria-label="Link to work website" href="$work-button-target$" id="work-button"
+              <a class="social-button linkedin-button" aria-label="Link to LinkedIn"
+                href="https://www.linkedin.com/in/till-knollmann/" target="_blank"><i class="bi bi-linkedin"></i></a>
+              <a class="social-button github-button" aria-label="Link to Github" href="https://github.com/TillKnollmann"
+                target="_blank"><i class="bi bi-github"></i></a>
+              <a class="social-button mail-button" aria-label="Link to E-Mail" href="mailto:mail@till-knollmann.com"
+                target="_blank"><i class="bi bi-envelope-fill"></i></a>
+              <a class="social-button work-button" aria-label="Link to work website" href="$work-button-target$"
                 target="_blank"><i class="bi bi-briefcase-fill"></i></a>
             </div>
           </div>
           <div class="row">
-            <h1>$about-title$</h1>
+            <h2>$about-title$</h2>
             <div id="about-text">
               $about-text$
             </div>
           </div>
           <hr class="mt-4 mb-4 border-dark border-2 border-top" />
           <div class="row">
-            <h1>$pub-title$</h1>
+            <h2>$pub-title$</h2>
             <p>$pub-text$</p>
             <div id="publications">
               <div class="col">
@@ -386,7 +390,7 @@
           </div>
           <hr class="mt-4 mb-4 border-dark border-2 border-top" />
           <div class="row">
-            <h1>$contact-title$</h1>
+            <h2>$contact-title$</h2>
             <p>$contact-text$</p>
             <div class="container-fluid">
               <div id="form-div">

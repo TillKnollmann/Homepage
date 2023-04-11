@@ -109,11 +109,11 @@ h3 {
     margin-bottom: 10px;
 }
 
-#linkedin-button:hover {
+.linkedin-button:hover {
     color: #0a66c2;
 }
 
-#github-button:hover, #mail-button:hover, #work-button:hover {
+.github-button:hover, .mail-button:hover, .work-button:hover {
     color: rgb(150, 150, 150);
 }
 

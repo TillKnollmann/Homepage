@@ -12,12 +12,9 @@ jobs:
     - name: 🚚 Get Latest Code
       uses: actions/checkout@v3
         
-    - name: 👁‍🗨 Minifying Page
+    - name: 👁‍🗨 Minifying Css
       run: >
         sudo apt-get install -y yui-compressor
-        && cd scripts
-        && sudo yui-compressor script.js
-        && cd ..
         && cd styles
         && sudo yui-compressor main.css
         && sudo yui-compressor Roboto.css

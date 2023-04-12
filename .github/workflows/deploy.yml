@@ -12,14 +12,6 @@ jobs:
     - name: 🚚 Get Latest Code
       uses: actions/checkout@v3
         
-    - name: 👁‍🗨 Minifying Css
-      run: >
-        sudo apt-get install -y yui-compressor
-        && cd styles
-        && sudo yui-compressor main.css > main.css
-        && sudo yui-compressor Roboto.css > Roboto.css
-        && cd ..
-      
     - name: ⌛ Generating Pages
       run: >
         cd generator

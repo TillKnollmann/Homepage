@@ -24,8 +24,8 @@ html * {
     max-height: calc(100vh);
     margin-left: -12px;
     margin-right: -12px;
-    min-width: 300px;
-    min-height: 410px;
+    min-width: 320px;
+    min-height: 400px;
     z-index: 1;
     overflow-y: auto;
 }
@@ -62,6 +62,9 @@ h3 {
         top: 0;
         z-index: 0;
         text-align: center;
+    }
+    #sidebar {
+        min-width: 250px;
     }
 }
 
@@ -110,8 +113,8 @@ h3 {
 .social-button {
     font-size: 2em;
     text-align: center;
-    margin-left: 9px;
-    margin-right: 9px;
+    margin-left: 10px;
+    margin-right: 10px;
     color: white;
 }
 

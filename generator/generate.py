@@ -15,6 +15,8 @@ def generate_page(lang: str, path: str, cwd: str):
                 page_content = page_content.replace(hotword, lang_code[hotword])
 
             # store the content
+            if not os.path.exists(path):
+                os.makedirs(path)
             with open("/".join([path, "index.html"]), 'wt', encoding='utf-8') as target:
                 target.write(page_content)
 

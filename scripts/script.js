@@ -15,13 +15,12 @@
         notifications = en;
       }
 
-      let button = document.getElementById("submit-button");
+      var button = document.getElementById("submit-button");
       button.innerHTML = notifications[0];
       button.setAttribute("disabled", "");
 
       // Define what happens on successful data submission
       XHR.addEventListener("load", (event) => {
-        let button = document.getElementById("submit-button");
         button.innerHTML = notifications[1];
         button.setAttribute("disabled", "");
         document.getElementById("name").setAttribute("disabled", "");

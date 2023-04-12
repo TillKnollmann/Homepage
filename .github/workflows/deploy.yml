@@ -12,14 +12,27 @@ jobs:
     - name: 🚚 Get Latest Code
       uses: actions/checkout@v3
       
+    - name: 🔧 Installing Node
+      run: sudo apt-get install -y nodejs npm
+      
     - name: 👀 Minifying Javascript
       run: >
-        sudo apt-get install -y nodejs npm
-        && sudo npm install uglify-js -g
+        sudo npm install uglify-js -g
         && cd scripts
         && sudo uglifyjs script.js > script.min.js
         && sudo rm -f script.js
         && sudo mv script.min.js script.js
+        && cd ..
+        
+    - name: 👀 Minifying CSS 
+      run: >
+        sudo npm install clean-css-cli -g
+        && cd styles
+        && sudo cleancss -o main.min.css main.css
+        && sudo cleancss -o Roboto.min.css Roboto.css
+        && sudo rm -f main.css Roboto.css
+        && sudo mv main.min.css main.css
+        && sudo mv Roboto.min.css Roboto.css
         && cd ..
         
     - name: ⌛ Generating Pages
@@ -35,7 +48,7 @@ jobs:
         && cd publish
         && ls
     
-    - name: Deploy to server
+    - name: 🚢 Deploy to server
       uses: easingthemes/ssh-deploy@main
       env:
         SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}

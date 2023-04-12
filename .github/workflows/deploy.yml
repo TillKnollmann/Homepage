@@ -12,6 +12,16 @@ jobs:
     - name: 🚚 Get Latest Code
       uses: actions/checkout@v3
       
+    - name: ⤵ Installing python
+      run: > 
+        sudo apt-get update && apt-get install -y python3
+      
+    - name: ⌛ Generating Pages
+      run: >
+        cd generator
+        && sudo python3 generate.py
+        && cd ..
+      
     - name: 🔧 Select Files
       run: > 
         sudo mkdir publish

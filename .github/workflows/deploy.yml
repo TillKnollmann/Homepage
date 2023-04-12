@@ -16,8 +16,8 @@ jobs:
       run: >
         sudo apt-get install -y yui-compressor
         && cd styles
-        && sudo yui-compressor main.css
-        && sudo yui-compressor Roboto.css
+        && sudo yui-compressor main.css > main.css
+        && sudo yui-compressor Roboto.css > Roboto.css
         && cd ..
       
     - name: ⌛ Generating Pages

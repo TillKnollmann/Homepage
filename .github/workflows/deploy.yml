@@ -11,10 +11,10 @@ jobs:
     steps:
     - name: 🚚 Get Latest Code
       uses: actions/checkout@v3
-      
+
     - name: 🔧 Installing Node
-      run: sudo apt-get install -y nodejs npm 2> /dev/null 
-      
+      run: sudo apt-get install -y nodejs npm 1> /dev/null
+
     - name: 👀 Minifying Javascript
       run: >
         sudo npm install uglify-js -g
@@ -23,8 +23,8 @@ jobs:
         && sudo rm -f script.js
         && sudo mv script.min.js script.js
         && cd ..
-        
-    - name: 👀 Minifying CSS 
+
+    - name: 👀 Minifying CSS
       run: >
         sudo npm install clean-css-cli -g
         && cd styles
@@ -36,20 +36,20 @@ jobs:
         && sudo mv Roboto.min.css Roboto.css
         && sudo mv bootstrap-custom.min.css bootstrap-custom.css
         && cd ..
-        
+
     - name: ⌛ Generating Pages
       run: >
         cd generator
         && sudo python3 generate.py
         && cd ..
-      
+
     - name: 🔧 Select Files
-      run: > 
+      run: >
         sudo mkdir publish
         && sudo cp -r assets de en favicon impr scripts styles index.php submit.php robots.txt sitemap.xml publish/
         && cd publish
         && ls
-    
+
     - name: 🚢 Deploy to server
       uses: easingthemes/ssh-deploy@main
       env:

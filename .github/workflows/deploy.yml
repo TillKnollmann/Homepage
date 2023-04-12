@@ -14,8 +14,7 @@ jobs:
       
     - name: ⌛ Generating Pages
       run: >
-        sudo mkdir en de
-        && cd generator
+        cd generator
         && sudo python3 generate.py
         && cd ..
       

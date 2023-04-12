@@ -17,7 +17,9 @@ jobs:
         sudo apt-get install -y nodejs npm
         && sudo npm install uglify-js -g
         && cd scripts
-        && sudo uglifyjs script.js > script.js
+        && sudo uglifyjs script.js > script.min.js
+        && sudo rm -f script.js
+        && sudo mv script.min.js script.js
         && cd ..
         
     - name: ⌛ Generating Pages

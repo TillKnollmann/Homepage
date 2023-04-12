@@ -85,10 +85,6 @@ h3 {
 }
 
 @media (min-width: 992px) {
-    #sidebar {
-        padding: 100px 60px 100px 40px;
-    }
-
     #content {
         padding-left: 60px;
     }

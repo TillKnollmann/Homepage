@@ -14,7 +14,8 @@ html * {
       rgba(0, 0, 0, 0.4),
       rgba(0, 0, 0, 0.4)
     ),
-    url("../assets/Grand-Canyon-optim.webp");
+    url("../assets/Grand-Canyon-optim.webp"),
+    rgb(80, 80, 80);
     background-position: center;
     background-size: auto auto;
     text-align: center;
@@ -59,6 +60,7 @@ h3 {
         background-color: rgb(80, 80, 80);
         position: -webkit-sticky;
         position: sticky;
+        padding-top: 10px;
         top: 0;
         z-index: 0;
         text-align: center;

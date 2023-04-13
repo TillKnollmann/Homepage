@@ -78,8 +78,9 @@ h3 {
 
     #sidebar {
         text-align: right;
-        padding: 20px 45px 20px 30px;
+        padding: 20px 35px 20px 20px;
         background-size: auto 100%;
+        min-width: 300px;
     }
 
     @media (min-height: 310px) {
@@ -103,15 +104,32 @@ h3 {
     }
 }
 
+@media (min-width: 800px) {
+    #sidebar {
+        padding-left: 35px;
+        padding-right: 45px;
+        min-width: 320px;
+    }
+}
+
 @media (min-width: 992px) {
     #content {
         padding-left: 60px;
+    }
+
+    #content .container-fluid {
+        padding-left: 0;
+    }
+
+    #sidebar {
+        padding-left: 40px;
+        padding-right: 60px;
     }
 }
 
 @media (min-width: 1200px) {
     #sidebar {
-        padding: 100px 80px 100px 90px;
+        padding: 100px 70px 100px 90px;
     }
 
     #content {

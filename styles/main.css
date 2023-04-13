@@ -26,7 +26,7 @@ html * {
     margin-left: -12px;
     margin-right: -12px;
     min-width: 320px;
-    min-height: 400px;
+    min-height: 200px;
     z-index: 1;
     overflow-y: auto;
 }
@@ -75,10 +75,27 @@ h3 {
     #sticky-header-mobile {
         display: none;
     }
+
     #sidebar {
         text-align: right;
-        padding: 100px 45px 100px 30px;
+        padding: 20px 45px 20px 30px;
         background-size: auto 100%;
+    }
+
+    @media (min-height: 310px) {
+        #sidebar {
+            padding-top: 50px;
+            padding-bottom: 50px;
+            min-height: 300px;
+        }
+    }
+
+    @media (min-height: 610px) {
+        #sidebar {
+            padding-top: 100px;
+            padding-bottom: 100px;
+            min-height: 400px;
+        }
     }
 
     #content {

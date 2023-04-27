@@ -46,7 +46,7 @@ jobs:
     - name: 🔧 Select Files
       run: >
         sudo mkdir publish
-        && sudo cp -r assets de en favicon impr scripts styles index.php submit.php robots.txt sitemap.xml publish/
+        && sudo cp -r assets de en favicon impr scripts styles index.php robots.txt sitemap.xml publish/
         && cd publish
         && ls
 

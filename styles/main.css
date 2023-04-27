@@ -210,12 +210,12 @@ h3 {
     color: rgb(80, 80, 80);
 }
 
-#publications a {
+#publications a, #about-text a, #contact-text a {
     text-decoration: none;
-    color: rgb(39, 96, 255);
+    color: rgb(38, 90, 233);
 }
 
-#publications a:hover {
+#publications a:hover, #about-text a:hover, #contact-text a:hover {
     text-decoration: underline;
 }
 

@@ -102,6 +102,10 @@ h3 {
     #content {
         padding-left: 45px;
     }
+    
+    #form-div {
+         padding-left: 10px;
+    }
 }
 
 @media (min-width: 800px) {
@@ -165,7 +169,6 @@ h3 {
 
 #form-div {
     max-width: 670px;
-    padding-left: 10px;
 }
 
 #form {

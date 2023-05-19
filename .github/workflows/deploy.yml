@@ -26,11 +26,11 @@ jobs:
 
     - name: 👀 Minifying CSS
       run: >
-        sudo npm install -D purify-css
-        && purifycss styles/boostrap-full.css generator/template.html --out styles/bootstrap-full.min.css
+        sudo npm install -g purify-css
+        && purifycss styles/bootstrap-full.css generator/template.html --out styles/bootstrap-full.min.css
         && cd styles
         && sudo rm -f bootstrap-full.css
-        && sudo mv boostrap-full.min.css bootstrap-full.css
+        && sudo mv bootstrap-full.min.css bootstrap-full.css
         && cd ..
         && sudo npm install clean-css-cli -g
         && cd styles

@@ -26,15 +26,21 @@ jobs:
 
     - name: 👀 Minifying CSS
       run: >
-        sudo npm install clean-css-cli -g
+        sudo npm install -g purify-css
+        && purifycss styles/bootstrap-full.css generator/template.html --out styles/bootstrap-full.min.css
+        && cd styles
+        && sudo rm -f bootstrap-full.css
+        && sudo mv bootstrap-full.min.css bootstrap-full.css
+        && cd ..
+        && sudo npm install clean-css-cli -g
         && cd styles
         && sudo cleancss -o main.min.css main.css
         && sudo cleancss -o Roboto.min.css Roboto.css
-        && sudo cleancss -o bootstrap-custom.min.css bootstrap-custom.css
-        && sudo rm -f main.css Roboto.css bootstrap-custom.css
+        && sudo cleancss -o bootstrap-full.min.css bootstrap-full.css
+        && sudo rm -f main.css Roboto.css bootstrap-full.css
         && sudo mv main.min.css main.css
         && sudo mv Roboto.min.css Roboto.css
-        && sudo mv bootstrap-custom.min.css bootstrap-custom.css
+        && sudo mv bootstrap-full.min.css bootstrap-full.css
         && cd ..
 
     - name: ⌛ Generating Pages

@@ -45,7 +45,7 @@ h3 {
 }
 
 @media (max-width: 320px) {
-    #publications .col-11 {
+    .publications .col-11 {
         margin: auto !important;
     }
 }
@@ -55,18 +55,20 @@ h3 {
         margin: auto;
         margin-top: -155px;
         margin-bottom: 100px;
-        margin-left: -29px;
-        margin-right: -29px;
+        margin-left: -17px;
+        margin-right: -17px;
         background-color: rgb(80, 80, 80);
         position: -webkit-sticky;
         position: sticky;
-        padding-top: 10px;
+        padding-top: 5px;
+        padding-bottom: 5px;
         top: 0;
-        z-index: 0;
+        z-index: 1;
         text-align: center;
     }
     #sidebar {
         min-width: 250px;
+        z-index: 2;
     }
 }
 
@@ -102,7 +104,7 @@ h3 {
     #content {
         padding-left: 45px;
     }
-    
+
     #form-div {
          padding-left: 10px;
     }
@@ -205,29 +207,42 @@ h3 {
     margin-right: 0px !important;
 }
 
-#publications {
+.publications {
     margin-top: 15px;
     max-width: 650px;
 }
 
-#publications strong {
+.publications h3 {
+    margin-bottom: 10px;
+}
+
+.accordion-button {
+    --bs-accordion-bg: grey;
+    --bs-accordion-active-color: black;
+    --bs-accordion-active-bg: white;
+    --bs-accordion-btn-focus-border-color: grey;
+    --bs-accordion-btn-focus-border-color: white;
+    --bs-accordion-btn-focus-box-shadow: 0 0 0 0;
+}
+
+.publications strong {
     color: rgb(80, 80, 80);
 }
 
-#publications a, #about-text a, #contact-text a {
+.publications a, #about-text a, #contact-text a {
     text-decoration: none;
     color: rgb(38, 90, 233);
 }
 
-#publications a:hover, #about-text a:hover, #contact-text a:hover {
+.publications a:hover, #about-text a:hover, #contact-text a:hover {
     text-decoration: underline;
 }
 
-#publications .col-1 {
+.publications .col-1 {
     text-align: right;
 }
 
-#publications .col-11 {
+.publications .col-11 {
     margin-left: 10px;
     margin-right: -10px !important;
 }

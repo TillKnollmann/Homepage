@@ -162,11 +162,15 @@ h3 {
 }
 
 .linkedin-button:hover {
-    color: #0a66c2;
+    color: hsl(210, 90%, 50%);
 }
 
-.github-button:hover, .mail-button:hover, .work-button:hover {
+.github-button:hover, .mail-button:hover {
     color: rgb(150, 150, 150);
+}
+
+.research-gate-fill:hover {
+    fill: #00d0af;
 }
 
 #form-div {

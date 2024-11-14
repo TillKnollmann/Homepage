@@ -107,14 +107,33 @@
         /* Match placeholder text color to light gray */
     }
 
+    /* Styles for input and textarea elements when readonly or disabled */
+    .form-group input[readonly],
+    .form-group textarea[readonly],
+    .form-group input:disabled,
+    .form-group textarea:disabled {
+        background-color: #3a3a3a;
+        /* Maintain dark gray background */
+        color: #d0d0d0;
+        /* Light gray text color */
+        border-color: #3a3a3a;
+        /* Match border color */
+        opacity: 1;
+        /* Ensure text is fully visible */
+    }
+
     /* Dark mode styles for links in #content */
-    .publications a, #about-text a, #contact-text a {
+    .publications a,
+    #about-text a,
+    #contact-text a {
         text-decoration: none;
         color: #1e90ff !important;
         /* Brighter blue for better visibility */
     }
 
-    .publications a:hover, #about-text a:hover, #contact-text a:hover {
+    .publications a:hover,
+    #about-text a:hover,
+    #contact-text a:hover {
         text-decoration: underline;
         color: #4682b4 !important;
         /* Slightly darker blue on hover */
@@ -372,12 +391,16 @@ h3 {
     color: rgb(80, 80, 80);
 }
 
-.publications a, #about-text a, #contact-text a {
+.publications a,
+#about-text a,
+#contact-text a {
     text-decoration: none;
     color: rgb(38, 90, 233);
 }
 
-.publications a:hover, #about-text a:hover, #contact-text a:hover {
+.publications a:hover,
+#about-text a:hover,
+#contact-text a:hover {
     text-decoration: underline;
 }
 

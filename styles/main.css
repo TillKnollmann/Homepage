@@ -108,13 +108,13 @@
     }
 
     /* Dark mode styles for links in #content */
-    #content a {
+    .publications a, #about-text a, #contact-text a {
         text-decoration: none;
         color: #1e90ff !important;
         /* Brighter blue for better visibility */
     }
 
-    #content a:hover {
+    .publications a:hover, #about-text a:hover, #contact-text a:hover {
         text-decoration: underline;
         color: #4682b4 !important;
         /* Slightly darker blue on hover */
@@ -372,12 +372,12 @@ h3 {
     color: rgb(80, 80, 80);
 }
 
-#content a {
+.publications a, #about-text a, #contact-text a {
     text-decoration: none;
     color: rgb(38, 90, 233);
 }
 
-#content a:hover {
+.publications a:hover, #about-text a:hover, #contact-text a:hover {
     text-decoration: underline;
 }
 

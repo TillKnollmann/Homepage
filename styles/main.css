@@ -1,3 +1,149 @@
+/* Light mode styles for #content */
+#content {
+    min-height: calc(100vh);
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    max-width: 800px;
+    background-color: #ffffff;
+    /* Light mode background */
+    color: #000000;
+    /* Light mode text color */
+}
+
+/* Dark mode styles for body and #content */
+@media (prefers-color-scheme: dark) {
+
+    body,
+    #content {
+        background-color: #2e2e2e;
+        /* Dark gray background */
+        color: #d0d0d0;
+        /* Light gray text color */
+    }
+
+    /* Dark mode styles for Bootstrap accordion */
+    .accordion-button {
+        background-color: #454545;
+        /* Brighter gray background */
+        color: #d0d0d0;
+        /* Light gray text color */
+        border: none;
+        /* Remove borders */
+    }
+
+    .accordion-button:not(.collapsed) {
+        background-color: #3a3a3a;
+        /* Slightly darker gray when active */
+        color: #ffffff;
+        /* White text color when active */
+    }
+
+    .accordion-button::after {
+        filter: invert(100%);
+        /* Make arrow button white when collapsed */
+    }
+
+    .accordion-item {
+        background-color: #2e2e2e;
+        /* Dark gray background */
+        border-color: #3a3a3a;
+        /* Slightly darker border */
+    }
+
+    .accordion-body {
+        background-color: #3a3a3a;
+        /* Slightly darker gray for body */
+        color: #d0d0d0;
+        /* Light gray text color */
+    }
+
+
+
+    /* Ensure strong elements are styled appropriately */
+    .publications strong {
+        color: #ffffff !important;
+        /* White text color */
+    }
+
+    /* Dark mode styles for input and textarea elements */
+    .form-group input,
+    .form-group textarea {
+        background-color: #454545;
+        /* Brighter gray background */
+        color: #d0d0d0;
+        /* Light gray text color */
+        border: 1px solid #3a3a3a;
+        /* Border color to match accordion */
+        border-radius: 4px;
+        /* Rounded corners for better aesthetics */
+        padding: 10px;
+        /* Padding for better spacing */
+    }
+
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+        color: #b0b0b0;
+        /* Lighter gray placeholder text */
+    }
+
+    /* Styles for input and textarea elements when focused */
+    .form-group input:focus,
+    .form-group textarea:focus {
+        background-color: #555555;
+        /* Darker gray background */
+        color: #ffffff;
+        /* White text color */
+        border-color: #2e2e2e;
+        /* Darker border color */
+        outline: none;
+        /* Remove default focus outline */
+    }
+
+    .form-group input:focus::placeholder,
+    .form-group textarea:focus::placeholder {
+        color: #d0d0d0;
+        /* Match placeholder text color to light gray */
+    }
+
+    /* Dark mode styles for links in #content */
+    #content a {
+        text-decoration: none;
+        color: #1e90ff !important;
+        /* Brighter blue for better visibility */
+    }
+
+    #content a:hover {
+        text-decoration: underline;
+        color: #4682b4 !important;
+        /* Slightly darker blue on hover */
+    }
+
+    /* Dark mode styles for Bootstrap buttons */
+    .btn {
+        background-color: #454545;
+        /* Brighter gray background */
+        color: #d0d0d0;
+        /* Light gray text color */
+        border: 1px solid #3a3a3a;
+        /* Border to match other elements */
+    }
+
+    .btn:hover,
+    .btn:focus,
+    .btn:active {
+        background-color: #555555;
+        /* Darker gray background on hover/focus/active */
+        color: #ffffff;
+        /* White text color */
+        border-color: #2e2e2e;
+        /* Darker border color */
+    }
+}
+
+
+/* General styles remain unchanged */
 @font-face {
     font-family: "Roboto";
     src: url("Roboto-Regular.ttf");
@@ -9,13 +155,12 @@ html * {
 }
 
 #sidebar {
-    background: /* top, transparent black, faked with gradient */
-    linear-gradient(
-      rgba(0, 0, 0, 0.4),
-      rgba(0, 0, 0, 0.4)
-    ),
-    url("../assets/Grand-Canyon-optim.webp"),
-    rgb(80, 80, 80);
+    background:
+        /* top, transparent black, faked with gradient */
+        linear-gradient(rgba(0, 0, 0, 0.4),
+            rgba(0, 0, 0, 0.4)),
+        url("../assets/Grand-Canyon-optim.webp"),
+        rgb(80, 80, 80);
     background-position: center;
     background-size: auto auto;
     text-align: center;
@@ -31,17 +176,10 @@ html * {
     overflow-y: auto;
 }
 
-#content {
-    min-height: calc(100vh);
-    padding-left: 5px;
-    padding-right: 5px;
-    padding-top: 40px;
-    padding-bottom: 40px;
-    max-width: 800px;
-}
-
 h3 {
     font-size: x-large;
+    color: inherit;
+    /* Ensures h3 text color adapts to light or dark mode */
 }
 
 @media (max-width: 320px) {
@@ -66,13 +204,13 @@ h3 {
         z-index: 1;
         text-align: center;
     }
+
     #sidebar {
         min-width: 250px;
         z-index: 2;
     }
 }
 
-/* Small devices (tablets, 768px and up) */
 @media (min-width: 768px) {
     #sticky-header-mobile {
         display: none;
@@ -106,7 +244,7 @@ h3 {
     }
 
     #form-div {
-         padding-left: 10px;
+        padding-left: 10px;
     }
 }
 
@@ -165,7 +303,8 @@ h3 {
     color: hsl(210, 90%, 50%);
 }
 
-.github-button:hover, .mail-button:hover {
+.github-button:hover,
+.mail-button:hover {
     color: rgb(150, 150, 150);
 }
 
@@ -233,12 +372,12 @@ h3 {
     color: rgb(80, 80, 80);
 }
 
-.publications a, #about-text a, #contact-text a {
+#content a {
     text-decoration: none;
     color: rgb(38, 90, 233);
 }
 
-.publications a:hover, #about-text a:hover, #contact-text a:hover {
+#content a:hover {
     text-decoration: underline;
 }
 

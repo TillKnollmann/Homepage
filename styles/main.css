@@ -183,13 +183,9 @@ html * { font-family: 'Inter', Arial, Helvetica, sans-serif; }
     #content { padding-left: 70px; }
 }
 
-/* Weitere Optimierungen: Doppelte Werte entfernt, Farben vereinheitlicht, Kommentare reduziert. */
-/* ...Restliche Styles wie .social-button, #form-div, .publications etc. bleiben unverändert... */
-
 h3 {
     font-size: x-large;
     color: inherit;
-    /* Ensures h3 text color adapts to light or dark mode */
 }
 
 #profile-picture {

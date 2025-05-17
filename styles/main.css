@@ -200,10 +200,12 @@ h3 {
     margin-left: 10px;
     margin-right: 10px;
     color: white;
+    transition: transform 0.1s, color 0.2s;
+    display: inline-block;
 }
 
-.social-links {
-    margin-bottom: 5px;
+.social-button:hover {
+    transform: translateY(-4px) scale(1.04);
 }
 
 .linkedin-button:hover {
@@ -213,6 +215,10 @@ h3 {
 .github-button:hover,
 .mail-button:hover {
     color: rgb(150, 150, 150);
+}
+
+.social-links {
+    margin-bottom: 5px;
 }
 
 .research-gate-fill:hover {

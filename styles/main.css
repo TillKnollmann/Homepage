@@ -1,3 +1,13 @@
+@font-face {
+    font-family: 'Inter';
+    src: url('../assets/fonts/Inter-VariableFont_opsz,wght.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+html * { font-family: 'Inter', Arial, Helvetica, sans-serif; }
+
 :root {
     --color-bg-light: #ffffff;
     --color-bg-dark: #2e2e2e;
@@ -109,14 +119,6 @@
         border-color: var(--color-bg-dark);
     }
 }
-
-/* Schriftart */
-@font-face {
-    font-family: "Roboto";
-    src: url("Roboto-Regular.ttf");
-    font-display: swap;
-}
-html * { font-family: 'Roboto', sans-serif; }
 
 /* Sidebar und Layout */
 #sidebar {

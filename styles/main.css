@@ -1,303 +1,193 @@
-/* Light mode styles for #content */
-#content {
-    min-height: calc(100vh);
-    padding-left: 5px;
-    padding-right: 5px;
-    padding-top: 40px;
-    padding-bottom: 40px;
-    max-width: 800px;
-    background-color: #ffffff;
-    /* Light mode background */
-    color: #000000;
-    /* Light mode text color */
+:root {
+    --color-bg-light: #ffffff;
+    --color-bg-dark: #2e2e2e;
+    --color-text-light: #000000;
+    --color-text-dark: #d0d0d0;
+    --color-accent-blue: #1e90ff;
+    --color-accent-blue-hover: #4682b4;
+    --color-accordion-bg: #454545;
+    --color-accordion-active-bg: #3a3a3a;
+    --color-border-dark: #3a3a3a;
+    --color-btn-hover: #555555;
+    --color-publications-strong-light: rgb(80, 80, 80);
+    --color-publications-strong-dark: #ffffff;
 }
 
-/* Dark mode styles for body and #content */
+/* Light mode styles */
+#content {
+    min-height: 100vh;
+    padding: 40px 5px;
+    max-width: 800px;
+    background-color: var(--color-bg-light);
+    color: var(--color-text-light);
+}
+
+/* Dark mode styles */
 @media (prefers-color-scheme: dark) {
-
-    body,
-    #content {
-        background-color: #2e2e2e;
-        /* Dark gray background */
-        color: #d0d0d0;
-        /* Light gray text color */
+    body, #content {
+        background-color: var(--color-bg-dark);
+        color: var(--color-text-dark);
     }
 
-    /* Dark mode styles for Bootstrap accordion */
     .accordion-button {
-        background-color: #454545;
-        /* Brighter gray background */
-        color: #d0d0d0;
-        /* Light gray text color */
+        background-color: var(--color-accordion-bg);
+        color: var(--color-text-dark);
         border: none;
-        /* Remove borders */
     }
-
     .accordion-button:not(.collapsed) {
-        background-color: #3a3a3a;
-        /* Slightly darker gray when active */
-        color: #ffffff;
-        /* White text color when active */
+        background-color: var(--color-accordion-active-bg);
+        color: #fff;
     }
-
     .accordion-button::after {
         filter: invert(100%);
-        /* Make arrow button white when collapsed */
     }
-
     .accordion-item {
-        background-color: #2e2e2e;
-        /* Dark gray background */
-        border-color: #3a3a3a;
-        /* Slightly darker border */
+        background-color: var(--color-bg-dark);
+        border-color: var(--color-border-dark);
     }
-
     .accordion-body {
-        background-color: #3a3a3a;
-        /* Slightly darker gray for body */
-        color: #d0d0d0;
-        /* Light gray text color */
+        background-color: var(--color-accordion-active-bg);
+        color: var(--color-text-dark);
     }
-
-
-
-    /* Ensure strong elements are styled appropriately */
     .publications strong {
-        color: #ffffff !important;
-        /* White text color */
+        color: var(--color-publications-strong-dark) !important;
     }
-
-    /* Dark mode styles for input and textarea elements */
     .form-group input,
     .form-group textarea {
-        background-color: #454545;
-        /* Brighter gray background */
-        color: #d0d0d0;
-        /* Light gray text color */
-        border: 1px solid #3a3a3a;
-        /* Border color to match accordion */
+        background-color: var(--color-accordion-bg);
+        color: var(--color-text-dark);
+        border: 1px solid var(--color-border-dark);
         border-radius: 4px;
-        /* Rounded corners for better aesthetics */
         padding: 10px;
-        /* Padding for better spacing */
     }
-
     .form-group input::placeholder,
     .form-group textarea::placeholder {
         color: #b0b0b0;
-        /* Lighter gray placeholder text */
     }
-
-    /* Styles for input and textarea elements when focused */
     .form-group input:focus,
     .form-group textarea:focus {
-        background-color: #555555;
-        /* Darker gray background */
-        color: #ffffff;
-        /* White text color */
-        border-color: #2e2e2e;
-        /* Darker border color */
+        background-color: var(--color-btn-hover);
+        color: #fff;
+        border-color: var(--color-bg-dark);
         outline: none;
-        /* Remove default focus outline */
     }
-
     .form-group input:focus::placeholder,
     .form-group textarea:focus::placeholder {
-        color: #d0d0d0;
-        /* Match placeholder text color to light gray */
+        color: var(--color-text-dark);
     }
-
-    /* Styles for input and textarea elements when readonly or disabled */
     .form-group input[readonly],
     .form-group textarea[readonly],
     .form-group input:disabled,
     .form-group textarea:disabled {
-        background-color: #3a3a3a;
-        /* Maintain dark gray background */
-        color: #d0d0d0;
-        /* Light gray text color */
-        border-color: #3a3a3a;
-        /* Match border color */
+        background-color: var(--color-accordion-active-bg);
+        color: var(--color-text-dark);
+        border-color: var(--color-border-dark);
         opacity: 1;
-        /* Ensure text is fully visible */
     }
-
-    /* Dark mode styles for links in #content */
     .publications a,
     #about-text a,
     #contact-text a {
+        color: var(--color-accent-blue) !important;
         text-decoration: none;
-        color: #1e90ff !important;
-        /* Brighter blue for better visibility */
     }
-
     .publications a:hover,
     #about-text a:hover,
     #contact-text a:hover {
+        color: var(--color-accent-blue-hover) !important;
         text-decoration: underline;
-        color: #4682b4 !important;
-        /* Slightly darker blue on hover */
     }
-
-    /* Dark mode styles for Bootstrap buttons */
     .btn {
-        background-color: #454545;
-        /* Brighter gray background */
-        color: #d0d0d0;
-        /* Light gray text color */
-        border: 1px solid #3a3a3a;
-        /* Border to match other elements */
+        background-color: var(--color-accordion-bg);
+        color: var(--color-text-dark);
+        border: 1px solid var(--color-border-dark);
     }
-
     .btn:hover,
     .btn:focus,
     .btn:active {
-        background-color: #555555;
-        /* Darker gray background on hover/focus/active */
-        color: #ffffff;
-        /* White text color */
-        border-color: #2e2e2e;
-        /* Darker border color */
+        background-color: var(--color-btn-hover);
+        color: #fff;
+        border-color: var(--color-bg-dark);
     }
 }
 
-
-/* General styles remain unchanged */
+/* Schriftart */
 @font-face {
     font-family: "Roboto";
     src: url("Roboto-Regular.ttf");
     font-display: swap;
 }
+html * { font-family: 'Roboto', sans-serif; }
 
-html * {
-    font-family: 'Roboto', sans-serif;
-}
-
+/* Sidebar und Layout */
 #sidebar {
-    background:
-        /* top, transparent black, faked with gradient */
-        linear-gradient(rgba(0, 0, 0, 0.4),
-            rgba(0, 0, 0, 0.4)),
-        url("../assets/Grand-Canyon-optim.webp"),
-        rgb(80, 80, 80);
+    background: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url("../assets/Grand-Canyon-optim.webp"), rgb(80,80,80);
     background-position: center;
     background-size: auto auto;
     text-align: center;
     color: white;
     padding: 20px;
     height: 100%;
-    max-height: calc(100vh);
-    margin-left: -12px;
-    margin-right: -12px;
+    max-height: 100vh;
+    margin: 0 -12px;
     min-width: 320px;
     min-height: 200px;
     z-index: 1;
     overflow-y: auto;
 }
 
-h3 {
-    font-size: x-large;
-    color: inherit;
-    /* Ensures h3 text color adapts to light or dark mode */
-}
-
+/* Responsive Layouts */
 @media (max-width: 320px) {
-    .publications .col-11 {
-        margin: auto !important;
-    }
+    .publications .col-11 { margin: auto !important; }
 }
-
 @media (max-width: 768px) {
     #sticky-header-mobile {
-        margin: auto;
-        margin-top: -155px;
-        margin-bottom: 100px;
-        margin-left: -17px;
-        margin-right: -17px;
-        background-color: rgb(80, 80, 80);
-        position: -webkit-sticky;
+        margin: -155px -17px 100px -17px;
+        background-color: rgb(80,80,80);
         position: sticky;
-        padding-top: 5px;
-        padding-bottom: 5px;
+        padding: 5px 0;
         top: 0;
         z-index: 1;
         text-align: center;
     }
-
-    #sidebar {
-        min-width: 250px;
-        z-index: 2;
-    }
+    #sidebar { min-width: 250px; z-index: 2; }
 }
-
 @media (min-width: 768px) {
-    #sticky-header-mobile {
-        display: none;
-    }
-
+    #sticky-header-mobile { display: none; }
     #sidebar {
         text-align: right;
         padding: 20px 35px 20px 20px;
         background-size: auto 100%;
         min-width: 300px;
     }
-
     @media (min-height: 310px) {
-        #sidebar {
-            padding-top: 50px;
-            padding-bottom: 50px;
-            min-height: 300px;
-        }
+        #sidebar { padding-top: 50px; padding-bottom: 50px; min-height: 300px; }
     }
-
     @media (min-height: 610px) {
-        #sidebar {
-            padding-top: 100px;
-            padding-bottom: 100px;
-            min-height: 400px;
-        }
+        #sidebar { padding-top: 100px; padding-bottom: 100px; min-height: 400px; }
     }
-
-    #content {
-        padding-left: 45px;
-    }
-
-    #form-div {
-        padding-left: 10px;
-    }
+    #content { padding-left: 45px; }
+    #form-div { padding-left: 10px; }
 }
-
 @media (min-width: 800px) {
-    #sidebar {
-        padding-left: 35px;
-        padding-right: 45px;
-        min-width: 320px;
-    }
+    #sidebar { padding: 20px 45px 20px 35px; min-width: 320px; }
 }
-
 @media (min-width: 992px) {
-    #content {
-        padding-left: 60px;
-    }
-
-    #content .container-fluid {
-        padding-left: 0;
-    }
-
-    #sidebar {
-        padding-left: 40px;
-        padding-right: 60px;
-    }
+    #content { padding-left: 60px; }
+    #content .container-fluid { padding-left: 0; }
+    #sidebar { padding: 20px 60px 20px 40px; }
+}
+@media (min-width: 1200px) {
+    #sidebar { padding: 100px 70px 100px 90px; }
+    #content { padding-left: 70px; }
 }
 
-@media (min-width: 1200px) {
-    #sidebar {
-        padding: 100px 70px 100px 90px;
-    }
+/* Weitere Optimierungen: Doppelte Werte entfernt, Farben vereinheitlicht, Kommentare reduziert. */
+/* ...Restliche Styles wie .social-button, #form-div, .publications etc. bleiben unverändert... */
 
-    #content {
-        padding-left: 70px;
-    }
+h3 {
+    font-size: x-large;
+    color: inherit;
+    /* Ensures h3 text color adapts to light or dark mode */
 }
 
 #profile-picture {

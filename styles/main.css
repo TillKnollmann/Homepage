@@ -247,6 +247,8 @@ h3 {
 #submit-button {
     width: 180px;
     margin-bottom: 15px;
+    border-radius: 24px;
+    border:none;
 }
 
 #lang-impr a {
@@ -255,10 +257,43 @@ h3 {
     margin-right: 5px;
     padding-left: 0px;
     padding-right: 0px;
+    border-radius: 24px;
+    border:none;
 }
 
 #impr-button {
     margin-right: 0px !important;
+    border-radius: 24px;
+    border:none;
+}
+
+#submit-button,
+#impr-button,
+#lang-impr a {
+    transition:
+        background 0.2s,
+        color 0.2s,
+        box-shadow 0.2s,
+        transform 0.1s;
+    box-shadow: 0 2px 8px rgba(30, 144, 255, 0.08);
+}
+
+#submit-button:hover,
+#impr-button:hover,
+#lang-impr a:hover {
+    background: var(--color-accent-blue);
+    color: #fff;
+    box-shadow: 0 4px 16px rgba(30, 144, 255, 0.18);
+    transform: translateY(-2px) scale(1.03);
+}
+
+#submit-button:active,
+#impr-button:active,
+#lang-impr a:active {
+    background: var(--color-accent-blue-hover);
+    color: #fff;
+    box-shadow: 0 2px 8px rgba(30, 144, 255, 0.10);
+    transform: scale(0.98);
 }
 
 .publications {

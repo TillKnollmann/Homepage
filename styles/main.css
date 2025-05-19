@@ -17,10 +17,12 @@ html * { font-family: 'Inter', Arial, Helvetica, sans-serif; }
     --color-accent-blue-hover: #4682b4;
     --color-accordion-bg: #454545;
     --color-accordion-active-bg: #3a3a3a;
+    --color-border-light: #c0c0c0;
     --color-border-dark: #3a3a3a;
     --color-btn-hover: #555555;
     --color-publications-strong-light: rgb(80, 80, 80);
     --color-publications-strong-dark: #ffffff;
+    --color-header-mobile: rgb(80,80,80);
 }
 
 /* Light mode styles */
@@ -33,7 +35,8 @@ html * { font-family: 'Inter', Arial, Helvetica, sans-serif; }
 }
 
 /* Dark mode styles */
-@media (prefers-color-scheme: dark) {
+[data-theme="dark"] {
+
     body, #content {
         background-color: var(--color-bg-dark);
         color: var(--color-text-dark);
@@ -118,6 +121,11 @@ html * { font-family: 'Inter', Arial, Helvetica, sans-serif; }
         color: #fff;
         border-color: var(--color-bg-dark);
     }
+    #theme-toggle {
+        background: var(--color-bg-light);
+        border: 2px solid var(--color-bg-light);
+        color: var(--color-accordion-bg);
+    }
 }
 
 /* Sidebar und Layout */
@@ -144,7 +152,7 @@ html * { font-family: 'Inter', Arial, Helvetica, sans-serif; }
 @media (max-width: 768px) {
     #sticky-header-mobile {
         margin: -155px -17px 100px -17px;
-        background-color: rgb(80,80,80);
+        background-color: var(--color-header-mobile);
         position: sticky;
         padding: 5px 0;
         top: 0;
@@ -286,7 +294,7 @@ h3 {
     background: var(--color-accent-blue);
     color: #fff;
     box-shadow: 0 4px 16px rgba(30, 144, 255, 0.18);
-    transform: translateY(-2px) scale(1.03);
+    transform: translateY(-2px) scale(1.04);
 }
 
 #submit-button:active,
@@ -348,4 +356,38 @@ h1 {
 
 #about-text {
     text-align: justify;
+}
+
+#theme-toggle-container {
+    position: sticky;
+    float: right;
+    top: 14px;
+    z-index: 100;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    pointer-events: none;
+    margin-right: 8px;
+}
+#theme-toggle {
+    pointer-events: auto;
+    background: var(--color-header-mobile);
+    border: 2px solid var(--color-header-mobile);
+    color: #ffffff;
+    border-radius: 50%;
+    width: 38px;
+    height: 38px;
+    font-size: 1em;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(30,144,255,0.08);
+    transition: transform 0.2s, background 0.2s, color 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#theme-toggle:hover {
+    transform: translateY(-4px) scale(1.04);
+}
+#theme-toggle:active {
+    transform: scale(0.98);
 }

@@ -6,7 +6,9 @@
     font-display: swap;
 }
 
-html * { font-family: 'Inter', Arial, Helvetica, sans-serif; }
+html * {
+    font-family: 'Inter', Arial, Helvetica, sans-serif;
+}
 
 :root {
     --color-bg-light: #ffffff;
@@ -21,7 +23,7 @@ html * { font-family: 'Inter', Arial, Helvetica, sans-serif; }
     --color-btn-hover: #555555;
     --color-publications-strong-light: rgb(80, 80, 80);
     --color-publications-strong-dark: #ffffff;
-    --color-header-mobile: rgb(80,80,80);
+    --color-header-mobile: rgb(80, 80, 80);
 }
 
 /* Light mode styles */
@@ -34,102 +36,116 @@ html * { font-family: 'Inter', Arial, Helvetica, sans-serif; }
 }
 
 /* Dark mode styles */
-[data-theme="dark"] {
-
-    body, #content {
-        background-color: var(--color-bg-dark);
-        color: var(--color-text-dark);
-    }
-
-    .accordion-button {
-        background-color: var(--color-accordion-bg);
-        color: var(--color-text-dark);
-        border: none;
-    }
-    .accordion-button:not(.collapsed) {
-        background-color: var(--color-accordion-active-bg);
-        color: #fff;
-    }
-    .accordion-button::after {
-        filter: invert(100%);
-    }
-    .accordion-item {
-        background-color: var(--color-bg-dark);
-        border-color: var(--color-border-dark);
-    }
-    .accordion-body {
-        background-color: var(--color-accordion-active-bg);
-        color: var(--color-text-dark);
-    }
-    .publications strong {
-        color: var(--color-publications-strong-dark) !important;
-    }
-    .form-group input,
-    .form-group textarea {
-        background-color: var(--color-accordion-bg);
-        color: var(--color-text-dark);
-        border: 1px solid var(--color-border-dark);
-        border-radius: 4px;
-        padding: 10px;
-    }
-    .form-group input::placeholder,
-    .form-group textarea::placeholder {
-        color: #b0b0b0;
-    }
-    .form-group input:focus,
-    .form-group textarea:focus {
-        background-color: var(--color-btn-hover);
-        color: #fff;
-        border-color: var(--color-bg-dark);
-        outline: none;
-    }
-    .form-group input:focus::placeholder,
-    .form-group textarea:focus::placeholder {
-        color: var(--color-text-dark);
-    }
-    .form-group input[readonly],
-    .form-group textarea[readonly],
-    .form-group input:disabled,
-    .form-group textarea:disabled {
-        background-color: var(--color-accordion-active-bg);
-        color: var(--color-text-dark);
-        border-color: var(--color-border-dark);
-        opacity: 1;
-    }
-    .publications a,
-    #about-text a,
-    #contact-text a {
-        color: var(--color-accent-blue) !important;
-        text-decoration: none;
-    }
-    .publications a:hover,
-    #about-text a:hover,
-    #contact-text a:hover {
-        color: var(--color-accent-blue-hover) !important;
-        text-decoration: underline;
-    }
-    .btn {
-        background-color: var(--color-accordion-bg);
-        color: var(--color-text-dark);
-        border: 1px solid var(--color-border-dark);
-    }
-    .btn:hover,
-    .btn:focus,
-    .btn:active {
-        background-color: var(--color-btn-hover);
-        color: #fff;
-        border-color: var(--color-bg-dark);
-    }
-    #theme-toggle {
-        background: var(--color-bg-light);
-        border: 2px solid var(--color-bg-light);
-        color: var(--color-accordion-bg);
-    }
+[data-theme="dark"] body,
+[data-theme="dark"] #content {
+    background-color: var(--color-bg-dark);
+    color: var(--color-text-dark);
 }
+
+[data-theme="dark"] .accordion-button {
+    background-color: var(--color-accordion-bg);
+    color: var(--color-text-dark);
+    border: none;
+}
+
+[data-theme="dark"] .accordion-button:not(.collapsed) {
+    background-color: var(--color-accordion-active-bg);
+    color: #fff;
+}
+
+[data-theme="dark"] .accordion-button::after {
+    filter: invert(100%);
+}
+
+[data-theme="dark"] .accordion-item {
+    background-color: var(--color-bg-dark);
+    border-color: var(--color-border-dark);
+}
+
+[data-theme="dark"] .accordion-body {
+    background-color: var(--color-accordion-active-bg);
+    color: var(--color-text-dark);
+}
+
+[data-theme="dark"] .publications strong {
+    color: var(--color-publications-strong-dark) !important;
+}
+
+[data-theme="dark"] .form-group input,
+[data-theme="dark"] .form-group textarea {
+    background-color: var(--color-accordion-bg);
+    color: var(--color-text-dark);
+    border: 1px solid var(--color-border-dark);
+    border-radius: 4px;
+    padding: 10px;
+}
+
+[data-theme="dark"] .form-group input::placeholder,
+[data-theme="dark"] .form-group textarea::placeholder {
+    color: #b0b0b0;
+}
+
+[data-theme="dark"] .form-group input:focus,
+[data-theme="dark"] .form-group textarea:focus {
+    background-color: var(--color-btn-hover);
+    color: #fff;
+    border-color: var(--color-bg-dark);
+    outline: none;
+}
+
+[data-theme="dark"] .form-group input:focus::placeholder,
+[data-theme="dark"] .form-group textarea:focus::placeholder {
+    color: var(--color-text-dark);
+}
+
+[data-theme="dark"] .form-group input[readonly],
+[data-theme="dark"] .form-group textarea[readonly],
+[data-theme="dark"] .form-group input:disabled,
+[data-theme="dark"] .form-group textarea:disabled {
+    background-color: var(--color-accordion-active-bg);
+    color: var(--color-text-dark);
+    border-color: var(--color-border-dark);
+    opacity: 1;
+}
+
+[data-theme="dark"] .publications a,
+[data-theme="dark"] #about-text a,
+[data-theme="dark"] #contact-text a {
+    color: var(--color-accent-blue) !important;
+    text-decoration: none;
+}
+
+[data-theme="dark"] .publications a:hover,
+[data-theme="dark"] #about-text a:hover,
+[data-theme="dark"] #contact-text a:hover {
+    color: var(--color-accent-blue-hover) !important;
+    text-decoration: underline;
+}
+
+[data-theme="dark"] .btn {
+    background-color: var(--color-accordion-bg);
+    color: var(--color-text-dark);
+    border: 1px solid var(--color-border-dark);
+}
+
+[data-theme="dark"] .btn:hover,
+[data-theme="dark"] .btn:focus,
+[data-theme="dark"] .btn:active {
+    background-color: var(--color-btn-hover);
+    color: #fff;
+    border-color: var(--color-bg-dark);
+}
+
+[data-theme="dark"] #theme-toggle {
+    background: var(--color-bg-light);
+    border: 2px solid var(--color-bg-light);
+    color: var(--color-accordion-bg);
+}
+/* Ende dark-mode */
 
 /* Sidebar und Layout */
 #sidebar {
-    background: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url("../assets/Grand-Canyon-optim.webp"), rgb(80,80,80);
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../assets/Grand-Canyon-optim.webp"), rgb(80, 80, 80);
     background-position: center;
     background-size: auto auto;
     text-align: center;
@@ -146,8 +162,11 @@ html * { font-family: 'Inter', Arial, Helvetica, sans-serif; }
 
 /* Responsive Layouts */
 @media (max-width: 320px) {
-    .publications .col-11 { margin: auto !important; }
+    .publications .col-11 {
+        margin: auto !important;
+    }
 }
+
 @media (max-width: 768px) {
     #sticky-header-mobile {
         margin: -155px -17px 100px -17px;
@@ -158,36 +177,79 @@ html * { font-family: 'Inter', Arial, Helvetica, sans-serif; }
         z-index: 1;
         text-align: center;
     }
-    #sidebar { min-width: 250px; z-index: 2; }
+
+    #sidebar {
+        min-width: 250px;
+        z-index: 2;
+    }
 }
+
 @media (min-width: 768px) {
-    #sticky-header-mobile { display: none; }
+    #sticky-header-mobile {
+        display: none;
+    }
+
     #sidebar {
         text-align: right;
         padding: 20px 35px 20px 20px;
         background-size: auto 100%;
         min-width: 300px;
     }
+
     @media (min-height: 310px) {
-        #sidebar { padding-top: 50px; padding-bottom: 50px; min-height: 300px; }
+        #sidebar {
+            padding-top: 50px;
+            padding-bottom: 50px;
+            min-height: 300px;
+        }
     }
+
     @media (min-height: 610px) {
-        #sidebar { padding-top: 100px; padding-bottom: 100px; min-height: 400px; }
+        #sidebar {
+            padding-top: 100px;
+            padding-bottom: 100px;
+            min-height: 400px;
+        }
     }
-    #content { padding-left: 45px; }
-    #form-div { padding-left: 10px; }
+
+    #content {
+        padding-left: 45px;
+    }
+
+    #form-div {
+        padding-left: 10px;
+    }
 }
+
 @media (min-width: 800px) {
-    #sidebar { padding: 20px 45px 20px 35px; min-width: 320px; }
+    #sidebar {
+        padding: 20px 45px 20px 35px;
+        min-width: 320px;
+    }
 }
+
 @media (min-width: 992px) {
-    #content { padding-left: 60px; }
-    #content .container-fluid { padding-left: 0; }
-    #sidebar { padding: 20px 60px 20px 40px; }
+    #content {
+        padding-left: 60px;
+    }
+
+    #content .container-fluid {
+        padding-left: 0;
+    }
+
+    #sidebar {
+        padding: 20px 60px 20px 40px;
+    }
 }
+
 @media (min-width: 1200px) {
-    #sidebar { padding: 100px 70px 100px 90px; }
-    #content { padding-left: 70px; }
+    #sidebar {
+        padding: 100px 70px 100px 90px;
+    }
+
+    #content {
+        padding-left: 70px;
+    }
 }
 
 h3 {
@@ -257,7 +319,7 @@ h3 {
     width: 180px;
     margin-bottom: 15px;
     border-radius: 24px;
-    border:none;
+    border: none;
 }
 
 #lang-impr a {
@@ -267,13 +329,13 @@ h3 {
     padding-left: 0px;
     padding-right: 0px;
     border-radius: 24px;
-    border:none;
+    border: none;
 }
 
 #impr-button {
     margin-right: 0px !important;
     border-radius: 24px;
-    border:none;
+    border: none;
 }
 
 #submit-button,
@@ -368,6 +430,7 @@ h1 {
     pointer-events: none;
     margin-right: 8px;
 }
+
 #theme-toggle {
     pointer-events: auto;
     background: var(--color-header-mobile);
@@ -378,15 +441,17 @@ h1 {
     height: 38px;
     font-size: 1em;
     cursor: pointer;
-    box-shadow: 0 2px 8px rgba(30,144,255,0.08);
+    box-shadow: 0 2px 8px rgba(30, 144, 255, 0.08);
     transition: transform 0.2s, background 0.2s, color 0.2s;
     display: flex;
     align-items: center;
     justify-content: center;
 }
+
 #theme-toggle:hover {
     transform: translateY(-4px) scale(1.04);
 }
+
 #theme-toggle:active {
     transform: scale(0.98);
 }

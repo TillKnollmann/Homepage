@@ -12,10 +12,20 @@ jobs:
     - name: 🚚 Get Latest Code
       uses: actions/checkout@v3
 
+    - name: 🛠 Check required tools
+      run: |
+        echo "Checking for rsync, npm, node, python3..."
+        which rsync
+        rsync --version
+        which npm
+        npm --version
+        which node
+        node --version
+        which python3
+        python3 --version
+
     - name: 👀 Install build tools
       run: |
-        sudo apt-get update
-        sudo apt-get install -y rsync
         npm install -g uglify-js purify-css clean-css-cli
 
     - name: 👀 Minifying Javascript

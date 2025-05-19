@@ -24,11 +24,18 @@ jobs:
         which python3
         python3 --version
 
-    - name: 👀 Install build tools
+    - name: 👀 Check and install build tools
       run: |
-        npm install -g uglify-js purify-css clean-css-cli
+        for pkg in uglify-js purify-css clean-css-cli; do
+          if ! npm list -g --depth=0 $pkg >/dev/null 2>&1; then
+            echo "$pkg not found, installing..."
+            npm install -g $pkg
+          else
+            echo "$pkg already installed."
+          fi
+        done
 
-    - name: 👀 Minifying Javascript
+    - name: 🗜️ Minifying Javascript
       run: |
         cd scripts
         uglifyjs script.js > script.min.js
@@ -36,7 +43,7 @@ jobs:
         mv script.min.js script.js
         cd ..
 
-    - name: 👀 Minifying CSS
+    - name: 🎨 Minifying CSS
       run: |
         purifycss styles/bootstrap-full.css generator/template.html --out styles/bootstrap-full.min.css
         cd styles

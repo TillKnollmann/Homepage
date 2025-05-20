@@ -12,18 +12,6 @@ jobs:
     - name: 🚚 Get Latest Code
       uses: actions/checkout@v3
 
-    - name: 🛠 Check required tools
-      run: |
-        echo "Checking for rsync, npm, node, python3..."
-        which rsync
-        rsync --version
-        which npm
-        npm --version
-        which node
-        node --version
-        which python3
-        python3 --version
-
     - name: 👀 Install build tools
       run: |
         npm install -g uglify-js purify-css clean-css-cli html-minifier
@@ -65,9 +53,12 @@ jobs:
         BOOTSTRAP_CONTENT=$(cat styles/bootstrap-full.css)
         JS_CONTENT=$(cat scripts/script.js)
         for file in $(find . -name "*.html"); do
-          sed -i "/<link.*bootstrap-full\.css.*>/ { r /dev/stdin; d; }" "$file" <<< "<style>${BOOTSTRAP_CONTENT}</style>"
-          sed -i "/<link.*main\.css.*>/ { r /dev/stdin; d; }" "$file" <<< "<style>${CSS_CONTENT}</style>"
-          sed -i "/<script.*script\.js.*><\/script>/ { r /dev/stdin; d; }" "$file" <<< "<script>${JS_CONTENT}</script>"
+          awk -v boot="$BOOTSTRAP_CONTENT" -v main="$CSS_CONTENT" -v js="$JS_CONTENT" '
+            /<link.*bootstrap-full\.css.*>/ { print "<style>"boot"</style>"; next }
+            /<link.*main\.css.*>/ { print "<style>"main"</style>"; next }
+            /<script.*script\.js.*><\/script>/ { print "<script>"js"</script>"; next }
+            { print }
+          ' "$file" > "$file.inlined" && mv "$file.inlined" "$file"
         done
 
     - name: 🔧 Select Files

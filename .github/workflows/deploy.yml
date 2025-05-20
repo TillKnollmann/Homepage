@@ -49,17 +49,19 @@ jobs:
 
     - name: 🧩 Inline CSS & JS in HTML
       run: |
-        CSS_CONTENT=$(cat styles/main.css)
-        BOOTSTRAP_CONTENT=$(cat styles/bootstrap-full.css)
-        JS_CONTENT=$(cat scripts/script.js)
         for lang in de en; do
           for file in $lang/*.html; do
-            awk -v boot="$BOOTSTRAP_CONTENT" -v main="$CSS_CONTENT" -v js="$JS_CONTENT" '
-              /<link.*bootstrap-full\.css.*>/ { print "<style>"boot"</style>"; next }
-              /<link.*main\.css.*>/ { print "<style>"main"</style>"; next }
-              /<script.*script\.js.*><\/script>/ { print "<script>"js"</script>"; next }
-              { print }
-            ' "$file" > "$file.inlined" && mv "$file.inlined" "$file"
+            perl -0777 -i -pe '
+              BEGIN {
+                local $/;
+                open F, "styles/bootstrap-full.css"; $boot = <F>; close F;
+                open F, "styles/main.css"; $main = <F>; close F;
+                open F, "scripts/script.js"; $js = <F>; close F;
+              }
+              s{<link[^>]*bootstrap-full\.css[^>]*>}{<style>$boot</style>}gs;
+              s{<link[^>]*main\.css[^>]*>}{<style>$main</style>}gs;
+              s{<script[^>]*script\.js[^>]*></script>}{<script>$js</script>}gs;
+            ' "$file"
           done
         done
 

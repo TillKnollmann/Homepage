@@ -24,7 +24,7 @@ jobs:
 
     - name: ⏬ Minifying HTML
       run: |
-        find . -name "*.html" -exec html-minifier --collapse-whitespace --remove-comments -o {} {} \;
+        find . -name "*.html" -exec html-minifier --remove-comments -o {} {} \;
 
     - name: 🎨 Minifying CSS
       run: |

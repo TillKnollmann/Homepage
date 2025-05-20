@@ -64,9 +64,11 @@ jobs:
         CSS_CONTENT=$(cat styles/main.css)
         BOOTSTRAP_CONTENT=$(cat styles/bootstrap-full.css)
         JS_CONTENT=$(cat scripts/script.js)
-        find . -name "*.html" -exec sed -i "/<link.*bootstrap-full\.css.*>/ { r /dev/stdin; d; }" "$file" <<< "<style>${BOOTSTRAP_CONTENT}</style>" {} \;
-        find . -name "*.html" -exec sed -i "/<link.*main\.css.*>/ { r /dev/stdin; d; }" "$file" <<< "<style>${CSS_CONTENT}</style>" {} \;
-        find . -name "*.html" -exec sed -i "/<script.*script\.js.*><\/script>/ { r /dev/stdin; d; }" "$file" <<< "<script>${JS_CONTENT}</script>" {} \;
+        for file in $(find . -name "*.html"); do
+          sed -i "/<link.*bootstrap-full\.css.*>/ { r /dev/stdin; d; }" "$file" <<< "<style>${BOOTSTRAP_CONTENT}</style>"
+          sed -i "/<link.*main\.css.*>/ { r /dev/stdin; d; }" "$file" <<< "<style>${CSS_CONTENT}</style>"
+          sed -i "/<script.*script\.js.*><\/script>/ { r /dev/stdin; d; }" "$file" <<< "<script>${JS_CONTENT}</script>"
+        done
 
     - name: 🔧 Select Files
       run: |

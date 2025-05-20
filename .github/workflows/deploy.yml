@@ -47,20 +47,6 @@ jobs:
         mv script.min.js script.js
         cd ..
 
-    - name: 🧩 Inline CSS & JS in HTML
-      run: |
-        CSS_CONTENT=$(cat styles/main.css)
-        BOOTSTRAP_CONTENT=$(cat styles/bootstrap-full.css)
-        JS_CONTENT=$(cat scripts/script.js)
-        for file in $(find . -name "*.html"); do
-          awk -v boot="$BOOTSTRAP_CONTENT" -v main="$CSS_CONTENT" -v js="$JS_CONTENT" '
-            /<link.*bootstrap-full\.css.*>/ { print "<style>"boot"</style>"; next }
-            /<link.*main\.css.*>/ { print "<style>"main"</style>"; next }
-            /<script.*script\.js.*><\/script>/ { print "<script>"js"</script>"; next }
-            { print }
-          ' "$file" > "$file.inlined" && mv "$file.inlined" "$file"
-        done
-
     - name: 🔧 Select Files
       run: |
         mkdir publish

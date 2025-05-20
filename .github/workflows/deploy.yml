@@ -26,7 +26,7 @@ jobs:
 
     - name: 👀 Install build tools
       run: |
-        npm install -g uglifyjs purify-css clean-css-cli
+        npm install -g uglify-js purify-css clean-css-cli
 
     - name: 🗜️ Minifying Javascript
       run: |

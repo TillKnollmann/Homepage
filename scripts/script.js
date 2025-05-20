@@ -1,5 +1,6 @@
 window.addEventListener("load", () => {
 
+    // Theme toggle
     function getPreferredTheme() {
       return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
     }
@@ -32,13 +33,58 @@ window.addEventListener("load", () => {
       setTheme(e.matches ? 'dark' : 'light');
     });
 
+    // Image overlay
+    const profilePic = document.getElementById("profile-picture");
+    const overlay = document.getElementById("image-overlay");
+    const overlayBg = document.getElementById("overlay-bg");
+    const overlayContent = document.getElementById("overlay-content");
+    const spinner = document.getElementById("spinner");
+    const largeImg = document.getElementById("large-profile-picture");
+
+    if (profilePic) {
+      profilePic.addEventListener("click", function() {
+        overlay.style.display = "flex";
+        spinner.style.display = "block";
+        largeImg.style.display = "none";
+        largeImg.src = "";
+        const largeSrc = profilePic.getAttribute("data-large-src");
+        largeImg.src = largeSrc;
+      });
+    }
+
+    if (largeImg) {
+      largeImg.onload = function() {
+        spinner.style.display = "none";
+        largeImg.style.display = "block";
+      };
+      largeImg.onerror = function() {
+        spinner.style.display = "none";
+        overlayContent.innerHTML = "<div style='color:white'>Could not load image.</div>";
+      };
+    }
+
+    if (overlayBg) {
+      overlayBg.addEventListener("click", function() {
+        overlay.style.display = "none";
+      });
+    }
+    if (largeImg) {
+      largeImg.addEventListener("click", function() {
+        overlay.style.display = "none";
+      });
+    }
+    document.addEventListener("keydown", function(e) {
+      if (e.key === "Escape") {
+        overlay.style.display = "none";
+      }
+    });
+
+    // Form submission
     function sendData() {
       const XHR = new XMLHttpRequest();
 
-      // Bind the FormData object and the form element
       const FD = new FormData(form);
 
-      // determine language
       var notifications;
 
       if (lang === "de") {
@@ -52,7 +98,6 @@ window.addEventListener("load", () => {
       button.innerHTML = notifications[0];
       button.setAttribute("disabled", "");
 
-      // Define what happens on successful data submission
       XHR.addEventListener("load", (event) => {
         let button = document.getElementById("submit-button");
         button.innerHTML = notifications[1];
@@ -62,28 +107,22 @@ window.addEventListener("load", () => {
         document.getElementById("textarea").setAttribute("disabled", "");
       });
 
-      // Define what happens in case of error
       XHR.addEventListener("error", (event) => {
         console.error('Request to server failed');
       });
 
-      // Set up our request
       XHR.open("POST", "../submit.php");
 
-      // The data sent is what the user provided in the form
       XHR.send(FD);
     }
 
-    // Get the form element
     const form = document.getElementById("contact-form");
 
-    // get the language
     const lang = document.getElementsByTagName("html")[0].getAttribute("lang");
 
     const en = ["Sending ...", "Sent!"];
     const de = ["Sendet ...", "Gesendet!"];
 
-    // Add 'submit' event handler
     form.addEventListener("submit", (event) => {
       event.preventDefault();
       sendData();

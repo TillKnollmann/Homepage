@@ -265,6 +265,14 @@ h2 {
     width: 120px;
     height: 120px;
     margin-bottom: 30px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+@media(hover: hover) and (pointer: fine) {
+    #profile-picture:hover {
+        transform: scale(1.06);
+    }
 }
 
 .social-button {
@@ -467,4 +475,27 @@ h1 {
 
 #theme-toggle:active {
     transform: scale(0.98);
+}
+
+#image-overlay {
+  position: fixed;
+  z-index: 9999;
+  left: 0; top: 0; width: 100vw; height: 100vh;
+  display: flex; align-items: center; justify-content: center;
+}
+#overlay-bg {
+  position: absolute;
+  left: 0; top: 0; width: 100vw; height: 100vh;
+  background: rgba(0,0,0,0.8);
+}
+#overlay-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+#spinner {
+  margin: 40px;
 }

@@ -28,7 +28,7 @@ jobs:
       run: |
         npm install -g uglify-js purify-css clean-css-cli html-minifier
 
-    - name: 📏 Vorher: Dateigröße HTML, CSS, JS
+    - name: 📏 Measure file sizes before
       run: |
         du -cb generator/output/*.html styles/*.css scripts/*.js 2>/dev/null | grep total | awk '{print $1}' > sizes_before.txt
 
@@ -63,7 +63,7 @@ jobs:
         mv script.min.js script.js
         cd ..
 
-    - name: 📏 Nachher: Dateigröße HTML, CSS, JS & Auswertung
+    - name: 📏 Measure file sizes after
       run: |
         du -cb generator/output/*.html styles/*.css scripts/*.js 2>/dev/null | grep total | awk '{print $1}' > sizes_after.txt
         BEFORE=$(cat sizes_before.txt)

@@ -453,8 +453,10 @@ h1 {
     justify-content: center;
 }
 
-#theme-toggle:hover {
-    transform: translateY(-4px) scale(1.04);
+@media(hover: hover) and (pointer: fine) {
+    #theme-toggle:hover {
+        transform: translateY(-4px) scale(1.04);
+    }
 }
 
 #theme-toggle:active {

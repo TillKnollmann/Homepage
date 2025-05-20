@@ -277,25 +277,27 @@ h2 {
     display: inline-block;
 }
 
-.social-button:hover {
-    transform: translateY(-4px) scale(1.04);
-}
+@media(hover: hover) and (pointer: fine) {
+    .social-button:hover {
+        transform: translateY(-4px) scale(1.04);
+    }
 
-.linkedin-button:hover {
-    color: hsl(210, 90%, 50%);
-}
+    .linkedin-button:hover {
+        color: hsl(210, 90%, 50%);
+    }
 
-.github-button:hover,
-.mail-button:hover {
-    color: rgb(150, 150, 150);
+    .github-button:hover,
+    .mail-button:hover {
+        color: rgb(150, 150, 150);
+    }
+
+    .research-gate-fill:hover {
+        fill: #00d0af;
+    }
 }
 
 .social-links {
     margin-bottom: 5px;
-}
-
-.research-gate-fill:hover {
-    fill: #00d0af;
 }
 
 #form-div {
@@ -353,13 +355,15 @@ h2 {
     box-shadow: 0 2px 8px rgba(30, 144, 255, 0.08);
 }
 
-#submit-button:hover,
-#impr-button:hover,
-#lang-impr a:hover {
-    background: var(--color-accent-blue);
-    color: #fff;
-    box-shadow: 0 4px 16px rgba(30, 144, 255, 0.18);
-    transform: translateY(-2px) scale(1.04);
+@media(hover: hover) and (pointer: fine) {
+    #submit-button:hover,
+    #impr-button:hover,
+    #lang-impr a:hover {
+        background: var(--color-accent-blue);
+        color: #fff;
+        box-shadow: 0 4px 16px rgba(30, 144, 255, 0.18);
+        transform: translateY(-2px) scale(1.04);
+    }
 }
 
 #submit-button:active,
@@ -400,10 +404,12 @@ h2 {
     color: rgb(38, 90, 233);
 }
 
-.publications a:hover,
-#about-text a:hover,
-#contact-text a:hover {
-    text-decoration: underline;
+@media(hover: hover) and (pointer: fine) {
+    .publications a:hover,
+    #about-text a:hover,
+    #contact-text a:hover {
+        text-decoration: underline;
+    }
 }
 
 .publications .col-1 {

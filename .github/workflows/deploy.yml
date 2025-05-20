@@ -26,15 +26,21 @@ jobs:
 
     - name: 👀 Install build tools
       run: |
-        npm install -g uglify-js purify-css clean-css-cli
+        npm install -g uglify-js purify-css clean-css-cli html-minifier
 
-    - name: 🗜️ Minifying Javascript
+    - name: 📏 Vorher: Dateigröße HTML, CSS, JS
       run: |
-        cd scripts
-        uglifyjs script.js > script.min.js
-        rm -f script.js
-        mv script.min.js script.js
+        du -cb generator/output/*.html styles/*.css scripts/*.js 2>/dev/null | grep total | awk '{print $1}' > sizes_before.txt
+
+    - name: ⏳ Generating Pages
+      run: |
+        cd generator
+        python3 generate.py
         cd ..
+
+    - name: ⏬ Minifying HTML
+      run: |
+        find generator/output -name "*.html" -exec html-minifier --collapse-whitespace --remove-comments --minify-css true --minify-js true -o {} {} \;
 
     - name: 🎨 Minifying CSS
       run: |
@@ -49,11 +55,28 @@ jobs:
         mv bootstrap-full.min.css bootstrap-full.css
         cd ..
 
-    - name: ⌛ Generating Pages
+    - name: 🗜️ Minifying Javascript
       run: |
-        cd generator
-        python3 generate.py
+        cd scripts
+        uglifyjs script.js > script.min.js
+        rm -f script.js
+        mv script.min.js script.js
         cd ..
+
+    - name: 📏 Nachher: Dateigröße HTML, CSS, JS & Auswertung
+      run: |
+        du -cb generator/output/*.html styles/*.css scripts/*.js 2>/dev/null | grep total | awk '{print $1}' > sizes_after.txt
+        BEFORE=$(cat sizes_before.txt)
+        AFTER=$(cat sizes_after.txt)
+        if [ "$BEFORE" -gt 0 ]; then
+          REDUCTION=$((BEFORE - AFTER))
+          PERCENT=$((REDUCTION * 100 / BEFORE))
+          echo "Dateigröße vor Minimierung: $BEFORE Bytes"
+          echo "Dateigröße nach Minimierung: $AFTER Bytes"
+          echo "Reduktion: $REDUCTION Bytes (${PERCENT}%)"
+        else
+          echo "Vorher-Größe nicht bestimmbar."
+        fi
 
     - name: 🔧 Select Files
       run: |

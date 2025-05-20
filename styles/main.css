@@ -432,14 +432,14 @@ h1 {
 #theme-toggle-container {
     position: sticky;
     float: right;
-    top: 14px;
+    top: 13px;
     z-index: 100;
     width: 100%;
     display: flex;
     justify-content: flex-end;
     pointer-events: none;
     margin-right: 8px;
-    margin-bottom: -34px;
+    margin-bottom: -35px;
 }
 
 #theme-toggle {

@@ -40,7 +40,7 @@ jobs:
 
     - name: ⏬ Minifying HTML
       run: |
-        find generator/output -name "*.html" -exec html-minifier --collapse-whitespace --remove-comments --minify-css true --minify-js true -o {} {} \;
+        find generator -name "*.html" -exec html-minifier --collapse-whitespace --remove-comments --minify-css true --minify-js true -o {} {} \;
 
     - name: 🎨 Minifying CSS
       run: |

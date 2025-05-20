@@ -24,16 +24,9 @@ jobs:
         which python3
         python3 --version
 
-    - name: 👀 Check and install build tools
+    - name: 👀 Install build tools
       run: |
-        for pkg in uglify-js purify-css clean-css-cli; do
-          if ! npm list -g --depth=0 $pkg >/dev/null 2>&1; then
-            echo "$pkg not found, installing..."
-            npm install -g $pkg
-          else
-            echo "$pkg already installed."
-          fi
-        done
+        npm install -g uglifyjs purify-css clean-css-cli
 
     - name: 🗜️ Minifying Javascript
       run: |

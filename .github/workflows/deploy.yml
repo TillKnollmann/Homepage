@@ -73,15 +73,12 @@ jobs:
         ls
 
     - name: 🚢 Deploy to server
-      uses: TillKnollmann/ssh-deploy@main
+      uses: TillKnollmann/FTP-Deploy-Action@v4.3.5
       env:
-        SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-        ARGS: "-rlgoDzvc -i"
-        SOURCE: "publish/"
-        REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
-        REMOTE_USER: ${{ secrets.REMOTE_USER }}
-        TARGET: ${{ secrets.REMOTE_TARGET }}
-        EXCLUDE: ""
-        SCRIPT_BEFORE: |
-        SCRIPT_AFTER: |
-          echo $RSYNC_STDOUT
+        server: ${{ secrets.FTP_HOST }}
+        username: ${{ secrets.FTP_USER }}
+        password: ${{ secrets.FTP_PASSWORD }}
+        port: 21
+        security: strict
+        protocol: ftps
+        dry-run: true

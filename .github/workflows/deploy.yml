@@ -79,6 +79,5 @@ jobs:
         port: 21
         security: strict
         protocol: ftps
-        dry-run: true
         local-dir: ./publish/
         server-dir: ./

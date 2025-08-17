@@ -80,5 +80,5 @@ jobs:
         security: strict
         protocol: ftps
         dry-run: true
-        local-dir: ./publish
+        local-dir: ./publish/
         server-dir: ./

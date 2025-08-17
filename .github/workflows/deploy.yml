@@ -73,7 +73,7 @@ jobs:
         ls
 
     - name: 🚢 Deploy to server
-      uses: TillKnollmann/FTP-Deploy-Action@v4.3.5
+      uses: TillKnollmann/FTP-Deploy-Action
       env:
         server: ${{ secrets.FTP_HOST }}
         username: ${{ secrets.FTP_USER }}

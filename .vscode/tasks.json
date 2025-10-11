@@ -1,0 +1,68 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "comment-base",
+      "type": "shell",
+      "command": "sed -Ei 's|^([[:space:]]*)(<base[^>]*>)|\\1<!--\\2 -->|' \"${workspaceFolder}/generator/template.html\"",
+      "problemMatcher": []
+    },
+    {
+      "label": "generate",
+      "type": "shell",
+      "command": "python3 generate.py",
+      "options": { "cwd": "${workspaceFolder}/generator" },
+      "problemMatcher": []
+    },
+    {
+      "label": "uncomment-base",
+      "type": "shell",
+      "command": "sed -Ei 's|^([[:space:]]*)<!--[[:space:]]*(<base[^>]*>)[[:space:]]*-->|\\1\\2|' \"${workspaceFolder}/generator/template.html\"",
+      "problemMatcher": []
+    },
+    {
+      "label": "start-php-server",
+      "type": "shell",
+      "command": "sh -c 'php -S 127.0.0.1:8000 -t \"${workspaceFolder}\" > /tmp/php-server.log 2>&1 & echo $! > /tmp/php-server.pid'",
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared"
+      }
+    },
+    {
+      "label": "open-default-browser",
+      "type": "shell",
+      "command": "bash -lc 'if [ -n \"$BROWSER\" ]; then \"$BROWSER\" \"http://127.0.0.1:8000/index.php\"; else xdg-open \"http://127.0.0.1:8000/index.php\"; fi'",
+      "problemMatcher": []
+    },
+    {
+      "label": "prepare-and-run",
+      "dependsOn": [
+        "comment-base",
+        "generate",
+        "uncomment-base",
+        "start-php-server",
+        "open-default-browser"
+      ],
+      "dependsOrder": "sequence",
+      "type": "shell",
+      "command": "echo done",
+      "problemMatcher": []
+    }
+    ,
+    {
+      "label": "prepare-and-run-no-open",
+      "dependsOn": [
+        "comment-base",
+        "generate",
+        "uncomment-base",
+        "start-php-server"
+      ],
+      "dependsOrder": "sequence",
+      "type": "shell",
+      "command": "echo done",
+      "problemMatcher": []
+    }
+  ]
+}

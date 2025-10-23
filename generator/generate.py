@@ -3,6 +3,14 @@ import json
 
 tag_hotwords = ["$about-text$", "$contact-text$"]
 
+def generate_projects_html(projects):
+    ''' Generates HTML for project cards from project data '''
+    html_parts = []
+    for project in projects:
+        card_html = f'''<div class="col-md-6 mb-3"><div class="card h-100"><div class="card-body"><h5 class="card-title">{project['title']}</h5><p class="card-text">{project['description']}</p><a href="{project['url']}" target="_blank" class="btn btn-secondary">{project['button_text']}</a></div></div></div>'''
+        html_parts.append(card_html)
+    return ''.join(html_parts)
+
 def generate_page(lang: str, path: str, cwd: str):
     ''' Generates the webpage using the file "template.html"
     in cwd, applying the language of lang using the replacements
@@ -22,6 +30,12 @@ def generate_page(lang: str, path: str, cwd: str):
                 for hotword in lang_code.keys():
 
                     to_plug_in = lang_code[hotword]
+                    
+                    # Special handling for projects array
+                    if hotword == "$projects$":
+                        to_plug_in = generate_projects_html(to_plug_in)
+                        page_content = page_content.replace("$projects-content$", to_plug_in)
+                        continue
 
                     if hotword in tag_hotwords:
                         # tag text to be plugged in

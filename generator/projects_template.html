@@ -1,4 +1,5 @@
 <!-- Project Group Template -->
+<!--PROJECT_GROUP_START-->
 <div class="project-group mb-5">
   <h3 class="project-group-title mb-3">{{group_title}}</h3>
   <p class="project-group-description mb-4">{{group_description}}</p>
@@ -6,6 +7,7 @@
     {{projects}}
   </div>
 </div>
+<!--PROJECT_GROUP_END-->
 
 <!-- Individual Project Card Template -->
 <!--PROJECT_CARD_START-->
@@ -27,7 +29,7 @@
 <!-- Project Image Section (if image provided) -->
 <!--IMAGE_SECTION_START-->
 <div class="card-img-top-wrapper">
-  <img src="{{image}}" class="card-img-top project-image" alt="{{title}}" loading="lazy">
+  <img src="{{image}}" class="card-img-top project-image" alt="{{title}}" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(135deg, #667eea 0%, #764ba2 100%)'; this.style.display='none';">
 </div>
 <!--IMAGE_SECTION_END-->
 
@@ -89,12 +91,32 @@
   margin-right: 0.25rem;
   margin-bottom: 0.25rem;
   font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 150px;
 }
 
 .project-tags {
   display: flex;
   flex-wrap: wrap;
   gap: 0.25rem;
+  min-height: 2rem;
+}
+
+@media (max-width: 768px) {
+  .project-card {
+    margin-bottom: 1rem;
+  }
+  
+  .project-image {
+    height: 150px;
+  }
+  
+  .project-tag {
+    max-width: 100px;
+    font-size: 0.7rem;
+  }
 }
 
 .hover-lift {

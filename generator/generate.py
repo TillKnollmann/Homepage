@@ -1,5 +1,6 @@
 import os
 import json
+from projects_generator import generate_projects_html
 
 tag_hotwords = ["$about-text$", "$contact-text$"]
 
@@ -22,6 +23,12 @@ def generate_page(lang: str, path: str, cwd: str):
                 for hotword in lang_code.keys():
 
                     to_plug_in = lang_code[hotword]
+                    
+                    # Special handling for projects dictionary
+                    if hotword == "$projects$":
+                        to_plug_in = generate_projects_html(to_plug_in, cwd)
+                        page_content = page_content.replace("$projects-content$", to_plug_in)
+                        continue
 
                     if hotword in tag_hotwords:
                         # tag text to be plugged in

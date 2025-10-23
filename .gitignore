@@ -1,2 +1,4 @@
 de/
 en/
+__pycache__/
+*.pyc

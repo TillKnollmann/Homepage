@@ -1,25 +1,26 @@
 <!-- Project Group Template -->
 <!--PROJECT_GROUP_START-->
-<div class="project-group mb-5">
-  <h3 class="project-group-title mb-3">{{group_title}}</h3>
-  <p class="project-group-description mb-4">{{group_description}}</p>
-  <div class="row g-4">
-    {{projects}}
-  </div>
+<div class="col-12 project-group mb-4">
+  <h3 class="project-group-title">{{group_title}}</h3>
+  <p class="project-group-description">{{group_description}}</p>
 </div>
+{{projects}}
 <!--PROJECT_GROUP_END-->
 
 <!-- Individual Project Card Template -->
 <!--PROJECT_CARD_START-->
-<div class="col-md-6 col-lg-4">
-  <div class="card project-card h-100 shadow-sm hover-lift">
+<div class="col-md-6 mb-4">
+  <div class="card project-card h-100">
     {{image_section}}
     <div class="card-body d-flex flex-column">
-      <h5 class="card-title project-title">{{title}}</h5>
-      <p class="card-text project-description flex-grow-1">{{description}}</p>
-      <div class="project-tags mb-3">
-        {{tags}}
+      <div class="d-flex justify-content-between align-items-start mb-2">
+        <h5 class="card-title project-title mb-0">{{title}}</h5>
+        <div class="project-language-tag">
+          {{language_tag}}
+        </div>
       </div>
+      {{stars_badge}}
+      <p class="card-text project-description flex-grow-1">{{description}}</p>
       <a href="{{url}}" target="_blank" class="btn btn-secondary mt-auto">{{button_text}}</a>
     </div>
   </div>
@@ -41,19 +42,19 @@
 <!-- CSS Styles for Projects -->
 <style>
 .project-card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border: 1px solid rgba(0,0,0,.125);
+  transition: transform 0.2s ease;
+  border: 1px solid var(--bs-border-color);
+  background-color: var(--bs-body-bg);
 }
 
 .project-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 0.5rem 1rem rgba(0,0,0,.15) !important;
+  transform: translateY(-2px);
 }
 
 .project-image {
-  height: 200px;
+  height: 180px;
   object-fit: cover;
-  border-bottom: 1px solid rgba(0,0,0,.125);
+  border-bottom: 1px solid var(--bs-border-color);
 }
 
 .card-img-top-wrapper {
@@ -62,46 +63,52 @@
 }
 
 .project-title {
-  color: #2c3e50;
+  color: var(--bs-body-color);
   font-weight: 600;
-  margin-bottom: 0.75rem;
+  font-size: 1.1rem;
 }
 
 .project-description {
-  color: #6c757d;
+  color: var(--bs-body-color);
   font-size: 0.95rem;
   line-height: 1.6;
+  opacity: 0.9;
 }
 
 .project-group-title {
-  color: #2c3e50;
+  color: var(--bs-body-color);
   font-weight: 600;
-  border-bottom: 3px solid #667eea;
-  display: inline-block;
-  padding-bottom: 0.5rem;
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
 }
 
 .project-group-description {
-  color: #6c757d;
-  font-size: 1.05rem;
+  color: var(--bs-body-color);
+  font-size: 1rem;
+  opacity: 0.8;
+  margin-bottom: 1.5rem;
 }
 
-.project-tag {
-  font-size: 0.75rem;
-  margin-right: 0.25rem;
-  margin-bottom: 0.25rem;
+.project-language-tag {
+  background-color: var(--bs-secondary-bg);
+  color: var(--bs-body-color);
+  padding: 0.25rem 0.6rem;
+  border-radius: 0.25rem;
+  font-size: 0.8rem;
   font-weight: 500;
   white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  max-width: 150px;
 }
 
-.project-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.25rem;
-  min-height: 2rem;
+.project-stars-badge {
+  color: var(--bs-body-color);
+  font-size: 0.9rem;
+  margin-bottom: 0.75rem;
+  opacity: 0.8;
+}
+
+.project-stars-badge svg {
+  color: #f6d365;
+  margin-right: 0.25rem;
 }
 
 @media (max-width: 768px) {
@@ -110,20 +117,7 @@
   }
   
   .project-image {
-    height: 150px;
+    height: 140px;
   }
-  
-  .project-tag {
-    max-width: 100px;
-    font-size: 0.7rem;
-  }
-}
-
-.hover-lift {
-  transition: all 0.3s ease;
-}
-
-.g-4 {
-  gap: 1.5rem !important;
 }
 </style>

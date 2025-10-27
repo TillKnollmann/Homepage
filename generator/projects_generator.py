@@ -89,27 +89,48 @@ def extract_template_section(template_content: str, start_marker: str, end_marke
     return template_content[start_idx:end_idx].strip()
 
 
-def generate_project_tags(tags: Optional[List[str]]) -> str:
+def get_primary_language(tags: Optional[List[str]]) -> str:
     """
-    Generate HTML for project technology tags.
+    Get the primary programming language from tags.
     
     Args:
         tags: List of technology/category tags (optional)
         
     Returns:
-        HTML string with badge elements for each tag
+        Primary language tag or empty string
     """
     if not tags:
         return ""
     
-    tag_html_parts = []
-    for tag in tags:
-        # Escape tag content for security
-        escaped_tag = escape_html(tag)
-        tag_html = f'<span class="badge bg-secondary project-tag">{escaped_tag}</span>'
-        tag_html_parts.append(tag_html)
+    # Programming languages to look for (in priority order)
+    languages = ['Rust', 'Python', 'JavaScript', 'Java', 'C#', 'C++', 'Go', 'TypeScript', 'HTML', 'CSS']
     
-    return '\n        '.join(tag_html_parts)
+    for lang in languages:
+        if lang in tags:
+            return escape_html(lang)
+    
+    # If no known language, return first tag
+    return escape_html(tags[0]) if tags else ""
+
+
+def generate_stars_badge(stars: Optional[int]) -> str:
+    """
+    Generate HTML for stars badge (for Advent of Code projects).
+    
+    Args:
+        stars: Number of stars achieved (optional)
+        
+    Returns:
+        HTML string with stars badge or empty string
+    """
+    if stars is None or stars == 0:
+        return ""
+    
+    # SVG star icon
+    star_svg = '<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/></svg>'
+    
+    escaped_stars = escape_html(str(stars))
+    return f'<div class="project-stars-badge">{star_svg} {escaped_stars} stars</div>'
 
 
 def generate_project_card(project: Dict, card_template: str, image_template: str) -> str:
@@ -124,6 +145,7 @@ def generate_project_card(project: Dict, card_template: str, image_template: str
             - button_text (required): Text for the action button
             - image (optional): Image URL
             - tags (optional): List of technology tags
+            - stars (optional): Number of stars for Advent of Code projects
         card_template: HTML template string with {{placeholders}}
         image_template: HTML template for image section
         
@@ -138,7 +160,9 @@ def generate_project_card(project: Dict, card_template: str, image_template: str
         ...     'title': 'My Project',
         ...     'description': 'A cool project',
         ...     'url': 'https://github.com/user/project',
-        ...     'button_text': 'View on GitHub'
+        ...     'button_text': 'View on GitHub',
+        ...     'tags': ['Python'],
+        ...     'stars': 50
         ... }
         >>> html = generate_project_card(project, card_tpl, img_tpl)
     """
@@ -151,15 +175,19 @@ def generate_project_card(project: Dict, card_template: str, image_template: str
         image_section = image_template.replace('{{image}}', escape_html(project['image']))
         image_section = image_section.replace('{{title}}', escape_html(project['title']))
     
-    # Generate tags
-    tags_html = generate_project_tags(project.get('tags', []))
+    # Generate language tag (only primary language)
+    language_tag = get_primary_language(project.get('tags', []))
+    
+    # Generate stars badge for Advent of Code projects
+    stars_badge = generate_stars_badge(project.get('stars'))
     
     # Fill in the card template with escaped content
     card_html = card_template
     card_html = card_html.replace('{{image_section}}', image_section)
     card_html = card_html.replace('{{title}}', escape_html(project['title']))
     card_html = card_html.replace('{{description}}', escape_html(project['description']))
-    card_html = card_html.replace('{{tags}}', tags_html)
+    card_html = card_html.replace('{{language_tag}}', language_tag)
+    card_html = card_html.replace('{{stars_badge}}', stars_badge)
     card_html = card_html.replace('{{url}}', escape_html(project['url']))
     card_html = card_html.replace('{{button_text}}', escape_html(project['button_text']))
     

@@ -55,7 +55,8 @@
                         "url": "https://github.com/TillKnollmann?tab=repositories&q=AdventOfCode",
                         "button_text": "View on GitHub",
                         "image": "https://via.placeholder.com/400x200/f6d365/ffffff?text=AoC+2023",
-                        "tags": ["Rust", "Algorithms", "2023"]
+                        "tags": ["Rust", "Algorithms"],
+                        "stars": 50
                     },
                     {
                         "title": "Advent of Code 2022",
@@ -63,7 +64,8 @@
                         "url": "https://github.com/TillKnollmann?tab=repositories&q=AdventOfCode",
                         "button_text": "View on GitHub",
                         "image": "https://via.placeholder.com/400x200/fda085/ffffff?text=AoC+2022",
-                        "tags": ["Python", "Algorithms", "2022"]
+                        "tags": ["Python", "Algorithms"],
+                        "stars": 50
                     }
                 ]
             },

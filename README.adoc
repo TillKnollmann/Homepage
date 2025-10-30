@@ -78,7 +78,7 @@ The source code, build scripts, and technical implementation are licensed under 
 ----
 MIT License
 
-Copyright (c) 2025 Till Knollmann
+Copyright (c) 2023 Till Knollmann
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -103,6 +103,6 @@ SOFTWARE.
 
 All website content, design elements, graphics, text, and personal materials are:
 
-Copyright © 2025 Till Knollmann. All rights reserved.
+Copyright © 2023 Till Knollmann. All rights reserved.
 
 No part of the website content or design may be reproduced, distributed, or transmitted in any form without prior written permission.

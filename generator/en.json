@@ -17,31 +17,28 @@
         "groups": [
             {
                 "group_title": "Flow Launcher Plugins",
-                "group_description": "Custom plugins to extend the functionality of Flow Launcher, a quick launcher for Windows.",
+                "group_description": "Plugins to extend the functionality of Flow Launcher, a quick launcher for Windows.",
                 "projects": [
                     {
-                        "title": "Flow Launcher Plugin 1",
-                        "description": "A productivity plugin that enhances workflow automation with custom commands and shortcuts.",
-                        "url": "https://github.com/TillKnollmann",
+                        "title": "Power Plan Switcher",
+                        "description": "A FlowLauncher plugin to easily switch between Windows power plans.",
+                        "url": "https://github.com/TillKnollmann/Flow.Launcher.Plugin.PowerPlans",
                         "button_text": "View on GitHub",
-                        "image": "https://via.placeholder.com/400x200/667eea/ffffff?text=Flow+Launcher+Plugin",
-                        "tags": ["Python", "Productivity", "Windows"]
+                        "language": "Python"
                     },
                     {
-                        "title": "Flow Launcher Plugin 2",
-                        "description": "Integration plugin for seamless interaction with external APIs and services.",
-                        "url": "https://github.com/TillKnollmann",
+                        "title": "ByteStash Plugin",
+                        "description": "A FlowLauncher plugin to manage and access code snippets in ByteStash.",
+                        "url": "https://github.com/TillKnollmann/Flow.Launcher.Plugin.ByteStash",
                         "button_text": "View on GitHub",
-                        "image": "https://via.placeholder.com/400x200/764ba2/ffffff?text=API+Integration",
-                        "tags": ["Python", "API", "Integration"]
+                        "language": "C#"
                     },
                     {
-                        "title": "Flow Launcher Plugin 3",
-                        "description": "Search and navigation plugin with advanced filtering capabilities.",
-                        "url": "https://github.com/TillKnollmann",
+                        "title": "Microsoft Edge Profile Switcher",
+                        "description": "A FlowLauncher plugin to easily launch different MS Edge Profiles.",
+                        "url": "https://github.com/TillKnollmann/Flow.Launcher.Plugin.EdgeProfiles",
                         "button_text": "View on GitHub",
-                        "image": "https://via.placeholder.com/400x200/f093fb/ffffff?text=Search+Plugin",
-                        "tags": ["Python", "Search", "UI"]
+                        "language": "Python"
                     }
                 ]
             },
@@ -50,36 +47,64 @@
                 "group_description": "Solutions to the annual Advent of Code programming challenges, showcasing problem-solving approaches and algorithm implementations.",
                 "projects": [
                     {
-                        "title": "Advent of Code 2023",
-                        "description": "Complete solutions for all 25 days of Advent of Code 2023, implemented in Rust with detailed explanations.",
-                        "url": "https://github.com/TillKnollmann?tab=repositories&q=AdventOfCode",
+                        "title": "Advent of Code 2024",
+                        "description": "Solutions for Advent of Code 2024.",
+                        "url": "https://github.com/TillKnollmann/AOC24",
                         "button_text": "View on GitHub",
-                        "image": "https://via.placeholder.com/400x200/f6d365/ffffff?text=AoC+2023",
-                        "tags": ["Rust", "Algorithms"],
+                        "language": "Python",
+                        "stars": 33
+                    },
+                    {
+                        "title": "Advent of Code 2023",
+                        "description": "Complete solutions for Advent of Code 2023.",
+                        "url": "https://github.com/TillKnollmann/AOC23",
+                        "button_text": "View on GitHub",
+                        "language": "Go",
                         "stars": 50
                     },
                     {
                         "title": "Advent of Code 2022",
-                        "description": "Solutions to Advent of Code 2022 challenges using Python, demonstrating various algorithmic techniques.",
-                        "url": "https://github.com/TillKnollmann?tab=repositories&q=AdventOfCode",
+                        "description": "Complete solutions for Advent of Code 2022.",
+                        "url": "https://github.com/TillKnollmann/AOC22",
                         "button_text": "View on GitHub",
-                        "image": "https://via.placeholder.com/400x200/fda085/ffffff?text=AoC+2022",
-                        "tags": ["Python", "Algorithms"],
+                        "language": "Rust",
                         "stars": 50
+                    },
+                    {
+                        "title": "Advent of Code 2021",
+                        "description": "Complete solutions for Advent of Code 2021.",
+                        "url": "https://github.com/TillKnollmann/AOC21",
+                        "button_text": "View on GitHub",
+                        "language": "Python",
+                        "stars": 50
+                    },
+                    {
+                        "title": "Advent of Code 2020",
+                        "description": "Solutions for Advent of Code 2020.",
+                        "url": "https://github.com/TillKnollmann/AOC20",
+                        "button_text": "View on GitHub",
+                        "language": "Java",
+                        "stars": 12
                     }
                 ]
             },
             {
                 "group_title": "Other Projects",
-                "group_description": "Miscellaneous projects including web development, automation, and open-source contributions.",
+                "group_description": "Miscellaneous other projects.",
                 "projects": [
                     {
                         "title": "Personal Homepage",
-                        "description": "This website itself is an open-source project! Built with a custom localization system, Bootstrap, and deployed via GitHub Actions.",
+                        "description": "My personal homepage build in basic HTML, CSS, JS with a CI/CD pipeline.",
                         "url": "https://github.com/TillKnollmann/Homepage",
                         "button_text": "View on GitHub",
-                        "image": "https://via.placeholder.com/400x200/48c6ef/ffffff?text=Homepage",
-                        "tags": ["HTML", "Python", "Bootstrap", "CI/CD"]
+                        "language": "HTML, CSS, JS"
+                    },
+                     {
+                        "title": "LaTeX Dev-Container Template",
+                        "description": "A Dev-Container environment for LaTeX in VS Code.",
+                        "url": "https://github.com/TillKnollmann/LatexDevContainerTemplate",
+                        "button_text": "View on GitHub",
+                        "language": "LaTeX"
                     }
                 ]
             }

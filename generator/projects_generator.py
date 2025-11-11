@@ -138,7 +138,7 @@ def generate_project_card(project: Dict, card_template: str, image_template: str
         ...     'description': 'A cool project',
         ...     'url': 'https://github.com/user/project',
         ...     'button_text': 'View on GitHub',
-        ...     'tags': ['Python'],
+        ...     'language': 'Python',
         ...     'stars': 50
         ... }
         >>> html = generate_project_card(project, card_tpl, img_tpl)

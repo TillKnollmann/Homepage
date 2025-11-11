@@ -5,7 +5,7 @@ Handles the generation of project sections with grouping and enhanced visuals
 
 import os
 import html as html_lib
-from typing import Dict, List, Optional
+from typing import Dict, Optional
 
 # Template marker constants
 CARD_START_MARKER = '<!--PROJECT_CARD_START-->'

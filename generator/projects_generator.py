@@ -121,7 +121,6 @@ def generate_project_card(project: Dict, card_template: str, image_template: str
             - url (required): GitHub or project URL
             - button_text (required): Text for the action button
             - image (optional): Image URL
-            - tags (optional): List of technology tags
             - stars (optional): Number of stars for Advent of Code projects
         card_template: HTML template string with {{placeholders}}
         image_template: HTML template for image section

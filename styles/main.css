@@ -332,7 +332,7 @@ h2 {
 #submit-button {
     width: 180px;
     margin-bottom: 15px;
-    border-radius: 24px;
+    border-radius: 12px;
     border: none;
 }
 
@@ -342,7 +342,7 @@ h2 {
     margin-right: 5px;
     padding-left: 0px;
     padding-right: 0px;
-    border-radius: 24px;
+    border-radius: 12px;
     border: none;
 }
 
@@ -363,6 +363,12 @@ h2 {
     box-shadow: 0 2px 8px rgba(30, 144, 255, 0.08);
 }
 
+.project-button {
+    width: fit-content;
+    border-radius: 12px;
+    border: none;
+}
+
 @media(hover: hover) and (pointer: fine) {
     #submit-button:hover,
     #impr-button:hover,
@@ -371,6 +377,10 @@ h2 {
         color: #fff;
         box-shadow: 0 4px 16px rgba(30, 144, 255, 0.18);
         transform: translateY(-2px) scale(1.04);
+    }
+    .project-button:hover {
+        background: var(--color-accent-blue);
+        box-shadow: 0 4px 16px rgba(30, 144, 255, 0.18);
     }
 }
 
@@ -381,6 +391,59 @@ h2 {
     color: #fff;
     box-shadow: 0 2px 8px rgba(30, 144, 255, 0.10);
     transform: scale(0.98);
+}
+
+.project-card {
+  transition: transform 0.1s ease;
+  border: 1px solid #ddd;
+}
+
+.project-card:hover {
+  transform: translateY(-4px) scale(1.02);
+}
+
+.project-image {
+  height: 180px;
+  object-fit: cover;
+}
+
+.card-img-top-wrapper {
+  overflow: hidden;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.project-title {
+  font-size: 1.2rem;
+}
+
+.project-description {
+  line-height: 1.6;
+}
+
+.project-group-title {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+}
+
+.project-group-description {
+  margin-bottom: 1rem;
+}
+
+.project-language-tag {
+  padding: 0.2rem 0.6rem;
+  border-radius: 0.25rem;
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
+
+.project-stars-badge {
+  margin-bottom: 0.75rem;
+}
+
+.project-stars-badge svg {
+  color: #ecb500;
+  margin-right: 0.25rem;
+  margin-bottom: 0.25rem;
 }
 
 .publications {

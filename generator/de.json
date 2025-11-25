@@ -100,7 +100,7 @@
                         "language": "HTML, CSS, JS"
                     },
                     {
-                        "title": "LaTeX Dev-Container Vorlage",
+                        "title": "LaTeX Dev-Container",
                         "description": "Eine Dev-Container Umgebung um LaTeX in VS Code zu verfassen.",
                         "url": "https://github.com/TillKnollmann/LatexDevContainerTemplate",
                         "button_text": "Auf GitHub ansehen",

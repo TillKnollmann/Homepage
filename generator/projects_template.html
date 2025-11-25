@@ -1,6 +1,6 @@
 <!-- Project Group Template -->
 <!--PROJECT_GROUP_START-->
-<div class="col-12 project-group mb-4">
+<div class="col-12 project-group">
   <h3 class="project-group-title">{{group_title}}</h3>
   <p class="project-group-description">{{group_description}}</p>
 </div>
@@ -9,7 +9,7 @@
 
 <!-- Individual Project Card Template -->
 <!--PROJECT_CARD_START-->
-<div class="col-md-6 mb-4">
+<div class="col-md-6 col-sm-6 mb-4">
   <div class="card project-card h-100">
     {{image_section}}
     <div class="card-body d-flex flex-column">
@@ -21,91 +21,14 @@
       </div>
       {{stars_badge}}
       <p class="card-text project-description flex-grow-1">{{description}}</p>
-      <a href="{{url}}" target="_blank" class="btn btn-secondary mt-auto">{{button_text}}</a>
+      <a href="{{url}}" target="_blank" class="btn btn-secondary project-button">{{button_text}}</a>
     </div>
   </div>
 </div>
 <!--PROJECT_CARD_END-->
 
-<!-- Project Image Section (if image provided) -->
 <!--IMAGE_SECTION_START-->
 <div class="card-img-top-wrapper">
   <img src="{{image}}" class="card-img-top project-image" alt="{{title}}" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(135deg, #667eea 0%, #764ba2 100%)'; this.style.display='none';">
 </div>
 <!--IMAGE_SECTION_END-->
-
-<!-- Project Tag Template -->
-<!--TAG_START-->
-<span class="badge bg-secondary project-tag">{{tag}}</span>
-<!--TAG_END-->
-
-<!-- CSS Styles for Projects -->
-<style>
-.project-card {
-  transition: transform 0.2s ease;
-  border: 1px solid;
-}
-
-.project-card:hover {
-  transform: translateY(-2px);
-}
-
-.project-image {
-  height: 180px;
-  object-fit: cover;
-}
-
-.card-img-top-wrapper {
-  overflow: hidden;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-}
-
-.project-title {
-  font-size: 1.1rem;
-}
-
-.project-description {
-  font-size: 0.95rem;
-  line-height: 1.6;
-  opacity: 0.9;
-}
-
-.project-group-title {
-  font-size: 1.3rem;
-  margin-bottom: 0.5rem;
-}
-
-.project-group-description {
-  font-size: 1rem;
-  opacity: 0.8;
-  margin-bottom: 1.5rem;
-}
-
-.project-language-tag {
-  padding: 0.25rem 0.6rem;
-  border-radius: 0.25rem;
-  font-size: 0.8rem;
-  white-space: nowrap;
-}
-
-.project-stars-badge {
-  font-size: 0.9rem;
-  margin-bottom: 0.75rem;
-  opacity: 0.8;
-}
-
-.project-stars-badge svg {
-  color: #f6d365;
-  margin-right: 0.25rem;
-}
-
-@media (max-width: 768px) {
-  .project-card {
-    margin-bottom: 1rem;
-  }
-
-  .project-image {
-    height: 140px;
-  }
-}
-</style>

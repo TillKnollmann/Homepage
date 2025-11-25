@@ -100,7 +100,7 @@
                         "language": "HTML, CSS, JS"
                     },
                      {
-                        "title": "LaTeX Dev-Container Template",
+                        "title": "LaTeX Dev-Container",
                         "description": "A Dev-Container environment for LaTeX in VS Code.",
                         "url": "https://github.com/TillKnollmann/LatexDevContainerTemplate",
                         "button_text": "View on GitHub",

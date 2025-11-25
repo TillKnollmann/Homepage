@@ -24,6 +24,9 @@ html * {
     --color-publications-strong-light: rgb(80, 80, 80);
     --color-publications-strong-dark: #ffffff;
     --color-header-mobile: rgb(80, 80, 80);
+    --color-language-tag-bg-light: #e0e0e0;
+    --color-language-tag-bg-dark: #454545;
+    --color-project-card-bg-dark: #3a3a3a;
 }
 
 /* Light mode styles */
@@ -141,6 +144,37 @@ html * {
     border: 2px solid var(--color-bg-light);
     color: var(--color-accordion-bg);
 }
+
+[data-theme="dark"] .project-card {
+    background-color: var(--color-project-card-bg-dark);
+    border-color: var(--color-project-card-bg-dark) !important;
+}
+
+[data-theme="dark"] .project-title,
+[data-theme="dark"] .project-description,
+[data-theme="dark"] .project-group-title,
+[data-theme="dark"] .project-group-description {
+    color: var(--color-text-dark);
+}
+
+[data-theme="dark"] .project-language-tag {
+    background-color: var(--color-language-tag-bg-dark);
+    color: var(--color-text-dark);
+    border: 1px solid var(--color-language-tag-bg-dark);
+}
+
+[data-theme="dark"] .project-button {
+    background-color: var(--color-accordion-bg);
+    color: var(--color-text-dark);
+    border: 1px solid var(--color-border-dark);
+}
+
+[data-theme="dark"] .project-button:hover {
+    background-color: var(--color-accent-blue);
+    color: #fff;
+    border-color: var(--color-accent-blue);
+}
+
 /* Ende dark-mode */
 
 /* Sidebar und Layout */
@@ -258,7 +292,7 @@ h3 {
 }
 
 h2 {
-    margin-bottom:18px;
+    margin-bottom: 18px;
 }
 
 #profile-picture {
@@ -370,6 +404,7 @@ h2 {
 }
 
 @media(hover: hover) and (pointer: fine) {
+
     #submit-button:hover,
     #impr-button:hover,
     #lang-impr a:hover {
@@ -378,6 +413,7 @@ h2 {
         box-shadow: 0 4px 16px rgba(30, 144, 255, 0.18);
         transform: translateY(-2px) scale(1.04);
     }
+
     .project-button:hover {
         background: var(--color-accent-blue);
         box-shadow: 0 4px 16px rgba(30, 144, 255, 0.18);
@@ -394,56 +430,60 @@ h2 {
 }
 
 .project-card {
-  transition: transform 0.1s ease;
-  border: 1px solid #ddd;
+    transition: transform 0.1s ease;
+    border: 1px solid #ddd;
 }
 
 .project-card:hover {
-  transform: translateY(-4px) scale(1.02);
+    transform: translateY(-4px) scale(1.02);
 }
 
 .project-image {
-  height: 180px;
-  object-fit: cover;
+    height: 180px;
+    object-fit: cover;
 }
 
 .card-img-top-wrapper {
-  overflow: hidden;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    overflow: hidden;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 }
 
 .project-title {
-  font-size: 1.2rem;
+    font-size: 1.2rem;
 }
 
 .project-description {
-  line-height: 1.6;
+    line-height: 1.6;
 }
 
 .project-group-title {
-  font-size: 1.4rem;
-  margin-bottom: 0.5rem;
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
 }
 
 .project-group-description {
-  margin-bottom: 1rem;
+    margin-bottom: 1rem;
 }
 
 .project-language-tag {
-  padding: 0.2rem 0.6rem;
-  border-radius: 0.25rem;
-  font-size: 0.8rem;
-  white-space: nowrap;
+    background-color: var(--color-language-tag-bg-light);
+    border: 1px solid var(--color-language-tag-bg-light);
+    color: var(--color-text-light);
+    padding: 0.2rem 0.6rem;
+    margin-top: -0.1rem;
+    border-radius: 0.25rem;
+    font-size: 0.8rem;
+    white-space: nowrap;
 }
 
 .project-stars-badge {
-  margin-bottom: 0.75rem;
+    margin-bottom: 0.75rem;
 }
 
 .project-stars-badge svg {
-  color: #ecb500;
-  margin-right: 0.25rem;
-  margin-bottom: 0.25rem;
+    color: #ecb500;
+    margin-right: 0.25rem;
+    margin-bottom: 0.25rem;
 }
 
 .publications {
@@ -476,6 +516,7 @@ h2 {
 }
 
 @media(hover: hover) and (pointer: fine) {
+
     .publications a:hover,
     #about-text a:hover,
     #contact-text a:hover {
@@ -541,24 +582,35 @@ h1 {
 }
 
 #image-overlay {
-  position: fixed;
-  z-index: 9999;
-  left: 0; top: 0; width: 100vw; height: 100vh;
-  display: flex; align-items: center; justify-content: center;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
 #overlay-bg {
-  position: absolute;
-  left: 0; top: 0; width: 100vw; height: 100vh;
-  background: rgba(0,0,0,0.8);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.8);
 }
+
 #overlay-content {
-  position: relative;
-  z-index: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
+
 #spinner {
-  margin: 40px;
+    margin: 40px;
 }

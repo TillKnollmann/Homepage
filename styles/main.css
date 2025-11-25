@@ -25,8 +25,9 @@ html * {
     --color-publications-strong-dark: #ffffff;
     --color-header-mobile: rgb(80, 80, 80);
     --color-language-tag-bg-light: #e0e0e0;
-    --color-language-tag-bg-dark: #454545;
+    --color-language-tag-bg-dark: rgb(80, 80, 80);
     --color-project-card-bg-dark: #3a3a3a;
+    --color-button-bg-dark: #636363;
 }
 
 /* Light mode styles */
@@ -126,9 +127,9 @@ html * {
 }
 
 [data-theme="dark"] .btn {
-    background-color: var(--color-accordion-bg);
+    background-color: var(--color-button-bg-dark);
     color: var(--color-text-dark);
-    border: 1px solid var(--color-border-dark);
+    border: 1px solid var(--color-button-bg-dark);
 }
 
 [data-theme="dark"] .btn:hover,
@@ -164,9 +165,9 @@ html * {
 }
 
 [data-theme="dark"] .project-button {
-    background-color: var(--color-accordion-bg);
+    background-color: var(--color-button-bg-dark);
     color: var(--color-text-dark);
-    border: 1px solid var(--color-border-dark);
+    border: 1px solid var(--color-button-bg-dark);
 }
 
 [data-theme="dark"] .project-button:hover {
@@ -394,13 +395,12 @@ h2 {
         color 0.2s,
         box-shadow 0.2s,
         transform 0.1s;
-    box-shadow: 0 2px 8px rgba(30, 144, 255, 0.08);
 }
 
 .project-button {
     width: fit-content;
     border-radius: 12px;
-    border: none;
+    border: 1px solid;
 }
 
 @media(hover: hover) and (pointer: fine) {

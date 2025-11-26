@@ -1,0 +1,108 @@
+= Homepage
+:toc:
+:toc-placement!:
+:homepage: https://till-knollmann.com
+
+This repository contains the source code of my personal homepage hosted at {homepage}.
+
+toc::[]
+
+== CI/CD
+
+The project uses GitHub Actions workflows for automated building and deployment:
+
+=== Build Workflow
+On push to the `develop` branch or pull requests to `develop`, a GitHub workflow validates that:
+
+* Localized pages are generated successfully
+* JavaScript, CSS and HTML files can be minified
+* JavaScript and CSS can be inlined into HTML
+* All required files are present for deployment
+
+This ensures that changes can be deployed before merging to main.
+
+=== Deploy Workflow
+On commit to the `main` branch, a GitHub workflow is activated that:
+
+* Generates localized pages
+* Minifies JavaScript, CSS and HTML files
+* Inlines JavaScript and CSS into the HTML
+* Pushes an incremental update to the webspace at {homepage}
+
+== Development
+
+=== Setup
+
+Pull the repository in a https://code.visualstudio.com/docs/devcontainers/containers[VSCode Devcontainer].
+The container configures itself and provides launch configurations for local development.
+
+=== Running Locally
+
+The project includes launch configurations and tasks for local development:
+
+==== Launch Configuration
+Use the launch configuration *"Run: generate + php + open browser"* to:
+
+* Generate localized pages from JSON files
+* Start a local PHP development server
+* Automatically open the homepage in your default browser
+
+==== Manual Tasks
+Alternatively, you can run individual tasks from the task list:
+
+* `generate` - Generate localized pages
+* `start-php-server` - Start the PHP development server
+* `prepare-and-run` - Complete workflow with browser opening
+* `prepare-and-run-no-open` - Complete workflow without opening browser
+
+=== Localizations
+
+To generate localizations of the page, run `/generator/generate.py`.
+
+The localization process:
+
+1. Reads text content from language-specific JSON files in `/generator/` (`de.json`, `en.json`)
+2. Inserts the content into `/generator/template.html`
+3. Matches placeholders for each language
+4. Outputs localized HTML pages in language-specific directories (`de/`, `en/`)
+
+== License
+
+This project uses a dual licensing approach:
+
+=== Code (MIT License)
+
+The source code, build scripts, and technical implementation are licensed under the MIT License.
+
+[source]
+----
+MIT License
+
+Copyright (c) 2023 Till Knollmann
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+----
+
+=== Content & Design (All Rights Reserved)
+
+All website content, design elements, graphics, text, and personal materials are:
+
+Copyright © 2023 Till Knollmann. All rights reserved.
+
+No part of the website content or design may be reproduced, distributed, or transmitted in any form without prior written permission.

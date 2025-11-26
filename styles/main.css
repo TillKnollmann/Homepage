@@ -431,7 +431,6 @@ h2 {
 
 .project-card {
     transition: transform 0.1s ease;
-    border: 1px solid #ddd;
 }
 
 .project-card:hover {
@@ -484,6 +483,36 @@ h2 {
     color: #ecb500;
     margin-right: 0.25rem;
     margin-bottom: 0.25rem;
+}
+
+.projects-container {
+    margin-bottom: 1rem;
+    container-type: inline-size;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.project-card {
+    width: 100%;
+}
+
+@container (min-width: 600px) {
+    .project-card {
+        width: calc(50% - 0.5rem);
+    }
+}
+
+@container (min-width: 1000px) {
+    .project-card {
+        width: calc(33.333% - 0.666rem);
+    }
+}
+
+@container (min-width: 1400px) {
+    .project-card {
+        width: calc(25% - 0.75rem);
+    }
 }
 
 .publications {

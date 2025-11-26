@@ -1,0 +1,138 @@
+name: Build and Test
+run-name: Build and Test
+on:
+  push:
+    branches:
+      - develop
+  pull_request:
+    branches:
+      - develop
+jobs:
+  build-test:
+    name: 🧪 Build and Test Website
+    runs-on: ubuntu-latest
+    steps:
+    - name: 🚚 Get Latest Code
+      uses: actions/checkout@v3
+
+    - name: 👀 Install build tools
+      run: |
+        npm install -g uglify-js purify-css clean-css-cli html-minifier
+
+    - name: ⏳ Generating Pages
+      run: |
+        cd generator
+        python3 generate.py
+        cd ..
+
+    - name: ✅ Verify Generated Files
+      run: |
+        if [ ! -d "de" ] || [ ! -d "en" ]; then
+          echo "Error: Language directories not generated"
+          exit 1
+        fi
+        if [ -z "$(ls -A de/*.html 2>/dev/null)" ] || [ -z "$(ls -A en/*.html 2>/dev/null)" ]; then
+          echo "Error: HTML files not generated"
+          exit 1
+        fi
+        echo "✓ Page generation successful"
+
+    - name: ⏬ Minifying HTML
+      run: |
+        find . -name "*.html" -exec html-minifier --remove-comments -o {} {} \;
+
+    - name: 🎨 Minifying CSS
+      run: |
+        purifycss styles/bootstrap-full.css en/index.html --out styles/bootstrap-full.min.css
+        cd styles
+        rm -f bootstrap-full.css
+        mv bootstrap-full.min.css bootstrap-full.css
+        cleancss -o main.min.css main.css
+        cleancss -o bootstrap-full.min.css bootstrap-full.css
+        rm -f main.css bootstrap-full.css
+        mv main.min.css main.css
+        mv bootstrap-full.min.css bootstrap-full.css
+        cd ..
+
+    - name: ✅ Verify CSS Minification
+      run: |
+        if [ ! -f "styles/main.css" ] || [ ! -f "styles/bootstrap-full.css" ]; then
+          echo "Error: CSS files not properly minified"
+          exit 1
+        fi
+        echo "✓ CSS minification successful"
+
+    - name: 🗜️ Minifying Javascript
+      run: |
+        cd scripts
+        uglifyjs script.js > script.min.js
+        rm -f script.js
+        mv script.min.js script.js
+        cd ..
+
+    - name: ✅ Verify JavaScript Minification
+      run: |
+        if [ ! -f "scripts/script.js" ]; then
+          echo "Error: JavaScript file not properly minified"
+          exit 1
+        fi
+        echo "✓ JavaScript minification successful"
+
+    - name: 🧩 Inline CSS & JS in HTML
+      run: |
+        for lang in de en; do
+          for file in $lang/*.html; do
+            perl -0777 -i -pe '
+              BEGIN {
+                local $/;
+                open F, "styles/bootstrap-full.css"; $boot = <F>; close F;
+                open F, "styles/main.css"; $main = <F>; close F;
+                open F, "scripts/script.js"; $js = <F>; close F;
+              }
+              s{<link[^>]*bootstrap-full\.css[^>]*>}{<style>$boot</style>}gs;
+              s{<link[^>]*main\.css[^>]*>}{<style>$main</style>}gs;
+              s{<script[^>]*script\.js[^>]*></script>}{<script>$js</script>}gs;
+            ' "$file"
+          done
+        done
+
+    - name: ✅ Verify Inlining
+      run: |
+        # Check if CSS/JS links were replaced with inline content
+        for lang in de en; do
+          for file in $lang/*.html; do
+            if grep -q '<link[^>]*\.css' "$file" || grep -q '<script[^>]*\.js[^>]*></script>' "$file"; then
+              echo "Warning: External CSS/JS links still present in $file"
+            fi
+          done
+        done
+        echo "✓ Inlining completed"
+
+    - name: 🔧 Prepare Deployment Package
+      run: |
+        mkdir publish
+        cp -r assets fonts de en favicon impr scripts styles index.php robots.txt sitemap.xml publish/
+
+    - name: ✅ Verify Deployment Package
+      run: |
+        required_items="assets fonts de en favicon impr scripts styles index.php robots.txt sitemap.xml"
+        for item in $required_items; do
+          if [ ! -e "publish/$item" ]; then
+            echo "Error: Missing required item: $item"
+            exit 1
+          fi
+        done
+        echo "✓ All required files present in deployment package"
+
+    - name: 🎉 Build Summary
+      run: |
+        echo "================================"
+        echo "Build completed successfully! ✓"
+        echo "================================"
+        echo "Generated pages:"
+        ls -la de/*.html en/*.html 2>/dev/null || true
+        echo ""
+        echo "Package size:"
+        du -sh publish/
+        echo "================================"
+        echo "Ready for deployment! 🚀"

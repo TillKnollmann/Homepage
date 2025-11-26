@@ -499,7 +499,7 @@ h2 {
 }
 
 .projects-container {
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
     container-type: inline-size;
     display: flex;
     flex-wrap: wrap;

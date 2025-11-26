@@ -146,7 +146,7 @@ html * {
     color: var(--color-accordion-bg);
 }
 
-[data-theme="dark"] .project-card {
+[data-theme="dark"] .project-card .card {
     background-color: var(--color-project-card-bg-dark);
     border-color: var(--color-project-card-bg-dark) !important;
 }

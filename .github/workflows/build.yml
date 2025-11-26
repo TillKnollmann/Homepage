@@ -43,7 +43,7 @@ jobs:
 
     - name: 🎨 Minifying CSS
       run: |
-        purifycss styles/bootstrap-full.css generator/template.html --out styles/bootstrap-full.min.css
+        purifycss styles/bootstrap-full.css en/index.html --out styles/bootstrap-full.min.css
         cd styles
         rm -f bootstrap-full.css
         mv bootstrap-full.min.css bootstrap-full.css

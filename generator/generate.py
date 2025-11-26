@@ -1,7 +1,9 @@
 import os
 import json
+from projects_generator import generate_projects_html
 
 tag_hotwords = ["$about-text$", "$contact-text$"]
+
 
 def generate_page(lang: str, path: str, cwd: str):
     ''' Generates the webpage using the file "template.html"
@@ -23,10 +25,18 @@ def generate_page(lang: str, path: str, cwd: str):
 
                     to_plug_in = lang_code[hotword]
 
+                    # Special handling for projects dictionary
+                    if hotword == "$projects$":
+                        to_plug_in = generate_projects_html(to_plug_in, cwd)
+                        page_content = page_content.replace(
+                            "$projects-content$", to_plug_in)
+                        continue
+
                     if hotword in tag_hotwords:
                         # tag text to be plugged in
                         for tag in tags_content.keys():
-                            to_plug_in = to_plug_in.replace(tag, "<a target=\"_blank\" href=\"" + tags_content[tag] + "\">" + tag + "</a>")
+                            to_plug_in = to_plug_in.replace(
+                                tag, "<a target=\"_blank\" href=\"" + tags_content[tag] + "\">" + tag + "</a>")
 
                     page_content = page_content.replace(hotword, to_plug_in)
 
@@ -44,5 +54,4 @@ languages = ["de", "en"]
 paths = ["/".join(cwd.split("/")[:-1] + [lang]) for lang in languages]
 
 for i in range(2):
-    generate_page(languages[i], paths[i], cwd )
-
+    generate_page(languages[i], paths[i], cwd)

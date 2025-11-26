@@ -11,6 +11,108 @@
     "$impr-button$" : "Impressum",
     "$about-title$" : "Über mich",
     "$about-text$" : "<p>Mein Name ist Till Knollmann. Ich bin sowohl beruflich als auch privat leidenschaftlicher Softwareentwickler mit einem Hintergrund in der theoretischen Informatik.</p> <p>Nach meinem Bachelor- und Masterstudium der Informatik an der Universität Paderborn, promovierte ich in der Fachgruppe Algorithmen und Komplexität am Heinz Nixdorf Institut. Meine Forschungsschwerpunkte waren Online-Algorithmen, die heterogene Ressourcen verwalten, und Anfragen für diese kosteneffizient beantworten. Außerdem arbeitete ich an verteilte Datenstrukturen, Flow-Problemen und theoretischen Robotermodellen. Meine Haupttätigkeiten lagen in der mathematischen Modellierung von Problemen sowie der Entwicklung und Analyse von Algorithmen.</p> <p>Seit Juli 2023 arbeite ich als Softwareentwickler bei der WPS Management GmbH. Als Teil eines agilen Teams liegt mein Fokus auf der Backend-Entwicklung einer auf Spring Boot basierenden Microservice-Architektur.</p> <p> Auch in meiner Freizeit beschäftige ich mich gerne mit Themen wie Programmierung in Java, C#, Python und Rust, Werkzeugen wie Docker, Kubernetes und Cloudlösungen, oder Ansätzen wie maschinellem Lernen. Außerdem nehme ich seit zwei Jahren begeistert am Advent of Code teil und veröffentliche meine Lösungen auf GitHub.</p> <p>Sowohl die theoretische als auch die praktische Seite der Informatik faszinieren mich und machen mir Spaß. Geht es Ihnen ähnlich? Dann vernetzen Sie sich gerne mit mir bei LinkedIn oder GitHub, oder kontaktieren Sie mich per E-Mail.</p>",
+    "$projects-title$" : "Meine Programmier-Projekte",
+    "$projects-text$" : "Hier sind einige meiner öffentlichen Repositories, nach Themen gruppiert.",
+    "$projects$" : {
+        "groups": [
+            {
+                "group_title": "FlowLauncher Plugins",
+                "group_description": "Plugins zur Erweiterung der Funktionalität von FlowLauncher, einem schnellen Launcher für Windows.",
+                "projects": [
+                    {
+                        "title": "Power Plan Switcher",
+                        "description": "Ein FlowLauncher-Plugin zum Wechseln des Energieschemas.",
+                        "url": "https://github.com/TillKnollmann/Flow.Launcher.Plugin.PowerPlans",
+                        "image": "https://cdn.jsdelivr.net/gh/TillKnollmann/Flow.Launcher.Plugin.PowerPlans@develop/DocAssets/PowerPlansHeader.png",
+                        "button_text": "Auf GitHub ansehen",
+                        "language": "Python"
+                    },
+                    {
+                        "title": "ByteStash Plugin",
+                        "description": "Ein FlowLauncher-Plugin zum Managen und Suchen von Code-Snippets aus ByteStash.",
+                        "url": "https://github.com/TillKnollmann/Flow.Launcher.Plugin.ByteStash",
+                        "image": "https://cdn.jsdelivr.net/gh/TillKnollmann/Flow.Launcher.Plugin.ByteStash@develop/DocAssets/ByteStashHeader.png",
+                        "button_text": "Auf GitHub ansehen",
+                        "language": "C#"
+                    },
+                    {
+                        "title": "MS Edge Profile Switcher",
+                        "description": "Ein FlowLauncher-Plugin um MS Edge Profile zu starten.",
+                        "url": "https://github.com/TillKnollmann/Flow.Launcher.Plugin.EdgeProfiles",
+                        "image": "https://cdn.jsdelivr.net/gh/TillKnollmann/Flow.Launcher.Plugin.EdgeProfiles@develop/DocAssets/EdgeProfilesHeader.png",
+                        "button_text": "Auf GitHub ansehen",
+                        "language": "Python"
+                    }
+                ]
+            },
+            {
+                "group_title": "Advent of Code",
+                "group_description": "Lösungen zu den jährlichen Advent of Code Programmierherausforderungen, die Problemlösungsansätze und Algorithmenimplementierungen demonstrieren.",
+                "projects": [
+                    {
+                        "title": "Advent of Code 2024",
+                        "description": "Lösungen zum Advent of Code 2024.",
+                        "url": "https://github.com/TillKnollmann/AOC24",
+                        "button_text": "Auf GitHub ansehen",
+                        "language": "Python",
+                        "stars": 33
+                    },
+                    {
+                        "title": "Advent of Code 2023",
+                        "description": "Vollständige Lösungen vom Advent of Code 2023.",
+                        "url": "https://github.com/TillKnollmann/AOC23",
+                        "button_text": "Auf GitHub ansehen",
+                        "language": "Go",
+                        "stars": 50
+                    },
+                    {
+                        "title": "Advent of Code 2022",
+                        "description": "Vollständige Lösungen vom Advent of Code 2022.",
+                        "url": "https://github.com/TillKnollmann/AOC22",
+                        "button_text": "Auf GitHub ansehen",
+                        "language": "Rust",
+                        "stars": 50
+                    },
+                    {
+                        "title": "Advent of Code 2021",
+                        "description": "Vollständige Lösungen vom Advent of Code 2021.",
+                        "url": "https://github.com/TillKnollmann/AOC21",
+                        "button_text": "Auf GitHub ansehen",
+                        "language": "Python",
+                        "stars": 50
+                    },
+                    {
+                        "title": "Advent of Code 2020",
+                        "description": "Lösungen zum Advent of Code 2020.",
+                        "url": "https://github.com/TillKnollmann/AOC20",
+                        "button_text": "Auf GitHub ansehen",
+                        "language": "Java",
+                        "stars": 12
+                    }
+                ]
+            },
+            {
+                "group_title": "Weitere Projekte",
+                "group_description": "Verschiedene weitere Projekte.",
+                "projects": [
+                    {
+                        "title": "Persönliche Webseite",
+                        "description": "Meine persönliche Webseite gebaut in HTML, CSS, JS mit einer CI/CD-Pipeline.",
+                        "url": "https://github.com/TillKnollmann/Homepage",
+                        "button_text": "Auf GitHub ansehen",
+                        "language": "HTML, CSS, JS"
+                    },
+                    {
+                        "title": "LaTeX Dev-Container",
+                        "description": "Eine Dev-Container Umgebung um LaTeX in VS Code zu verfassen.",
+                        "url": "https://github.com/TillKnollmann/LatexDevContainerTemplate",
+                        "button_text": "Auf GitHub ansehen",
+                        "language": "LaTeX"
+                    }
+                ]
+            }
+        ]
+    },
     "$pub-title$" : "Meine Publikationen",
     "$pub-text$" : "Während meiner Zeit als Doktorand veröffentlichte ich die folgenden Ergebnisse:",
     "$pub-title-main$" : "Hauptveröffentlichungen (7)",

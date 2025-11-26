@@ -23,6 +23,7 @@
                         "title": "Power Plan Switcher",
                         "description": "Ein FlowLauncher-Plugin zum Wechseln des Energieschemas.",
                         "url": "https://github.com/TillKnollmann/Flow.Launcher.Plugin.PowerPlans",
+                        "image": "https://cdn.jsdelivr.net/gh/TillKnollmann/Flow.Launcher.Plugin.PowerPlans@develop/DocAssets/PowerPlansHeader.png",
                         "button_text": "Auf GitHub ansehen",
                         "language": "Python"
                     },
@@ -30,6 +31,7 @@
                         "title": "ByteStash Plugin",
                         "description": "Ein FlowLauncher-Plugin zum Managen und Suchen von Code-Snippets aus ByteStash.",
                         "url": "https://github.com/TillKnollmann/Flow.Launcher.Plugin.ByteStash",
+                        "image": "https://cdn.jsdelivr.net/gh/TillKnollmann/Flow.Launcher.Plugin.ByteStash@develop/DocAssets/ByteStashHeader.png",
                         "button_text": "Auf GitHub ansehen",
                         "language": "C#"
                     },
@@ -37,6 +39,7 @@
                         "title": "MS Edge Profile Switcher",
                         "description": "Ein FlowLauncher-Plugin um MS Edge Profile zu starten.",
                         "url": "https://github.com/TillKnollmann/Flow.Launcher.Plugin.EdgeProfiles",
+                        "image": "https://cdn.jsdelivr.net/gh/TillKnollmann/Flow.Launcher.Plugin.EdgeProfiles@develop/DocAssets/EdgeProfilesHeader.png",
                         "button_text": "Auf GitHub ansehen",
                         "language": "Python"
                     }

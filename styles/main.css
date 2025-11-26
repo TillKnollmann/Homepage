@@ -176,6 +176,10 @@ html * {
     border-color: var(--color-accent-blue);
 }
 
+[data-theme="dark"] .card-img-top-wrapper {
+    background: radial-gradient(ellipse at center, #a0c4f3, #50698b);
+}
+
 /* Ende dark-mode */
 
 /* Sidebar und Layout */
@@ -438,13 +442,22 @@ h2 {
 }
 
 .project-image {
-    height: 180px;
-    object-fit: cover;
+    background: none;
+    height: 140px;
+    object-fit: contain;
+    padding: 30px;
+    padding-top: auto;
+    padding-bottom: auto;
+    border:none;
+    border-radius: 4px 4px 0 0;
 }
 
 .card-img-top-wrapper {
+    height: 140px;
     overflow: hidden;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: radial-gradient(ellipse at center, #ffffff, #ebf0ff);
+    border:none;
+    border-radius: 4px 4px 0 0;
 }
 
 .project-title {

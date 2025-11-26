@@ -1,8 +1,3 @@
-"""
-Projects Generator Module
-Handles the generation of project sections with grouping and enhanced visuals
-"""
-
 import os
 import html as html_lib
 from typing import Dict, Optional
@@ -22,12 +17,6 @@ _template_cache = {}
 def escape_html(text: str) -> str:
     """
     Escape HTML special characters for security.
-
-    Args:
-        text: Raw text string that may contain HTML special characters
-
-    Returns:
-        HTML-escaped string safe for insertion into HTML
     """
     return html_lib.escape(text)
 
@@ -35,14 +24,9 @@ def escape_html(text: str) -> str:
 def validate_project(project: Dict) -> None:
     """
     Validate that a project has all required fields.
-
-    Args:
-        project: Project dictionary to validate
-
-    Raises:
-        ValueError: If required fields are missing
     """
-    required_fields = ['title', 'description', 'url', 'button_text']
+    required_fields = ['title', 'description',
+                       'url', 'button_text', 'language']
     missing = [field for field in required_fields if field not in project]
 
     if missing:
@@ -53,12 +37,6 @@ def validate_project(project: Dict) -> None:
 def load_projects_template(template_path: str) -> str:
     """
     Load the projects HTML template with caching.
-
-    Args:
-        template_path: Path to the template file
-
-    Returns:
-        Template content as string
     """
     if template_path not in _template_cache:
         with open(template_path, 'r', encoding='utf-8') as f:
@@ -93,12 +71,6 @@ def extract_template_section(template_content: str, start_marker: str, end_marke
 def generate_stars_badge(stars: Optional[int]) -> str:
     """
     Generate HTML for stars badge (for Advent of Code projects).
-
-    Args:
-        stars: Number of stars achieved (optional)
-
-    Returns:
-        HTML string with stars badge or empty string
     """
     if stars is None or stars == 0:
         return ""
@@ -113,39 +85,10 @@ def generate_stars_badge(stars: Optional[int]) -> str:
 def generate_project_card(project: Dict, card_template: str, image_template: str) -> str:
     """
     Generate HTML for a single project card.
-
-    Args:
-        project: Dictionary with keys:
-            - title (required): Project title
-            - description (required): Project description
-            - url (required): GitHub or project URL
-            - button_text (required): Text for the action button
-            - image (optional): Image URL
-            - stars (optional): Number of stars for Advent of Code projects
-        card_template: HTML template string with {{placeholders}}
-        image_template: HTML template for image section
-
-    Returns:
-        Complete HTML string for the project card
-
-    Raises:
-        ValueError: If required fields are missing
-
-    Example:
-        >>> project = {
-        ...     'title': 'My Project',
-        ...     'description': 'A cool project',
-        ...     'url': 'https://github.com/user/project',
-        ...     'button_text': 'View on GitHub',
-        ...     'language': 'Python',
-        ...     'stars': 50
-        ... }
-        >>> html = generate_project_card(project, card_tpl, img_tpl)
     """
-    # Validate project has required fields
     validate_project(project)
 
-    # Generate image section if image URL is provided
+    # Generate image section
     image_section = ""
     if project.get('image'):
         image_section = image_template.replace(
@@ -153,7 +96,7 @@ def generate_project_card(project: Dict, card_template: str, image_template: str
         image_section = image_section.replace(
             '{{title}}', escape_html(project['title']))
 
-    # Generate language tag (only primary language)
+    # Generate language tag
     language_tag = (project.get('language'))
 
     # Generate stars badge for Advent of Code projects
@@ -177,18 +120,6 @@ def generate_project_card(project: Dict, card_template: str, image_template: str
 def generate_project_group(group_data: Dict, card_template: str, image_template: str, group_template: str) -> str:
     """
     Generate HTML for a project group with multiple projects.
-
-    Args:
-        group_data: Dictionary with keys:
-            - group_title (required): Title for the group
-            - group_description (required): Description for the group
-            - projects (required): List of project dictionaries
-        card_template: HTML template for individual project cards
-        image_template: HTML template for image sections
-        group_template: HTML template for the group wrapper
-
-    Returns:
-        Complete HTML string for the project group
     """
     projects_html_parts = []
 
@@ -206,23 +137,12 @@ def generate_project_group(group_data: Dict, card_template: str, image_template:
     # Combine all project cards
     projects_html = '\n    '.join(projects_html_parts)
 
-    # Use template if available, otherwise fall back to hardcoded HTML
-    if group_template:
-        group_html = group_template
-        group_html = group_html.replace(
-            '{{group_title}}', escape_html(group_data.get('group_title', '')))
-        group_html = group_html.replace('{{group_description}}', escape_html(
-            group_data.get('group_description', '')))
-        group_html = group_html.replace('{{projects}}', projects_html)
-    else:
-        # Fallback to hardcoded template
-        group_html = f'''<div class="project-group mb-5">
-  <h3 class="project-group-title mb-3">{escape_html(group_data.get('group_title', ''))}</h3>
-  <p class="project-group-description mb-4">{escape_html(group_data.get('group_description', ''))}</p>
-  <div class="row g-4">
-    {projects_html}
-  </div>
-</div>'''
+    group_html = group_template
+    group_html = group_html.replace(
+        '{{group_title}}', escape_html(group_data.get('group_title', '')))
+    group_html = group_html.replace('{{group_description}}', escape_html(
+        group_data.get('group_description', '')))
+    group_html = group_html.replace('{{projects}}', projects_html)
 
     return group_html
 
@@ -230,22 +150,6 @@ def generate_project_group(group_data: Dict, card_template: str, image_template:
 def generate_projects_html(projects_data: Dict, template_dir: str) -> str:
     """
     Generate complete projects HTML from structured data.
-
-    Args:
-        projects_data: Dictionary containing project groups:
-            {
-                "groups": [
-                    {
-                        "group_title": "...",
-                        "group_description": "...",
-                        "projects": [...]
-                    }
-                ]
-            }
-        template_dir: Directory containing the projects template
-
-    Returns:
-        Complete HTML string for the projects section including CSS
     """
     # Load the template with caching
     template_path = os.path.join(template_dir, 'projects_template.html')

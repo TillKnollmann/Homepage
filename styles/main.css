@@ -177,7 +177,7 @@ html * {
 }
 
 [data-theme="dark"] .card-img-top-wrapper {
-    background: radial-gradient(ellipse at center, #a0c4f3, #50698b);
+    background: radial-gradient(ellipse at center, #d1e5ff, #93add2);
 }
 
 /* Ende dark-mode */
@@ -474,7 +474,7 @@ h2 {
 }
 
 .project-group-description {
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
 }
 
 .project-language-tag {
@@ -503,7 +503,7 @@ h2 {
     container-type: inline-size;
     display: flex;
     flex-wrap: wrap;
-    gap: 1rem;
+    gap: 1.5rem;
 }
 
 .project-card {
@@ -512,19 +512,19 @@ h2 {
 
 @container (min-width: 600px) {
     .project-card {
-        width: calc(50% - 0.5rem);
+        width: calc(50% - 0.75rem);
     }
 }
 
 @container (min-width: 1000px) {
     .project-card {
-        width: calc(33.333% - 0.666rem);
+        width: calc(33.333% - 1rem);
     }
 }
 
 @container (min-width: 1400px) {
     .project-card {
-        width: calc(25% - 0.75rem);
+        width: calc(25% - 1rem);
     }
 }
 

@@ -230,29 +230,23 @@ html * {
 
     #sidebar {
         text-align: right;
-        padding: 20px 35px 20px 20px;
+        padding: 70px 30px 70px 30px;
         background-size: auto 100%;
         min-width: 300px;
     }
 
-    @media (min-height: 310px) {
-        #sidebar {
-            padding-top: 50px;
-            padding-bottom: 50px;
-            min-height: 300px;
-        }
-    }
-
-    @media (min-height: 610px) {
-        #sidebar {
-            padding-top: 100px;
-            padding-bottom: 100px;
-            min-height: 400px;
-        }
+    #sidebar-column {
+        min-width: 300px;
     }
 
     #content {
-        padding-left: 45px;
+        padding-left: 30px;
+        padding-right: 0px;
+        max-width: calc(min(100% - 300px, 800px));
+    }
+
+    .container-fluid {
+        padding-left: 0px;
     }
 
     #form-div {
@@ -260,34 +254,27 @@ html * {
     }
 }
 
-@media (min-width: 800px) {
-    #sidebar {
-        padding: 20px 45px 20px 35px;
-        min-width: 320px;
-    }
-}
-
 @media (min-width: 992px) {
     #content {
         padding-left: 60px;
     }
-
-    #content .container-fluid {
-        padding-left: 0;
-    }
-
     #sidebar {
-        padding: 20px 60px 20px 40px;
+        padding-right: 60px;
     }
 }
 
 @media (min-width: 1200px) {
-    #sidebar {
-        padding: 100px 70px 100px 90px;
-    }
-
     #content {
         padding-left: 70px;
+    }
+    #sidebar {
+        padding-right: 70px;
+    }
+}
+
+@media (min-width: 1600px) {
+    #sidebar-column {
+        width: calc(50% - 265px);
     }
 }
 
@@ -589,6 +576,7 @@ h1 {
     top: 13px;
     z-index: 100;
     width: 100%;
+    height: 38px;
     display: flex;
     justify-content: flex-end;
     pointer-events: none;
@@ -599,18 +587,24 @@ h1 {
 #theme-toggle {
     pointer-events: auto;
     background: var(--color-header-mobile);
-    border: 2px solid var(--color-header-mobile);
+    border: none;
     color: #ffffff;
     border-radius: 50%;
     width: 38px;
     height: 38px;
-    font-size: 1em;
     cursor: pointer;
-    box-shadow: 0 2px 8px rgba(30, 144, 255, 0.08);
     transition: transform 0.2s, background 0.2s, color 0.2s;
     display: flex;
+    justify-content: center; /* horizontal centering */
     align-items: center;
-    justify-content: center;
+}
+
+#theme-toggle-icon {
+    width: 22px;
+    height: 22px;
+    display: flex;
+    justify-content: center; /* horizontal centering */
+    align-items: center;
 }
 
 @media(hover: hover) and (pointer: fine) {

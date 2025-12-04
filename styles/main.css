@@ -184,8 +184,8 @@ html * {
 
 /* Sidebar und Layout */
 #sidebar {
-    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../assets/Grand-Canyon-optim.webp"), rgb(80, 80, 80);
-    background-position: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../assets/background.webp"), rgb(80, 80, 80);
+    background-position: 75% 50%;
     background-size: auto auto;
     text-align: center;
     color: white;

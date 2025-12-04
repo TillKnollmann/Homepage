@@ -50,6 +50,14 @@
                 "group_description": "Solutions to the annual Advent of Code programming challenges, showcasing problem-solving approaches and algorithm implementations.",
                 "projects": [
                     {
+                        "title": "Advent of Code 2025",
+                        "description": "Solutions for Advent of Code 2025.",
+                        "url": "https://github.com/TillKnollmann/AOC25",
+                        "button_text": "View on GitHub",
+                        "language": "C#",
+                        "stars": 8
+                    },
+                    {
                         "title": "Advent of Code 2024",
                         "description": "Solutions for Advent of Code 2024.",
                         "url": "https://github.com/TillKnollmann/AOC24",

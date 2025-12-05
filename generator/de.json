@@ -16,12 +16,12 @@
     "$projects$" : {
         "groups": [
             {
-                "group_title": "FlowLauncher Plugins",
-                "group_description": "Plugins zur Erweiterung der Funktionalität von FlowLauncher, einem schnellen Launcher für Windows.",
+                "group_title": "Flow Launcher Plugins",
+                "group_description": "Flow Launcher ist eine Software für Windows, die es erlaubt, schnell nach Dateien, Ordnern, Programmen und mehr zu suchen. Zur Erweiterung der Funktionalität entwickle ich Plugins, die meine Produktivität steigern.",
                 "projects": [
                     {
                         "title": "Power Plan Switcher",
-                        "description": "Ein FlowLauncher-Plugin zum Wechseln des Energieschemas.",
+                        "description": "Ein Flow Launcher-Plugin zum Wechseln des Energieschemas.",
                         "url": "https://github.com/TillKnollmann/Flow.Launcher.Plugin.PowerPlans",
                         "image": "https://cdn.jsdelivr.net/gh/TillKnollmann/Flow.Launcher.Plugin.PowerPlans@develop/DocAssets/PowerPlansHeader.png",
                         "button_text": "Auf GitHub ansehen",
@@ -29,7 +29,7 @@
                     },
                     {
                         "title": "ByteStash Plugin",
-                        "description": "Ein FlowLauncher-Plugin zum Managen und Suchen von Code-Snippets aus ByteStash.",
+                        "description": "Ein Flow Launcher-Plugin zum Managen und Suchen von Code-Snippets aus ByteStash.",
                         "url": "https://github.com/TillKnollmann/Flow.Launcher.Plugin.ByteStash",
                         "image": "https://cdn.jsdelivr.net/gh/TillKnollmann/Flow.Launcher.Plugin.ByteStash@develop/DocAssets/ByteStashHeader.png",
                         "button_text": "Auf GitHub ansehen",
@@ -37,7 +37,7 @@
                     },
                     {
                         "title": "MS Edge Profile Switcher",
-                        "description": "Ein FlowLauncher-Plugin um MS Edge Profile zu starten.",
+                        "description": "Ein Flow Launcher-Plugin um MS Edge Profile zu starten.",
                         "url": "https://github.com/TillKnollmann/Flow.Launcher.Plugin.EdgeProfiles",
                         "image": "https://cdn.jsdelivr.net/gh/TillKnollmann/Flow.Launcher.Plugin.EdgeProfiles@develop/DocAssets/EdgeProfilesHeader.png",
                         "button_text": "Auf GitHub ansehen",
@@ -47,61 +47,73 @@
             },
             {
                 "group_title": "Advent of Code",
-                "group_description": "Lösungen zu den jährlichen Advent of Code Programmierherausforderungen, die Problemlösungsansätze und Algorithmenimplementierungen demonstrieren.",
+                "group_description": "Seit 2020 bearbeite ich die Programmierherausforderungen des jährlichen Advent of Code. Bisher habe ich folgende Lösungen veröffentlicht.",
                 "projects": [
                     {
                         "title": "Advent of Code 2025",
-                        "description": "Lösungen zum Advent of Code 2025.",
+                        "description": "Lösungen für 2025.",
                         "url": "https://github.com/TillKnollmann/AOC25",
                         "button_text": "Auf GitHub ansehen",
                         "language": "C#",
-                        "stars": 8
+                        "stars": 8,
+                        "stars_max": 24,
+                        "stars_label": "Fortschritt"
                     },
                     {
                         "title": "Advent of Code 2024",
-                        "description": "Lösungen zum Advent of Code 2024.",
+                        "description": "Lösungen für 2024.",
                         "url": "https://github.com/TillKnollmann/AOC24",
                         "button_text": "Auf GitHub ansehen",
                         "language": "Python",
-                        "stars": 33
+                        "stars": 33,
+                        "stars_max": 50,
+                        "stars_label": "Fortschritt"
                     },
                     {
                         "title": "Advent of Code 2023",
-                        "description": "Vollständige Lösungen vom Advent of Code 2023.",
+                        "description": "Vollständige Lösungen für 2023.",
                         "url": "https://github.com/TillKnollmann/AOC23",
                         "button_text": "Auf GitHub ansehen",
                         "language": "Go",
-                        "stars": 50
+                        "stars": 50,
+                        "stars_max": 50,
+                        "stars_label": "Fortschritt"
                     },
                     {
                         "title": "Advent of Code 2022",
-                        "description": "Vollständige Lösungen vom Advent of Code 2022.",
+                        "description": "Vollständige Lösungen für 2022.",
                         "url": "https://github.com/TillKnollmann/AOC22",
                         "button_text": "Auf GitHub ansehen",
                         "language": "Rust",
-                        "stars": 50
+                        "stars": 50,
+                        "stars_max": 50,
+                        "stars_label": "Fortschritt"
                     },
                     {
                         "title": "Advent of Code 2021",
-                        "description": "Vollständige Lösungen vom Advent of Code 2021.",
+                        "description": "Vollständige Lösungen für 2021.",
                         "url": "https://github.com/TillKnollmann/AOC21",
                         "button_text": "Auf GitHub ansehen",
                         "language": "Python",
-                        "stars": 50
+                        "stars": 50,
+                        "stars_max": 50,
+                        "stars_label": "Fortschritt"
                     },
                     {
                         "title": "Advent of Code 2020",
-                        "description": "Lösungen zum Advent of Code 2020.",
+                        "description": "Lösungen für 2020.",
                         "url": "https://github.com/TillKnollmann/AOC20",
                         "button_text": "Auf GitHub ansehen",
                         "language": "Java",
-                        "stars": 12
+                        "stars": 12,
+                        "stars_max": 50,
+                        "stars_label": "Fortschritt"
                     }
                 ]
             },
             {
                 "group_title": "Weitere Projekte",
-                "group_description": "Verschiedene weitere Projekte.",
+                "group_description": "Darüber hinaus habe ich die folgenden Projekte.",
                 "projects": [
                     {
                         "title": "Persönliche Webseite",

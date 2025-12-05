@@ -122,6 +122,7 @@ def generate_project_card(project: Dict, card_template: str, image_template: str
 def generate_project_group(group_data: Dict, card_template: str, image_template: str, group_template: str) -> str:
     """
     Generate HTML for a project group with multiple projects.
+    Note: group_description is NOT escaped as it contains pre-processed content with tags.
     """
     projects_html_parts = []
 
@@ -142,8 +143,9 @@ def generate_project_group(group_data: Dict, card_template: str, image_template:
     group_html = group_template
     group_html = group_html.replace(
         '{{group_title}}', escape_html(group_data.get('group_title', '')))
-    group_html = group_html.replace('{{group_description}}', escape_html(
-        group_data.get('group_description', '')))
+    # group_description is NOT escaped - it contains pre-processed HTML with tag links
+    group_html = group_html.replace('{{group_description}}',
+        group_data.get('group_description', ''))
     group_html = group_html.replace('{{projects}}', projects_html)
 
     return group_html

@@ -17,8 +17,10 @@ html * {
     --color-text-dark: #d0d0d0;
     --color-accent-blue: #1e90ff;
     --color-accent-blue-hover: #4682b4;
-    --color-link: #1e90ff;
-    --color-link-hover: #4682b4;
+    --color-link-light: #0073E6;
+    --color-link-light-hover: #0067CC;
+    --color-link-dark: #3397FF;    
+    --color-link-dark-hover: #007BFF;
     --color-accordion-bg: #454545;
     --color-accordion-active-bg: #3a3a3a;
     --color-border-dark: #3a3a3a;
@@ -116,8 +118,9 @@ html * {
 
 [data-theme="dark"] .publications a,
 [data-theme="dark"] #about-text a,
+[data-theme="dark"] .project-group-description a
 [data-theme="dark"] #contact-text a {
-    color: var(--color-link) !important;
+    color: var(--color-link-dark) !important;
     text-decoration: none;
 }
 
@@ -125,7 +128,7 @@ html * {
 [data-theme="dark"] #about-text a:hover,
 [data-theme="dark"] .project-group-description a:hover,
 [data-theme="dark"] #contact-text a:hover {
-    color: var(--color-link-hover) !important;
+    color: var(--color-link-dark-hover) !important;
     text-decoration: underline;
 }
 
@@ -547,7 +550,7 @@ h2 {
 .project-group-description a,
 #contact-text a {
     text-decoration: none;
-    color: var(--color-link);
+    color: var(--color-link-light);
 }
 
 @media(hover: hover) and (pointer: fine) {
@@ -556,7 +559,7 @@ h2 {
     #about-text a:hover,
     .project-group-description a:hover,
     #contact-text a:hover {
-        color: var(--color-link-hover);
+        color: var(--color-link-light-hover);
         text-decoration: underline;
     }
 }

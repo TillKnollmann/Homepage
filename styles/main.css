@@ -452,6 +452,7 @@ h2 {
 }
 
 .project-description {
+    margin-top: 0.75rem;
     line-height: 1.6;
 }
 
@@ -476,7 +477,7 @@ h2 {
 }
 
 .project-stars-badge {
-    margin-bottom: 0.75rem;
+    margin-top: 0.75rem;
 }
 
 .project-stars-badge svg {
@@ -539,15 +540,17 @@ h2 {
 
 .publications a,
 #about-text a,
+.project-group-description a,
 #contact-text a {
     text-decoration: none;
-    color: rgb(38, 90, 233);
+    color: var(--color-accent-blue);
 }
 
 @media(hover: hover) and (pointer: fine) {
 
     .publications a:hover,
     #about-text a:hover,
+    .project-group-description a:hover,
     #contact-text a:hover {
         text-decoration: underline;
     }

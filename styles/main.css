@@ -19,7 +19,7 @@ html * {
     --color-accent-blue-hover: #4682b4;
     --color-link-light: #0073E6;
     --color-link-light-hover: #0067CC;
-    --color-link-dark: #3397FF;    
+    --color-link-dark: #3397FF;
     --color-link-dark-hover: #007BFF;
     --color-accordion-bg: #454545;
     --color-accordion-active-bg: #3a3a3a;
@@ -118,7 +118,7 @@ html * {
 
 [data-theme="dark"] .publications a,
 [data-theme="dark"] #about-text a,
-[data-theme="dark"] .project-group-description a
+[data-theme="dark"] .project-group-description a,
 [data-theme="dark"] #contact-text a {
     color: var(--color-link-dark) !important;
     text-decoration: none;
@@ -265,6 +265,7 @@ html * {
     #content {
         padding-left: 60px;
     }
+
     #sidebar {
         padding-right: 60px;
     }
@@ -274,6 +275,7 @@ html * {
     #content {
         padding-left: 70px;
     }
+
     #sidebar {
         padding-right: 70px;
     }
@@ -442,7 +444,7 @@ h2 {
     padding: 30px;
     padding-top: auto;
     padding-bottom: auto;
-    border:none;
+    border: none;
     border-radius: 4px 4px 0 0;
 }
 
@@ -450,7 +452,7 @@ h2 {
     height: 140px;
     overflow: hidden;
     background: radial-gradient(ellipse at center, #ffffff, #ebf0ff);
-    border:none;
+    border: none;
     border-radius: 4px 4px 0 0;
 }
 
@@ -606,7 +608,8 @@ h1 {
     cursor: pointer;
     transition: transform 0.2s, background 0.2s, color 0.2s;
     display: flex;
-    justify-content: center; /* horizontal centering */
+    justify-content: center;
+    /* horizontal centering */
     align-items: center;
 }
 
@@ -614,7 +617,8 @@ h1 {
     width: 22px;
     height: 22px;
     display: flex;
-    justify-content: center; /* horizontal centering */
+    justify-content: center;
+    /* horizontal centering */
     align-items: center;
 }
 

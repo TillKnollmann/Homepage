@@ -121,6 +121,7 @@ html * {
 
 [data-theme="dark"] .publications a:hover,
 [data-theme="dark"] #about-text a:hover,
+[data-theme="dark"] .project-group-description a:hover,
 [data-theme="dark"] #contact-text a:hover {
     color: var(--color-accent-blue-hover) !important;
     text-decoration: underline;

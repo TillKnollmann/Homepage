@@ -20,7 +20,8 @@
 	"customizations": {
 		"vscode": {
 			"extensions": [
-				"seatonjiang.gitmoji-vscode"
+				"seatonjiang.gitmoji-vscode",
+				"asciidoctor.asciidoctor-vscode"
 			]
 		}
 	}

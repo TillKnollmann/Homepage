@@ -17,6 +17,8 @@ html * {
     --color-text-dark: #d0d0d0;
     --color-accent-blue: #1e90ff;
     --color-accent-blue-hover: #4682b4;
+    --color-link: #1e90ff;
+    --color-link-hover: #4682b4;
     --color-accordion-bg: #454545;
     --color-accordion-active-bg: #3a3a3a;
     --color-border-dark: #3a3a3a;
@@ -115,7 +117,7 @@ html * {
 [data-theme="dark"] .publications a,
 [data-theme="dark"] #about-text a,
 [data-theme="dark"] #contact-text a {
-    color: var(--color-accent-blue) !important;
+    color: var(--color-link) !important;
     text-decoration: none;
 }
 
@@ -123,7 +125,7 @@ html * {
 [data-theme="dark"] #about-text a:hover,
 [data-theme="dark"] .project-group-description a:hover,
 [data-theme="dark"] #contact-text a:hover {
-    color: var(--color-accent-blue-hover) !important;
+    color: var(--color-link-hover) !important;
     text-decoration: underline;
 }
 
@@ -155,6 +157,7 @@ html * {
 [data-theme="dark"] .project-title,
 [data-theme="dark"] .project-description,
 [data-theme="dark"] .project-group-title,
+[data-theme="dark"] .project-stars-badge,
 [data-theme="dark"] .project-group-description {
     color: var(--color-text-dark);
 }
@@ -544,7 +547,7 @@ h2 {
 .project-group-description a,
 #contact-text a {
     text-decoration: none;
-    color: var(--color-accent-blue);
+    color: var(--color-link);
 }
 
 @media(hover: hover) and (pointer: fine) {
@@ -553,6 +556,7 @@ h2 {
     #about-text a:hover,
     .project-group-description a:hover,
     #contact-text a:hover {
+        color: var(--color-link-hover);
         text-decoration: underline;
     }
 }

@@ -540,15 +540,17 @@ h2 {
 
 .publications a,
 #about-text a,
+.project-group-description a,
 #contact-text a {
     text-decoration: none;
-    color: rgb(38, 90, 233);
+    color: var(--color-accent-blue);
 }
 
 @media(hover: hover) and (pointer: fine) {
 
     .publications a:hover,
     #about-text a:hover,
+    .project-group-description a:hover,
     #contact-text a:hover {
         text-decoration: underline;
     }

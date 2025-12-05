@@ -2,6 +2,7 @@
 :toc:
 :toc-placement!:
 :homepage: https://till-knollmann.com
+:bootstrap-version: 5.3.8
 
 This repository contains the source code of my personal homepage hosted at {homepage}.
 
@@ -65,6 +66,16 @@ The localization process:
 2. Inserts the content into `/generator/template.html`
 3. Matches placeholders for each language
 4. Outputs localized HTML pages in language-specific directories (`de/`, `en/`)
+
+=== Bootstrap Version Management
+
+Bootstrap version is centrally managed in `.bootstrap-version` (currently: `{bootstrap-version}`).
+
+To update Bootstrap:
+
+1. Update `.bootstrap-version` with the new version number
+2. Run: `python3 update-bootstrap.py`
+3. This downloads and updates `styles/bootstrap-full.css` and `scripts/bootstrap.bundle.min.js`
 
 == License
 

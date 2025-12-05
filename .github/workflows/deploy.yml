@@ -14,7 +14,7 @@ jobs:
 
     - name: 👀 Install build tools
       run: |
-        npm install -g uglify-js purify-css clean-css-cli html-minifier
+        npm install -g purify-css clean-css-cli html-minifier terser
 
     - name: ⏳ Generating Pages
       run: |
@@ -42,9 +42,7 @@ jobs:
     - name: 🗜️ Minifying Javascript
       run: |
         cd scripts
-        uglifyjs script.js > script.min.js
-        rm -f script.js
-        mv script.min.js script.js
+        terser script.js -o script.js
         cd ..
 
     - name: 🧩 Inline CSS & JS in HTML
@@ -57,10 +55,12 @@ jobs:
                 open F, "styles/bootstrap-full.css"; $boot = <F>; close F;
                 open F, "styles/main.css"; $main = <F>; close F;
                 open F, "scripts/script.js"; $js = <F>; close F;
+                open F, "scripts/bootstrap-full.js"; $bootjs = <F>; close F;
               }
               s{<link[^>]*bootstrap-full\.css[^>]*>}{<style>$boot</style>}gs;
               s{<link[^>]*main\.css[^>]*>}{<style>$main</style>}gs;
               s{<script[^>]*script\.js[^>]*></script>}{<script>$js</script>}gs;
+              s{<script[^>]*bootstrap-full\.js[^>]*></script>}{<script>$bootjs</script>}gs;
             ' "$file"
           done
         done

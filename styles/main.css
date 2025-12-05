@@ -452,6 +452,7 @@ h2 {
 }
 
 .project-description {
+    margin-top: 0.75rem;
     line-height: 1.6;
 }
 
@@ -476,7 +477,7 @@ h2 {
 }
 
 .project-stars-badge {
-    margin-bottom: 0.75rem;
+    margin-top: 0.75rem;
 }
 
 .project-stars-badge svg {

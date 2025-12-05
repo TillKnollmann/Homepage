@@ -68,18 +68,20 @@ def extract_template_section(template_content: str, start_marker: str, end_marke
     return template_content[start_idx:end_idx].strip()
 
 
-def generate_stars_badge(stars: Optional[int]) -> str:
+def generate_stars_badge(stars_label: Optional[str], stars: Optional[int], max_stars: Optional[int]) -> str:
     """
     Generate HTML for stars badge (for Advent of Code projects).
     """
-    if stars is None or stars == 0:
+    if stars is None or stars == 0 or stars_label is None or max_stars is None:
         return ""
 
     # SVG star icon
     star_svg = '<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/></svg>'
 
-    escaped_stars = escape_html(str(stars))
-    return f'<div class="project-stars-badge">{star_svg} {escaped_stars} stars</div>'
+    stars_label = escape_html(stars_label)
+    stars = escape_html(str(stars))
+    max_stars = escape_html(str(max_stars))
+    return f'<div class="project-stars-badge">{stars_label} {stars}/{max_stars} {star_svg}</div>'
 
 
 def generate_project_card(project: Dict, card_template: str, image_template: str) -> str:
@@ -100,7 +102,7 @@ def generate_project_card(project: Dict, card_template: str, image_template: str
     language_tag = (project.get('language'))
 
     # Generate stars badge for Advent of Code projects
-    stars_badge = generate_stars_badge(project.get('stars'))
+    stars_badge = generate_stars_badge(project.get('stars_label'), project.get('stars'), project.get('stars_max'))
 
     # Fill in the card template with escaped content
     card_html = card_template

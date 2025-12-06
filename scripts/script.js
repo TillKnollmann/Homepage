@@ -41,29 +41,46 @@ window.addEventListener("load", () => {
   const spinner = document.getElementById("spinner");
   const largeImg = document.getElementById("large-profile-picture");
 
+  let imageLoaded = false;
+
   if (profilePic) {
     profilePic.addEventListener("click", function () {
       overlay.style.display = "flex";
-      if (!largeImg.src || largeImg.src === window.location.href) {
+      if (imageLoaded) {
+        spinner.style.display = "none";
+        largeImg.style.display = "block";
+      } else {
         spinner.style.display = "block";
         largeImg.style.display = "none";
-        const largeSrc = profilePic.getAttribute("data-large-src");
-        largeImg.src = largeSrc;
-      } else {
-        largeImg.style.display = "block";
       }
     });
   }
 
   if (largeImg) {
     largeImg.onload = function () {
-      spinner.style.display = "none";
-      largeImg.style.display = "block";
+      imageLoaded = true;
+      if (overlay.style.display === "flex") {
+        spinner.style.display = "none";
+        largeImg.style.display = "block";
+      }
     };
     largeImg.onerror = function () {
-      spinner.style.display = "none";
-      overlayContent.innerHTML = "<div style='color:white'>Could not load image.</div>";
+      imageLoaded = false;
+      if (overlay.style.display === "flex") {
+        spinner.style.display = "none";
+        overlayContent.innerHTML = "<div style='color:white'>Could not load image.</div>";
+      }
     };
+
+    // Preload large image after page load with slight delay
+    if (profilePic) {
+      setTimeout(() => {
+        const largeSrc = profilePic.getAttribute("data-large-src");
+        if (largeSrc) {
+          largeImg.src = largeSrc;
+        }
+      }, 100);
+    }
   }
 
   if (overlayBg) {

@@ -5,7 +5,7 @@ Bootstrap Version Updater
 Updates Bootstrap CSS and JS files to the version specified in .bootstrap-version.
 Downloads from CDN and updates:
   - styles/bootstrap-full.css
-  - scripts/bootstrap.bundle.min.js
+  - scripts/bootstrap-full.js
 """
 
 import os
@@ -91,7 +91,7 @@ def main():
     # Download JS
     print_status('info', 'Downloading Bootstrap JS...')
     js_url = f'https://cdn.jsdelivr.net/npm/bootstrap@{version}/dist/js/bootstrap.bundle.min.js'
-    if not download_file(js_url, 'scripts/bootstrap.bundle.min.js'):
+    if not download_file(js_url, 'scripts/bootstrap-full.js'):
         sys.exit(1)
 
     print()

@@ -147,4 +147,17 @@ window.addEventListener("load", () => {
     event.preventDefault();
     sendData();
   });
+
+  // Lazy load project images after page load
+  setTimeout(() => {
+    const projectImages = document.querySelectorAll('.project-image[data-src]');
+    projectImages.forEach(img => {
+      const src = img.getAttribute('data-src');
+      img.onload = function() {
+        img.style.opacity = '1';
+      };
+      img.src = src;
+      img.removeAttribute('data-src');
+    });
+  }, 100);
 });

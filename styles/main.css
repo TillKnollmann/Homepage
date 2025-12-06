@@ -60,7 +60,7 @@
     --color-button-bg-dark: #636363;
 }
 
-body {
+.font-container {
     font-family: 'InterVariable', system-ui, sans-serif!important;
 }
 

@@ -18,59 +18,26 @@
   <link rel="manifest" href="../favicon/site.webmanifest" />
   <link rel="stylesheet" type="text/css" href="../styles/bootstrap-full.css" />
   <link rel="stylesheet" type="text/css" href="../styles/main.css" />
-  <link rel="preload" fetchpriority="high" href="../fonts/InterVariable.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" fetchpriority="high" href="../fonts/InterVariable.woff2" as="font" type="font/woff2"
+    crossorigin />
   <link rel="preload" fetchpriority="high" as="image" href="../assets/profile.webp" type="image/webp" />
   <link rel="preload" fetchpriority="high" as="image" href="../assets/background.webp" type="image/webp" />
 </head>
 
 <body>
-  <h1 class="d-none">$title$</h1>
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-md-4" id="sidebar-column">
-        <div class="sticky-top d-flex flex-column" id="sidebar">
-          <!-- Contains the sidebar with contact information -->
-          <div class="flex-grow-1">
-            <img id="profile-picture" fetchpriority="high" width="240" height="240" src="../assets/profile.webp" data-large-src="../assets/profile-large.webp" alt="Profile of Till Knollmann" />
-            <h3>$profile-header$</h3>
-            <p>$description$</p>
-          </div>
-          <div class="align-bottom mt-auto social-links">
-            <a class="social-button linkedin-button" aria-label="Link to LinkedIn"
-              href="https://www.linkedin.com/in/till-knollmann/" target="_blank"><svg xmlns="http://www.w3.org/2000/svg"
-                width="30" height="30" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16">
-                <path
-                  d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z" />
-              </svg></a>
-            <a class="social-button github-button" aria-label="Link to Github" href="https://github.com/TillKnollmann"
-              target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
-                class="bi bi-github" viewBox="0 0 16 16">
-                <path
-                  d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
-              </svg></a>
-            <a class="social-button mail-button" aria-label="Link to E-Mail" href="&#109;&#97;&#105;&#76;&#116;&#111;&#58;&#109;&#97;&#105;&#108;&#64;&#116;&#105;&#108;&#108;&#45;&#107;&#110;&#111;&#108;&#108;&#109;&#97;&#110;&#110;&#46;&#99;&#111;&#109;"
-              target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
-                class="bi bi-envelope-fill" viewBox="0 0 16 16">
-                <path
-                  d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555ZM0 4.697v7.104l5.803-3.558L0 4.697ZM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757Zm3.436-.586L16 11.801V4.697l-5.803 3.546Z" />
-              </svg></a>
-            <a class="social-button research-button" aria-label="Link to researchgate" href="$research-button-target$"
-              target="_blank"><svg style="color: white" width="30" height="30" xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 448 512">
-                <path
-                  d="M 0 33 V 440 c 0 20 20 40 40 40 h 388 c 20 0 40 -20 40 -40 V 81 c 0 -20 -20 -48 -40 -48 H 40 c -20 0 -40 20 -40 40 z m 262.2 334.4 c -6.6 3 -33.2 6 -50 -14.2 c -9.2 -10.6 -25.3 -33.3 -42.2 -63.6 c -8.9 0 -14.7 0 -21.4 -0.6 v 46.4 c 0 23.5 6 21.2 25.8 23.9 v 8.1 c -6.9 -0.3 -23.1 -0.8 -35.6 -0.8 c -13.1 0 -26.1 0.6 -33.6 0.8 v -8.1 c 15.5 -2.9 22 -1.3 22 -23.9 V 225 c 0 -22.6 -6.4 -21 -22 -23.9 V 193 c 25.8 1 53.1 -0.6 70.9 -0.6 c 31.7 0 55.9 14.4 55.9 45.6 c 0 21.1 -16.7 42.2 -39.2 47.5 c 13.6 24.2 30 45.6 42.2 58.9 c 7.2 7.8 17.2 14.7 27.2 14.7 v 7.3 z m 22.9 -135 c -23.3 0 -32.2 -15.7 -32.2 -32.2 V 167 c 0 -12.2 8.8 -30.4 34 -30.4 s 30.4 17.9 30.4 17.9 l -10.7 7.2 s -5.5 -12.5 -19.7 -12.5 c -7.9 0 -19.7 7.3 -19.7 19.7 v 26.8 c 0 13.4 6.6 23.3 17.9 23.3 c 14.1 0 21.5 -10.9 21.5 -26.8 h -17.9 v -10.7 h 30.4 c 0 20.5 4.7 49.9 -34 49.9 z m -116.5 44.7 c -9.4 0 -13.6 -0.3 -20 -0.8 v -69.7 c 6.4 -0.6 15 -0.6 22.5 -0.6 c 23.3 0 37.2 12.2 37.2 34.5 c 0 21.9 -15 36.6 -39.7 36.6 z"
-                  fill="currentColor" class="research-gate-fill"></path>
-              </svg></a>
-          </div>
-          <div class="align-bottom mt-auto" id="lang-impr">
-            <a class="btn btn-secondary" href="$lang-button-target$">$lang-button$</a> <a class="btn btn-secondary"
-              href="../impr/" id="impr-button">$impr-button$</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-8 content" id="content">
-        <div class="container-fluid">
-          <div id="sticky-header-mobile">
+  <div class="font-container">
+    <h1 class="d-none">$title$</h1>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-4" id="sidebar-column">
+          <div class="sticky-top d-flex flex-column" id="sidebar">
+            <!-- Contains the sidebar with contact information -->
+            <div class="flex-grow-1">
+              <img id="profile-picture" fetchpriority="high" width="240" height="240" src="../assets/profile.webp"
+                data-large-src="../assets/profile-large.webp" alt="Profile of Till Knollmann" />
+              <h3>$profile-header$</h3>
+              <p>$description$</p>
+            </div>
             <div class="align-bottom mt-auto social-links">
               <a class="social-button linkedin-button" aria-label="Link to LinkedIn"
                 href="https://www.linkedin.com/in/till-knollmann/" target="_blank"><svg
@@ -85,7 +52,8 @@
                   <path
                     d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
                 </svg></a>
-              <a class="social-button mail-button" aria-label="Link to E-Mail" href="&#109;&#97;&#105;&#76;&#116;&#111;&#58;&#109;&#97;&#105;&#108;&#64;&#116;&#105;&#108;&#108;&#45;&#107;&#110;&#111;&#108;&#108;&#109;&#97;&#110;&#110;&#46;&#99;&#111;&#109;"
+              <a class="social-button mail-button" aria-label="Link to E-Mail"
+                href="&#109;&#97;&#105;&#76;&#116;&#111;&#58;&#109;&#97;&#105;&#108;&#64;&#116;&#105;&#108;&#108;&#45;&#107;&#110;&#111;&#108;&#108;&#109;&#97;&#110;&#110;&#46;&#99;&#111;&#109;"
                 target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
                   class="bi bi-envelope-fill" viewBox="0 0 16 16">
                   <path
@@ -99,486 +67,538 @@
                     fill="currentColor" class="research-gate-fill"></path>
                 </svg></a>
             </div>
-          </div>
-          <div id="theme-toggle-container">
-            <button id="theme-toggle" aria-label="Theme wechseln">
-              <div id="theme-toggle-icon" aria-hidden="true">
-               <svg width="22" height="22" viewBox="0 0 384 512" fill="currentColor" aria-hidden="true">
-                <path d="M 233.5 32 C 110 32 10 132.3 10 256 S 110 480 233.5 480 c 60.6 0 115.5 -24.2 155.8 -63.4 c 5 -4.9 6.3 -12.5 3.1 -18.7 s -10.1 -9.7 -17 -8.5 c -9.8 1.7 -19.8 2.6 -30.1 2.6 c -96.9 0 -175.5 -78.8 -175.5 -176 c 0 -65.8 36 -123.1 89.3 -153.3 c 6.1 -3.5 9.2 -10.5 7.7 -17.3 s -7.3 -11.9 -14.3 -12.5 c -6.3 -0.5 -12.6 -0.8 -19 -0.8 z"/>
-              </svg>
-            </div>
-            </button>
-          </div>
-          <div class="row">
-            <h2>$about-title$</h2>
-            <div id="about-text">
-              $about-text$
+            <div class="align-bottom mt-auto" id="lang-impr">
+              <a class="btn btn-secondary" href="$lang-button-target$">$lang-button$</a> <a class="btn btn-secondary"
+                href="../impr/" id="impr-button">$impr-button$</a>
             </div>
           </div>
-          <hr class="mt-4 mb-4 split-line" />
-          <div class="row">
-            <h2>$projects-title$</h2>
-            <p>$projects-text$</p>
-          </div>
-          <div class="row project-group-container">
-            $projects-content$
-          </div>
-          <hr class="mt-4 mb-4 split-line" />
-          <div class="row">
-            <h2>$pub-title$</h2>
-            <p>$pub-text$</p>
-            <div class="accordion" id="publicationAccordion">
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="headingMainPublications">
-                  <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#collapseMainPublications" aria-expanded="true"
-                    aria-controls="collapseMainPublications">
-                    $pub-title-main$
-                  </button>
-                </h2>
-                <div id="collapseMainPublications" class="accordion-collapse collapse show"
-                  aria-labelledby="headingMainPublications">
-                  <div class="accordion-body">
-                    <div class="publications">
-                      <div class="col">
-                        <div class="row">
-                          <div class="col-1">
-                            [7]
-                          </div>
-                          <div class="col-11">
-                            2023 | Dissertation
-                            <div>
-                              <strong>Online Algorithms for Allocating Heterogeneous Resources</strong><br>
-                              T. Knollmann, Online Algorithms for Allocating Heterogeneous Resources, 2023.
+        </div>
+        <div class="col-md-8 content" id="content">
+          <div class="container-fluid">
+            <div id="sticky-header-mobile">
+              <div class="align-bottom mt-auto social-links">
+                <a class="social-button linkedin-button" aria-label="Link to LinkedIn"
+                  href="https://www.linkedin.com/in/till-knollmann/" target="_blank"><svg
+                    xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-linkedin"
+                    viewBox="0 0 16 16">
+                    <path
+                      d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z" />
+                  </svg></a>
+                <a class="social-button github-button" aria-label="Link to Github"
+                  href="https://github.com/TillKnollmann" target="_blank"><svg xmlns="http://www.w3.org/2000/svg"
+                    width="30" height="30" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
+                    <path
+                      d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
+                  </svg></a>
+                <a class="social-button mail-button" aria-label="Link to E-Mail"
+                  href="&#109;&#97;&#105;&#76;&#116;&#111;&#58;&#109;&#97;&#105;&#108;&#64;&#116;&#105;&#108;&#108;&#45;&#107;&#110;&#111;&#108;&#108;&#109;&#97;&#110;&#110;&#46;&#99;&#111;&#109;"
+                  target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                    class="bi bi-envelope-fill" viewBox="0 0 16 16">
+                    <path
+                      d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555ZM0 4.697v7.104l5.803-3.558L0 4.697ZM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757Zm3.436-.586L16 11.801V4.697l-5.803 3.546Z" />
+                  </svg></a>
+                <a class="social-button research-button" aria-label="Link to researchgate"
+                  href="$research-button-target$" target="_blank"><svg style="color: white" width="30" height="30"
+                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                    <path
+                      d="M 0 33 V 440 c 0 20 20 40 40 40 h 388 c 20 0 40 -20 40 -40 V 81 c 0 -20 -20 -48 -40 -48 H 40 c -20 0 -40 20 -40 40 z m 262.2 334.4 c -6.6 3 -33.2 6 -50 -14.2 c -9.2 -10.6 -25.3 -33.3 -42.2 -63.6 c -8.9 0 -14.7 0 -21.4 -0.6 v 46.4 c 0 23.5 6 21.2 25.8 23.9 v 8.1 c -6.9 -0.3 -23.1 -0.8 -35.6 -0.8 c -13.1 0 -26.1 0.6 -33.6 0.8 v -8.1 c 15.5 -2.9 22 -1.3 22 -23.9 V 225 c 0 -22.6 -6.4 -21 -22 -23.9 V 193 c 25.8 1 53.1 -0.6 70.9 -0.6 c 31.7 0 55.9 14.4 55.9 45.6 c 0 21.1 -16.7 42.2 -39.2 47.5 c 13.6 24.2 30 45.6 42.2 58.9 c 7.2 7.8 17.2 14.7 27.2 14.7 v 7.3 z m 22.9 -135 c -23.3 0 -32.2 -15.7 -32.2 -32.2 V 167 c 0 -12.2 8.8 -30.4 34 -30.4 s 30.4 17.9 30.4 17.9 l -10.7 7.2 s -5.5 -12.5 -19.7 -12.5 c -7.9 0 -19.7 7.3 -19.7 19.7 v 26.8 c 0 13.4 6.6 23.3 17.9 23.3 c 14.1 0 21.5 -10.9 21.5 -26.8 h -17.9 v -10.7 h 30.4 c 0 20.5 4.7 49.9 -34 49.9 z m -116.5 44.7 c -9.4 0 -13.6 -0.3 -20 -0.8 v -69.7 c 6.4 -0.6 15 -0.6 22.5 -0.6 c 23.3 0 37.2 12.2 37.2 34.5 c 0 21.9 -15 36.6 -39.7 36.6 z"
+                      fill="currentColor" class="research-gate-fill"></path>
+                  </svg></a>
+              </div>
+            </div>
+            <div id="theme-toggle-container">
+              <button id="theme-toggle" aria-label="Theme wechseln">
+                <div id="theme-toggle-icon" aria-hidden="true">
+                  <svg width="22" height="22" viewBox="0 0 384 512" fill="currentColor" aria-hidden="true">
+                    <path
+                      d="M 233.5 32 C 110 32 10 132.3 10 256 S 110 480 233.5 480 c 60.6 0 115.5 -24.2 155.8 -63.4 c 5 -4.9 6.3 -12.5 3.1 -18.7 s -10.1 -9.7 -17 -8.5 c -9.8 1.7 -19.8 2.6 -30.1 2.6 c -96.9 0 -175.5 -78.8 -175.5 -176 c 0 -65.8 36 -123.1 89.3 -153.3 c 6.1 -3.5 9.2 -10.5 7.7 -17.3 s -7.3 -11.9 -14.3 -12.5 c -6.3 -0.5 -12.6 -0.8 -19 -0.8 z" />
+                  </svg>
+                </div>
+              </button>
+            </div>
+            <div class="row">
+              <h2>$about-title$</h2>
+              <div id="about-text">
+                $about-text$
+              </div>
+            </div>
+            <hr class="mt-4 mb-4 split-line" />
+            <div class="row">
+              <h2>$projects-title$</h2>
+              <p>$projects-text$</p>
+            </div>
+            <div class="row project-group-container">
+              $projects-content$
+            </div>
+            <hr class="mt-4 mb-4 split-line" />
+            <div class="row">
+              <h2>$pub-title$</h2>
+              <p>$pub-text$</p>
+              <div class="accordion" id="publicationAccordion">
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingMainPublications">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#collapseMainPublications" aria-expanded="true"
+                      aria-controls="collapseMainPublications">
+                      $pub-title-main$
+                    </button>
+                  </h2>
+                  <div id="collapseMainPublications" class="accordion-collapse collapse show"
+                    aria-labelledby="headingMainPublications">
+                    <div class="accordion-body">
+                      <div class="publications">
+                        <div class="col">
+                          <div class="row">
+                            <div class="col-1">
+                              [7]
                             </div>
-                            <a href="https://doi.org/10.17619/UNIPB/1-1751" target="_blank">DOI</a>
-                          </div>
-                        </div>
-                        <div class="row">&nbsp;</div>
-                        <div class="row">
-                          <div class="col-1">
-                            [6]
-                          </div>
-                          <div class="col-11">
-                            2023 | Book Chapter
-                            <div>
-                              <strong>Capabilities and Limitations of Local Strategies in Dynamic Networks</strong><br>
-                              T. Götte, T. Knollmann, F. Meyer auf der Heide, C. Scheideler, J. Werthmann, in:
-                              On-The-Fly Computing &mdash; Individualized IT-Services in Dynamic Markets, Heinz Nixdorf
-                              Institut, Universität Paderborn, Paderborn, 2023, pp. 1–20.
+                            <div class="col-11">
+                              2023 | Dissertation
+                              <div>
+                                <strong>Online Algorithms for Allocating Heterogeneous Resources</strong><br>
+                                T. Knollmann, Online Algorithms for Allocating Heterogeneous Resources, 2023.
+                              </div>
+                              <a href="https://doi.org/10.17619/UNIPB/1-1751" target="_blank">DOI</a>
                             </div>
-                            <a href="https://doi.org/10.5281/zenodo.8060372" target="_blank">DOI</a>
                           </div>
-                        </div>
-                        <div class="row">&nbsp;</div>
-                        <div class="row">
-                          <div class="col-1">
-                            [5]
-                          </div>
-                          <div class="col-11">
-                            2022 | Conference Paper
-                            <div>
-                              <strong>The k-Server with Preferences
-                                Problem</strong><br>
-                              J. Castenow, B. Feldkord, T. Knollmann, M. Malatyali, F. Meyer auf der Heide, in:
-                              Proceedings of
-                              the 34th ACM Symposium on Parallelism in Algorithms and Architectures (SPAA), 2022, pp.
-                              345–356.
+                          <div class="row">&nbsp;</div>
+                          <div class="row">
+                            <div class="col-1">
+                              [6]
                             </div>
-                            <a href="https://doi.org/10.1145/3490148.3538595" target="_blank">DOI</a>
-                            | <a href="https://arxiv.org/abs/2205.11102" target="_blank">arXiv</a>
-                          </div>
-                        </div>
-                        <div class="row">&nbsp;</div>
-                        <div class="row">
-                          <div class="col-1">
-                            [4]
-                          </div>
-                          <div class="col-11">
-                            2022 | Journal Article
-                            <div>
-                              <strong>A self-stabilizing Hashed Patricia
-                                Trie</strong><br>
-                              T. Knollmann, C. Scheideler, Information and Computation (2022).
+                            <div class="col-11">
+                              2023 | Book Chapter
+                              <div>
+                                <strong>Capabilities and Limitations of Local Strategies in Dynamic
+                                  Networks</strong><br>
+                                T. Götte, T. Knollmann, F. Meyer auf der Heide, C. Scheideler, J. Werthmann, in:
+                                On-The-Fly Computing &mdash; Individualized IT-Services in Dynamic Markets, Heinz
+                                Nixdorf
+                                Institut, Universität Paderborn, Paderborn, 2023, pp. 1–20.
+                              </div>
+                              <a href="https://doi.org/10.5281/zenodo.8060372" target="_blank">DOI</a>
                             </div>
-                            <a href="https://doi.org/10.1016/j.ic.2021.104697" target="_blank">DOI</a>
                           </div>
-                        </div>
-                        <div class="row">&nbsp;</div>
-                        <div class="row">
-                          <div class="col-1">
-                            [3]
-                          </div>
-                          <div class="col-11">
-                            2020 | Conference Paper
-                            <div>
-                              <strong>The Online Multi-Commodity Facility
-                                Location Problem</strong><br>
-                              J. Castenow, B. Feldkord, T. Knollmann, M. Malatyali, F. Meyer auf der Heide, in:
-                              Proceedings of
-                              the 32nd ACM Symposium on Parallelism in Algorithms and Architectures (SPAA), 2020.
+                          <div class="row">&nbsp;</div>
+                          <div class="row">
+                            <div class="col-1">
+                              [5]
                             </div>
-                            <a href="https://doi.org/10.1145/3350755.3400281" target="_blank">DOI</a>
-                            | <a href="https://arxiv.org/abs/2005.08391" target="_blank">arXiv</a>
-                          </div>
-                        </div>
-                        <div class="row">&nbsp;</div>
-                        <div class="row">
-                          <div class="col-1">
-                            [2]
-                          </div>
-                          <div class="col-11">
-                            2018 | Conference Paper
-                            <div>
-                              <strong>A Self-Stabilizing Hashed Patricia
-                                Trie</strong><br>
-                              T. Knollmann, C. Scheideler, in: Proceedings of the 20th International Symposium on
-                              Stabilization,
-                              Safety, and Security of Distributed Systems (SSS), 2018.
+                            <div class="col-11">
+                              2022 | Conference Paper
+                              <div>
+                                <strong>The k-Server with Preferences
+                                  Problem</strong><br>
+                                J. Castenow, B. Feldkord, T. Knollmann, M. Malatyali, F. Meyer auf der Heide, in:
+                                Proceedings of
+                                the 34th ACM Symposium on Parallelism in Algorithms and Architectures (SPAA), 2022, pp.
+                                345–356.
+                              </div>
+                              <a href="https://doi.org/10.1145/3490148.3538595" target="_blank">DOI</a>
+                              | <a href="https://arxiv.org/abs/2205.11102" target="_blank">arXiv</a>
                             </div>
-                            <a href="https://doi.org/10.1007/978-3-030-03232-6_1" target="_blank">DOI</a>
-                            | <a href="https://arxiv.org/abs/1809.04923" target="_blank">arXiv</a>
                           </div>
-                        </div>
-                        <div class="row">&nbsp;</div>
-                        <div class="row">
-                          <div class="col-1">
-                            [1]
-                          </div>
-                          <div class="col-11">
-                            2018 | Conference Paper
-                            <div>
-                              <strong>A Peer-to-Peer based Cloud Storage
-                                supporting orthogonal Range Queries of arbitrary Dimension</strong><br>
-                              M. Benter, T. Knollmann, F. Meyer auf der Heide, A. Setzer, J. Sundermeier, in:
-                              Proceedings of
-                              the
-                              4th International Symposium on Algorithmic Aspects of Cloud Computing (ALGOCLOUD), 2018.
+                          <div class="row">&nbsp;</div>
+                          <div class="row">
+                            <div class="col-1">
+                              [4]
                             </div>
-                            <a href="https://doi.org/10.1007/978-3-030-19759-9_4" target="_blank">DOI</a>
+                            <div class="col-11">
+                              2022 | Journal Article
+                              <div>
+                                <strong>A self-stabilizing Hashed Patricia
+                                  Trie</strong><br>
+                                T. Knollmann, C. Scheideler, Information and Computation (2022).
+                              </div>
+                              <a href="https://doi.org/10.1016/j.ic.2021.104697" target="_blank">DOI</a>
+                            </div>
                           </div>
+                          <div class="row">&nbsp;</div>
+                          <div class="row">
+                            <div class="col-1">
+                              [3]
+                            </div>
+                            <div class="col-11">
+                              2020 | Conference Paper
+                              <div>
+                                <strong>The Online Multi-Commodity Facility
+                                  Location Problem</strong><br>
+                                J. Castenow, B. Feldkord, T. Knollmann, M. Malatyali, F. Meyer auf der Heide, in:
+                                Proceedings of
+                                the 32nd ACM Symposium on Parallelism in Algorithms and Architectures (SPAA), 2020.
+                              </div>
+                              <a href="https://doi.org/10.1145/3350755.3400281" target="_blank">DOI</a>
+                              | <a href="https://arxiv.org/abs/2005.08391" target="_blank">arXiv</a>
+                            </div>
+                          </div>
+                          <div class="row">&nbsp;</div>
+                          <div class="row">
+                            <div class="col-1">
+                              [2]
+                            </div>
+                            <div class="col-11">
+                              2018 | Conference Paper
+                              <div>
+                                <strong>A Self-Stabilizing Hashed Patricia
+                                  Trie</strong><br>
+                                T. Knollmann, C. Scheideler, in: Proceedings of the 20th International Symposium on
+                                Stabilization,
+                                Safety, and Security of Distributed Systems (SSS), 2018.
+                              </div>
+                              <a href="https://doi.org/10.1007/978-3-030-03232-6_1" target="_blank">DOI</a>
+                              | <a href="https://arxiv.org/abs/1809.04923" target="_blank">arXiv</a>
+                            </div>
+                          </div>
+                          <div class="row">&nbsp;</div>
+                          <div class="row">
+                            <div class="col-1">
+                              [1]
+                            </div>
+                            <div class="col-11">
+                              2018 | Conference Paper
+                              <div>
+                                <strong>A Peer-to-Peer based Cloud Storage
+                                  supporting orthogonal Range Queries of arbitrary Dimension</strong><br>
+                                M. Benter, T. Knollmann, F. Meyer auf der Heide, A. Setzer, J. Sundermeier, in:
+                                Proceedings of
+                                the
+                                4th International Symposium on Algorithmic Aspects of Cloud Computing (ALGOCLOUD), 2018.
+                              </div>
+                              <a href="https://doi.org/10.1007/978-3-030-19759-9_4" target="_blank">DOI</a>
+                            </div>
+                          </div>
+                          <div class="row">&nbsp;</div>
                         </div>
-                        <div class="row">&nbsp;</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingOtherPublications">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#collapseOtherPublications" aria-expanded="false"
+                      aria-controls="collapseOtherPublications">
+                      $pub-title-other$
+                    </button>
+                  </h2>
+                  <div id="collapseOtherPublications" class="accordion-collapse collapse"
+                    aria-labelledby="headingOtherPublications">
+                    <div class="accordion-body">
+                      <div class="publications">
+                        <div class="col">
+                          <div class="row">
+                            <div class="col-1">
+                              [14]
+                            </div>
+                            <div class="col-11">
+                              2023 | Book Chapter
+                              <div>
+                                <strong>Distributed Data Streams</strong><br>
+                                J. Castenow, B. Feldkord, J. Hanselle, T. Knollmann, M. Malatyali, F. Meyer auf der
+                                Heide, in: Algorithms for Big Data. Lecture Notes in Computer Science, vol 13201,
+                                Springer, 2023, pp. 179–195.
+                              </div>
+                              <a href="https://doi.org/10.1007/978-3-031-21534-6_10" target="_blank">DOI</a>
+                            </div>
+                          </div>
+                          <div class="row">&nbsp;</div>
+                          <div class="row">
+                            <div class="col-1">
+                              [13]
+                            </div>
+                            <div class="col-11">
+                              2023 | Journal Article
+                              <div>
+                                <strong>Gathering a Euclidean Closed Chain of
+                                  Robots in Linear Time and Improved Algorithms for Chain-Formation</strong><br>
+                                J. Castenow, J. Harbig, D. Jung, T. Knollmann, F. Meyer auf der Heide, Theoretical
+                                Computer
+                                Science 939 (2023) 261–291.
+                              </div>
+                              <a href="https://doi.org/10.1016/j.tcs.2022.10.031" target="_blank">DOI</a>
+                              | <a href="https://arxiv.org/abs/2010.04424" target="_blank">arXiv</a>
+                            </div>
+                          </div>
+                          <div class="row">&nbsp;</div>
+                          <div class="row">
+                            <div class="col-1">
+                              [12]
+                            </div>
+                            <div class="col-11">
+                              2023 | Conference Paper
+                              <div>
+                                <strong>A Unifying Approach to Efficient
+                                  (Near-)Gathering of Disoriented Robots with Limited Visibility</strong><br>
+                                J. Castenow, J. Harbig, D. Jung, P. Kling, T. Knollmann, F. Meyer auf der Heide, in:
+                                Proceedings
+                                of the 26th International Conference on Principles of
+                                Distributed Systems (OPODIS), 2023,
+                                p. 15:1–15:25.
+                              </div>
+                              <a href="https://doi.org/10.4230/LIPIcs.OPODIS.2022.15" target="_blank">DOI</a>
+                              | <a href="https://arxiv.org/abs/2206.07567" target="_blank">arXiv</a>
+                            </div>
+                          </div>
+                          <div class="row">&nbsp;</div>
+                          <div class="row">
+                            <div class="col-1">
+                              [11]
+                            </div>
+                            <div class="col-11">
+                              2022 | Journal Article
+                              <div>
+                                <strong>A Discrete and Continuous Study of the
+                                  Max-Chain-Formation Problem</strong><br>
+                                J. Castenow, P. Kling, T. Knollmann, F. Meyer auf der Heide, Information and Computation
+                                (2022).
+                              </div>
+                              <a href="https://doi.org/10.1016/j.ic.2022.104877" target="_blank">DOI</a>
+                            </div>
+                          </div>
+                          <div class="row">&nbsp;</div>
+                          <div class="row">
+                            <div class="col-1">
+                              [10]
+                            </div>
+                            <div class="col-11">
+                              2022 | Journal Article
+                              <div>
+                                <strong>Mincut Sensitivity Data Structures for
+                                  the Insertion of an Edge</strong><br>
+                                S. Baswana, S. Gupta, T. Knollmann, Algorithmica (2022).
+                              </div>
+                              <a href="https://doi.org/10.1007/s00453-022-00978-0" target="_blank">DOI</a>
+                            </div>
+                          </div>
+                          <div class="row">&nbsp;</div>
+                          <div class="row">
+                            <div class="col-1">
+                              [9]
+                            </div>
+                            <div class="col-11">
+                              2021 | Conference Paper
+                              <div>
+                                <strong>Gathering a Euclidean Closed Chain of
+                                  Robots in Linear Time</strong><br>
+                                J. Castenow, J. Harbig, D. Jung, T. Knollmann, F. Meyer auf der Heide, in: Proceedings
+                                of
+                                the 17th
+                                International Symposium on Algorithms and
+                                Experiments for Wireless Sensor Networks (ALGOSENSORS), 2021, pp. 29–44.
+                              </div>
+                              <a href="https://doi.org/10.1007/978-3-030-89240-1_3" target="_blank">DOI</a>
+                              | <a href="https://arxiv.org/abs/2010.04424" target="_blank">arXiv</a>
+                            </div>
+                          </div>
+                          <div class="row">&nbsp;</div>
+                          <div class="row">
+                            <div class="col-1">
+                              [8]
+                            </div>
+                            <div class="col-11">
+                              2021 | Journal Article
+                              <div>
+                                <strong>Managing Multiple Mobile
+                                  Resources</strong><br>
+                                B. Feldkord, T. Knollmann, M. Malatyali, F. Meyer auf der Heide, Theory of Computing
+                                Systems 65
+                                (2021) 943–984.
+                              </div>
+                              <a href="https://doi.org/10.1007/s00224-020-10023-8" target="_blank">DOI</a>
+                            </div>
+                          </div>
+                          <div class="row">&nbsp;</div>
+                          <div class="row">
+                            <div class="col-1">
+                              [7]
+                            </div>
+                            <div class="col-11">
+                              2021 | Conference Paper
+                              <div>
+                                <strong>The Max-Line-Formation Problem – And
+                                  New Insights for Gathering and Chain-Formation</strong><br>
+                                J. Castenow, T. Götte, T. Knollmann, F. Meyer auf der Heide, in: Proceedings of the 23rd
+                                International Symposium on Stabilization, Safety, and Security of Distributed Systems
+                                (SSS), 2021,
+                                pp. 289–304.
+                              </div>
+                              <a href="https://doi.org/10.1007/978-3-030-91081-5_19" target="_blank">DOI</a>
+                              | <a href="https://arxiv.org/abs/2109.11856" target="_blank">arXiv</a>
+                            </div>
+                          </div>
+                          <div class="row">&nbsp;</div>
+                          <div class="row">
+                            <div class="col-1">
+                              [6]
+                            </div>
+                            <div class="col-11">
+                              2020 | Conference Paper
+                              <div>
+                                <strong>A Discrete and Continuous Study of the
+                                  Max-Chain-Formation Problem – Slow Down to Speed Up</strong><br>
+                                J. Castenow, P. Kling, T. Knollmann, F. Meyer auf der Heide, in: Proceedings of the 22nd
+                                International Symposium on Stabilization, Safety, and Security of Distributed Systems
+                                (SSS), 2020,
+                                pp. 65–80.
+                              </div>
+                              <a href="https://doi.org/10.1007/978-3-030-64348-5_6" target="_blank">DOI</a>
+                              | <a href="https://arxiv.org/abs/2010.02043" target="_blank">arXiv</a>
+                            </div>
+                          </div>
+                          <div class="row">&nbsp;</div>
+                          <div class="row">
+                            <div class="col-1">
+                              [5]
+                            </div>
+                            <div class="col-11">
+                              2020 | Conference Paper
+                              <div>
+                                <strong>Mincut Sensitivity Data Structures for
+                                  the Insertion of an Edge</strong><br>
+                                S. Baswana, S. Gupta, T. Knollmann, in: Proceedings of the 28th Annual
+                                European Symposium on Algorithms (ESA), 2020, pp. 12:1–12:14.
+                              </div>
+                              <a href="https://doi.org/10.4230/LIPIcs.ESA.2020.12" target="_blank">DOI</a>
+                            </div>
+                          </div>
+                          <div class="row">&nbsp;</div>
+                          <div class="row">
+                            <div class="col-1">
+                              [4]
+                            </div>
+                            <div class="col-11">
+                              2020 | Conference Paper
+                              <div>
+                                <strong>Brief Announcement: Gathering in
+                                  Linear Time: A Closed Chain of Disoriented &amp; Luminous Robots with Limited
+                                  Visibility</strong><br>
+                                J. Castenow, J. Harbig, D. Jung, T. Knollmann, F. Meyer auf der Heide, in: Proceedings
+                                of
+                                the 22nd
+                                International Symposium on Stabilization, Safety, and Security of Distributed Systems
+                                (SSS), 2020,
+                                pp. 60–64.
+                              </div>
+                              <a href="https://doi.org/10.1007/978-3-030-64348-5_5" target="_blank">DOI</a>
+                              | <a href="https://arxiv.org/abs/2010.04424" target="_blank">arXiv</a>
+                            </div>
+                          </div>
+                          <div class="row">&nbsp;</div>
+                          <div class="row">
+                            <div class="col-1">
+                              [3]
+                            </div>
+                            <div class="col-11">
+                              2020 | Conference Paper
+                              <div>
+                                <strong>Brief Announcement: A Discrete and
+                                  Continuous Study of the Max-Chain-Formation Problem: Slow Down to Speed
+                                  up</strong><br>
+                                J. Castenow, P. Kling, T. Knollmann, F. Meyer auf der Heide, in: Proceedings of the 32nd
+                                ACM
+                                Symposium on Parallelism in Algorithms and Architectures (SPAA), 2020.
+                              </div>
+                              <a href="https://doi.org/10.1145/3350755.3400263" target="_blank">DOI</a>
+                              | <a href="https://arxiv.org/abs/2010.02043" target="_blank">arXiv</a>
+                            </div>
+                          </div>
+                          <div class="row">&nbsp;</div>
+                          <div class="row">
+                            <div class="col-1">
+                              [2]
+                            </div>
+                            <div class="col-11">
+                              2019 | Conference Paper
+                              <div>
+                                <strong>Managing Multiple Mobile
+                                  Resources</strong><br>
+                                B. Feldkord, T. Knollmann, M. Malatyali, F. Meyer auf der Heide, in: Proceedings of the
+                                17th
+                                Workshop on Approximation and Online Algorithms (WAOA), 2019, pp. 120–137.
+                              </div>
+                              <a href="https://doi.org/10.1007/978-3-030-39479-0_9" target="_blank">DOI</a>
+                              | <a href="https://arxiv.org/abs/1907.09834" target="_blank">arXiv</a>
+                            </div>
+                          </div>
+                          <div class="row">&nbsp;</div>
+                          <div class="row">
+                            <div class="col-1">
+                              [1]
+                            </div>
+                            <div class="col-11">
+                              2017 | Book Chapter
+                              <div>
+                                <strong>Monitoring of Domain-Related Problems
+                                  in&nbsp;Distributed Data Streams</strong><br>
+                                P. Bemmann, F. Biermeier, J. Bürmann, A. Kemper, T. Knollmann, S. Knorr, N. Kothe, A.
+                                Mäcker, M.
+                                Malatyali, F. Meyer auf der Heide, S. Riechers, J.S. Schaefer, J. Sundermeier, in:
+                                Structural
+                                Information and Communication Complexity (SIROCCO), 2017.
+                              </div>
+                              <a href="https://doi.org/10.1007/978-3-319-72050-0_13" target="_blank">DOI</a>
+                              | <a href="https://arxiv.org/abs/arXiv:1706.03568" target="_blank">arXiv</a>
+                            </div>
+                          </div>
+                          <div class="row">&nbsp;</div>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="headingOtherPublications">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#collapseOtherPublications" aria-expanded="false"
-                    aria-controls="collapseOtherPublications">
-                    $pub-title-other$
-                  </button>
-                </h2>
-                <div id="collapseOtherPublications" class="accordion-collapse collapse"
-                  aria-labelledby="headingOtherPublications">
-                  <div class="accordion-body">
-                    <div class="publications">
-                      <div class="col">
-                        <div class="row">
-                          <div class="col-1">
-                            [14]
-                          </div>
-                          <div class="col-11">
-                            2023 | Book Chapter
-                            <div>
-                              <strong>Distributed Data Streams</strong><br>
-                              J. Castenow, B. Feldkord, J. Hanselle, T. Knollmann, M. Malatyali, F. Meyer auf der Heide, in: Algorithms for Big Data. Lecture Notes in Computer Science, vol 13201, Springer, 2023, pp. 179–195.
-                            </div>
-                            <a href="https://doi.org/10.1007/978-3-031-21534-6_10" target="_blank">DOI</a>
-                          </div>
-                        </div>
-                        <div class="row">&nbsp;</div>
-                        <div class="row">
-                          <div class="col-1">
-                            [13]
-                          </div>
-                          <div class="col-11">
-                            2023 | Journal Article
-                            <div>
-                              <strong>Gathering a Euclidean Closed Chain of
-                                Robots in Linear Time and Improved Algorithms for Chain-Formation</strong><br>
-                              J. Castenow, J. Harbig, D. Jung, T. Knollmann, F. Meyer auf der Heide, Theoretical
-                              Computer
-                              Science 939 (2023) 261–291.
-                            </div>
-                            <a href="https://doi.org/10.1016/j.tcs.2022.10.031" target="_blank">DOI</a>
-                            | <a href="https://arxiv.org/abs/2010.04424" target="_blank">arXiv</a>
-                          </div>
-                        </div>
-                        <div class="row">&nbsp;</div>
-                        <div class="row">
-                          <div class="col-1">
-                            [12]
-                          </div>
-                          <div class="col-11">
-                            2023 | Conference Paper
-                            <div>
-                              <strong>A Unifying Approach to Efficient
-                                (Near-)Gathering of Disoriented Robots with Limited Visibility</strong><br>
-                              J. Castenow, J. Harbig, D. Jung, P. Kling, T. Knollmann, F. Meyer auf der Heide, in:
-                              Proceedings
-                              of the 26th International Conference on Principles of
-                              Distributed Systems (OPODIS), 2023,
-                              p. 15:1–15:25.
-                            </div>
-                            <a href="https://doi.org/10.4230/LIPIcs.OPODIS.2022.15" target="_blank">DOI</a>
-                            | <a href="https://arxiv.org/abs/2206.07567" target="_blank">arXiv</a>
-                          </div>
-                        </div>
-                        <div class="row">&nbsp;</div>
-                        <div class="row">
-                          <div class="col-1">
-                            [11]
-                          </div>
-                          <div class="col-11">
-                            2022 | Journal Article
-                            <div>
-                              <strong>A Discrete and Continuous Study of the
-                                Max-Chain-Formation Problem</strong><br>
-                              J. Castenow, P. Kling, T. Knollmann, F. Meyer auf der Heide, Information and Computation
-                              (2022).
-                            </div>
-                            <a href="https://doi.org/10.1016/j.ic.2022.104877" target="_blank">DOI</a>
-                          </div>
-                        </div>
-                        <div class="row">&nbsp;</div>
-                        <div class="row">
-                          <div class="col-1">
-                            [10]
-                          </div>
-                          <div class="col-11">
-                            2022 | Journal Article
-                            <div>
-                              <strong>Mincut Sensitivity Data Structures for
-                                the Insertion of an Edge</strong><br>
-                              S. Baswana, S. Gupta, T. Knollmann, Algorithmica (2022).
-                            </div>
-                            <a href="https://doi.org/10.1007/s00453-022-00978-0" target="_blank">DOI</a>
-                          </div>
-                        </div>
-                        <div class="row">&nbsp;</div>
-                        <div class="row">
-                          <div class="col-1">
-                            [9]
-                          </div>
-                          <div class="col-11">
-                            2021 | Conference Paper
-                            <div>
-                              <strong>Gathering a Euclidean Closed Chain of
-                                Robots in Linear Time</strong><br>
-                              J. Castenow, J. Harbig, D. Jung, T. Knollmann, F. Meyer auf der Heide, in: Proceedings of
-                              the 17th
-                              International Symposium on Algorithms and
-                              Experiments for Wireless Sensor Networks (ALGOSENSORS), 2021, pp. 29–44.
-                            </div>
-                            <a href="https://doi.org/10.1007/978-3-030-89240-1_3" target="_blank">DOI</a>
-                            | <a href="https://arxiv.org/abs/2010.04424" target="_blank">arXiv</a>
-                          </div>
-                        </div>
-                        <div class="row">&nbsp;</div>
-                        <div class="row">
-                          <div class="col-1">
-                            [8]
-                          </div>
-                          <div class="col-11">
-                            2021 | Journal Article
-                            <div>
-                              <strong>Managing Multiple Mobile
-                                Resources</strong><br>
-                              B. Feldkord, T. Knollmann, M. Malatyali, F. Meyer auf der Heide, Theory of Computing
-                              Systems 65
-                              (2021) 943–984.
-                            </div>
-                            <a href="https://doi.org/10.1007/s00224-020-10023-8" target="_blank">DOI</a>
-                          </div>
-                        </div>
-                        <div class="row">&nbsp;</div>
-                        <div class="row">
-                          <div class="col-1">
-                            [7]
-                          </div>
-                          <div class="col-11">
-                            2021 | Conference Paper
-                            <div>
-                              <strong>The Max-Line-Formation Problem – And
-                                New Insights for Gathering and Chain-Formation</strong><br>
-                              J. Castenow, T. Götte, T. Knollmann, F. Meyer auf der Heide, in: Proceedings of the 23rd
-                              International Symposium on Stabilization, Safety, and Security of Distributed Systems
-                              (SSS), 2021,
-                              pp. 289–304.
-                            </div>
-                            <a href="https://doi.org/10.1007/978-3-030-91081-5_19" target="_blank">DOI</a>
-                            | <a href="https://arxiv.org/abs/2109.11856" target="_blank">arXiv</a>
-                          </div>
-                        </div>
-                        <div class="row">&nbsp;</div>
-                        <div class="row">
-                          <div class="col-1">
-                            [6]
-                          </div>
-                          <div class="col-11">
-                            2020 | Conference Paper
-                            <div>
-                              <strong>A Discrete and Continuous Study of the
-                                Max-Chain-Formation Problem – Slow Down to Speed Up</strong><br>
-                              J. Castenow, P. Kling, T. Knollmann, F. Meyer auf der Heide, in: Proceedings of the 22nd
-                              International Symposium on Stabilization, Safety, and Security of Distributed Systems
-                              (SSS), 2020,
-                              pp. 65–80.
-                            </div>
-                            <a href="https://doi.org/10.1007/978-3-030-64348-5_6" target="_blank">DOI</a>
-                            | <a href="https://arxiv.org/abs/2010.02043" target="_blank">arXiv</a>
-                          </div>
-                        </div>
-                        <div class="row">&nbsp;</div>
-                        <div class="row">
-                          <div class="col-1">
-                            [5]
-                          </div>
-                          <div class="col-11">
-                            2020 | Conference Paper
-                            <div>
-                              <strong>Mincut Sensitivity Data Structures for
-                                the Insertion of an Edge</strong><br>
-                              S. Baswana, S. Gupta, T. Knollmann, in: Proceedings of the 28th Annual
-                              European Symposium on Algorithms (ESA), 2020, pp. 12:1–12:14.
-                            </div>
-                            <a href="https://doi.org/10.4230/LIPIcs.ESA.2020.12" target="_blank">DOI</a>
-                          </div>
-                        </div>
-                        <div class="row">&nbsp;</div>
-                        <div class="row">
-                          <div class="col-1">
-                            [4]
-                          </div>
-                          <div class="col-11">
-                            2020 | Conference Paper
-                            <div>
-                              <strong>Brief Announcement: Gathering in
-                                Linear Time: A Closed Chain of Disoriented &amp; Luminous Robots with Limited
-                                Visibility</strong><br>
-                              J. Castenow, J. Harbig, D. Jung, T. Knollmann, F. Meyer auf der Heide, in: Proceedings of
-                              the 22nd
-                              International Symposium on Stabilization, Safety, and Security of Distributed Systems
-                              (SSS), 2020,
-                              pp. 60–64.
-                            </div>
-                            <a href="https://doi.org/10.1007/978-3-030-64348-5_5" target="_blank">DOI</a>
-                            | <a href="https://arxiv.org/abs/2010.04424" target="_blank">arXiv</a>
-                          </div>
-                        </div>
-                        <div class="row">&nbsp;</div>
-                        <div class="row">
-                          <div class="col-1">
-                            [3]
-                          </div>
-                          <div class="col-11">
-                            2020 | Conference Paper
-                            <div>
-                              <strong>Brief Announcement: A Discrete and
-                                Continuous Study of the Max-Chain-Formation Problem: Slow Down to Speed up</strong><br>
-                              J. Castenow, P. Kling, T. Knollmann, F. Meyer auf der Heide, in: Proceedings of the 32nd
-                              ACM
-                              Symposium on Parallelism in Algorithms and Architectures (SPAA), 2020.
-                            </div>
-                            <a href="https://doi.org/10.1145/3350755.3400263" target="_blank">DOI</a>
-                            | <a href="https://arxiv.org/abs/2010.02043" target="_blank">arXiv</a>
-                          </div>
-                        </div>
-                        <div class="row">&nbsp;</div>
-                        <div class="row">
-                          <div class="col-1">
-                            [2]
-                          </div>
-                          <div class="col-11">
-                            2019 | Conference Paper
-                            <div>
-                              <strong>Managing Multiple Mobile
-                                Resources</strong><br>
-                              B. Feldkord, T. Knollmann, M. Malatyali, F. Meyer auf der Heide, in: Proceedings of the
-                              17th
-                              Workshop on Approximation and Online Algorithms (WAOA), 2019, pp. 120–137.
-                            </div>
-                            <a href="https://doi.org/10.1007/978-3-030-39479-0_9" target="_blank">DOI</a>
-                            | <a href="https://arxiv.org/abs/1907.09834" target="_blank">arXiv</a>
-                          </div>
-                        </div>
-                        <div class="row">&nbsp;</div>
-                        <div class="row">
-                          <div class="col-1">
-                            [1]
-                          </div>
-                          <div class="col-11">
-                            2017 | Book Chapter
-                            <div>
-                              <strong>Monitoring of Domain-Related Problems
-                                in&nbsp;Distributed Data Streams</strong><br>
-                              P. Bemmann, F. Biermeier, J. Bürmann, A. Kemper, T. Knollmann, S. Knorr, N. Kothe, A.
-                              Mäcker, M.
-                              Malatyali, F. Meyer auf der Heide, S. Riechers, J.S. Schaefer, J. Sundermeier, in:
-                              Structural
-                              Information and Communication Complexity (SIROCCO), 2017.
-                            </div>
-                            <a href="https://doi.org/10.1007/978-3-319-72050-0_13" target="_blank">DOI</a>
-                            | <a href="https://arxiv.org/abs/arXiv:1706.03568" target="_blank">arXiv</a>
-                          </div>
-                        </div>
-                        <div class="row">&nbsp;</div>
+            </div>
+            <hr class="mt-4 mb-4 split-line" />
+            <div class="row">
+              <h2>$contact-title$</h2>
+              <p id="contact-text">$contact-text$</p>
+              <div class="container-fluid">
+                <div id="form-div">
+                  <form id="contact-form">
+                    <div class="form-group" id="form">
+                      <div class="row">
+                        <input type="text" name="name" class="form-control col" id="name"
+                          placeholder="$contact-name-placeholder$" required />
+                        <input type="email" name="email" class="form-control col" id="email"
+                          placeholder="$contact-email-placeholder$" required />
+                      </div>
+                      <div class="row">
+                        <textarea class="form-control" id="textarea" name="message" rows="5"
+                          placeholder="$contact-message-placeholder$" required></textarea>
+                      </div>
+                      <div class="row">
+                        <button type="submit" class="btn btn-secondary" id="submit-button">$contact-submit$</button>
                       </div>
                     </div>
-                  </div>
+                  </form>
                 </div>
-              </div>
-            </div>
-          </div>
-          <hr class="mt-4 mb-4 split-line" />
-          <div class="row">
-            <h2>$contact-title$</h2>
-            <p id="contact-text">$contact-text$</p>
-            <div class="container-fluid">
-              <div id="form-div">
-                <form id="contact-form">
-                  <div class="form-group" id="form">
-                    <div class="row">
-                      <input type="text" name="name" class="form-control col" id="name"
-                        placeholder="$contact-name-placeholder$" required />
-                      <input type="email" name="email" class="form-control col" id="email"
-                        placeholder="$contact-email-placeholder$" required />
-                    </div>
-                    <div class="row">
-                      <textarea class="form-control" id="textarea" name="message" rows="5"
-                        placeholder="$contact-message-placeholder$" required></textarea>
-                    </div>
-                    <div class="row">
-                      <button type="submit" class="btn btn-secondary" id="submit-button">$contact-submit$</button>
-                    </div>
-                  </div>
-                </form>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  <div id="image-overlay" style="display:none;">
-    <div id="overlay-bg"></div>
-    <div id="overlay-content">
-      <div id="spinner" style="display:block;">
-        <svg width="60" height="60" viewBox="0 0 50 50">
-          <circle cx="25" cy="25" r="20" fill="none" stroke="#1e90ff" stroke-width="5" stroke-linecap="round" stroke-dasharray="31.4 31.4" transform="rotate(-90 25 25)">
-            <animateTransform attributeName="transform" type="rotate" from="0 25 25" to="360 25 25" dur="1s" repeatCount="indefinite"/>
-          </circle>
-        </svg>
+    <div id="image-overlay" style="display:none;">
+      <div id="overlay-bg"></div>
+      <div id="overlay-content">
+        <div id="spinner" style="display:block;">
+          <svg width="60" height="60" viewBox="0 0 50 50">
+            <circle cx="25" cy="25" r="20" fill="none" stroke="#1e90ff" stroke-width="5" stroke-linecap="round"
+              stroke-dasharray="31.4 31.4" transform="rotate(-90 25 25)">
+              <animateTransform attributeName="transform" type="rotate" from="0 25 25" to="360 25 25" dur="1s"
+                repeatCount="indefinite" />
+            </circle>
+          </svg>
+        </div>
+        <img id="large-profile-picture"
+          style="display:none; max-width:80vw; max-height:80vh; border-radius:12px; box-shadow:0 0 40px #000a;"
+          alt="Profilbild groß" />
       </div>
-      <img id="large-profile-picture" style="display:none; max-width:80vw; max-height:80vh; border-radius:12px; box-shadow:0 0 40px #000a;" alt="Profilbild groß" />
     </div>
   </div>
   <script type="text/javascript" src="../scripts/bootstrap-full.js"></script>
   <script type="text/javascript" src="../scripts/script.js"></script>
   <link rel="prefetch" href="../impr/" />
 </body>
+
 </html>

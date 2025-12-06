@@ -75,7 +75,7 @@ To update Bootstrap:
 
 1. Update `.bootstrap-version` with the new version number
 2. Run: `python3 update-bootstrap.py`
-3. This downloads and updates `styles/bootstrap-full.css` and `scripts/bootstrap.bundle.min.js`
+3. This downloads and updates `styles/bootstrap-full.css` and `scripts/bootstrap-full.js`
 
 == License
 

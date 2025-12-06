@@ -36,10 +36,6 @@
     }
 }
 
-.body-style {
-    font-family: 'InterVariable', system-ui, sans-serif!important;
-}
-
 :root {
     --color-bg-light: #ffffff;
     --color-bg-dark: #2e2e2e;
@@ -62,6 +58,10 @@
     --color-language-tag-bg-dark: rgb(80, 80, 80);
     --color-project-card-bg-dark: #3a3a3a;
     --color-button-bg-dark: #636363;
+}
+
+body {
+    font-family: 'InterVariable', system-ui, sans-serif!important;
 }
 
 /* Light mode styles */

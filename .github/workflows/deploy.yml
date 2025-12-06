@@ -32,8 +32,8 @@ jobs:
         cd styles
         rm -f bootstrap-full.css
         mv bootstrap-full.min.css bootstrap-full.css
-        cleancss -o main.min.css main.css
-        cleancss -o bootstrap-full.min.css bootstrap-full.css
+        cleancss --compatibility '*' --level 1 -o main.min.css main.css
+        cleancss --compatibility '*' --level 1 -o bootstrap-full.min.css bootstrap-full.css
         rm -f main.css bootstrap-full.css
         mv main.min.css main.css
         mv bootstrap-full.min.css bootstrap-full.css

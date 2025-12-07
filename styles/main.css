@@ -492,6 +492,10 @@ h2 {
 
 .project-title {
     font-size: 1.2rem;
+    line-height: 1.2rem;
+    font-weight: 500;
+    margin-top: 2px;
+    display: block;
 }
 
 .project-description {

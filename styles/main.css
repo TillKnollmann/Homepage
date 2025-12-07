@@ -34,6 +34,30 @@
     font-family: 'InterVariable', system-ui, sans-serif !important;
 }
 
+.skip-link {
+    position: absolute;
+    left: -999px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    z-index: 2000;
+    background: var(--color-accent-blue);
+    color: #ffffff;
+    padding: 8px 16px;
+    border-radius: 8px;
+    text-decoration: none;
+}
+
+.skip-link:focus,
+.skip-link:active {
+    left: 16px;
+    top: 16px;
+    width: auto;
+    height: auto;
+    clip: auto;
+}
+
 /* Light mode styles */
 #content {
     min-height: 100vh;
@@ -674,4 +698,24 @@ h1 {
 
 #spinner {
     margin: 40px;
+}
+
+.site-footer {
+    text-align: center;
+    padding: 0;
+    padding-top: 5px;
+    margin-bottom:5px;
+    background-color: var(--color-bg-light);
+    color: var(--color-text-light);
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.side-footer p {
+    margin: 0!important;
+}
+
+[data-theme="dark"] .site-footer {
+    background-color: var(--color-bg-dark);
+    color: var(--color-text-dark);
+    border-top: 1px solid var(--color-border-dark);
 }

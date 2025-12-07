@@ -711,7 +711,6 @@ h1 {
     margin-bottom:5px;
     background-color: var(--color-bg-light);
     color: var(--color-text-light);
-    border-top: 1px solid rgba(0, 0, 0, 0.08);
 }
 
 .side-footer p {
@@ -721,5 +720,4 @@ h1 {
 [data-theme="dark"] .site-footer {
     background-color: var(--color-bg-dark);
     color: var(--color-text-dark);
-    border-top: 1px solid var(--color-border-dark);
 }

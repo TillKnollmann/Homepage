@@ -54,11 +54,11 @@
                 "projects": [
                     {
                         "title": "Advent of Code 2025",
-                        "description": "Lösungen für 2025.",
+                        "description": "Vollständige Lösungen für 2025.",
                         "url": "https://github.com/TillKnollmann/AOC25",
                         "button_text": "Auf GitHub ansehen",
                         "language": "C#",
-                        "stars": 21,
+                        "stars": 24,
                         "stars_max": 24,
                         "stars_label": "Fortschritt"
                     },

@@ -111,11 +111,11 @@ jobs:
     - name: 🔧 Prepare Deployment Package
       run: |
         mkdir publish
-        cp -r assets fonts de en favicon impr scripts styles index.php robots.txt sitemap.xml publish/
+        cp -r assets fonts de en favicon scripts styles index.php robots.txt sitemap.xml publish/
 
     - name: ✅ Verify Deployment Package
       run: |
-        required_items="assets fonts de en favicon impr scripts styles index.php robots.txt sitemap.xml"
+        required_items="assets fonts de en favicon scripts styles index.php robots.txt sitemap.xml"
         for item in $required_items; do
           if [ ! -e "publish/$item" ]; then
             echo "Error: Missing required item: $item"

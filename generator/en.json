@@ -5,9 +5,6 @@
     "$title$" : "Till Knollmann's Personal Website",
     "$profile-header$" : "Dr. Till Knollmann",
     "$description$" : "Theoretical computer scientist<br>and developer out of passion",
-    "$skip-link-text$" : "Skip to main content",
-    "$social-links-label$" : "Social profiles",
-    "$lang-imprint-nav-label$" : "Language and legal links",
     "$lang-button$" : "Deutsch",
     "$lang-button-target$" : "../de/",
     "$research-button-target$" : "https://www.researchgate.net/profile/Till-Knollmann-2",
@@ -145,5 +142,6 @@
     "$contact-name-placeholder$" : "Name",
     "$contact-email-placeholder$" : "Email",
     "$contact-message-placeholder$" : "Message",
-    "$contact-submit$" : "Submit"
+    "$contact-submit$" : "Submit",
+    "$impressum-title$": "Imprint"
 }

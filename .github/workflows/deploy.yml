@@ -68,7 +68,7 @@ jobs:
     - name: 🔧 Select Files
       run: |
         mkdir publish
-        cp -r assets fonts de en favicon impr index.php robots.txt sitemap.xml publish/
+        cp -r assets fonts de en favicon index.php robots.txt sitemap.xml publish/
 
     - name: 🚢 Deploy to server
       uses: TillKnollmann/FTP-Deploy-Action@master

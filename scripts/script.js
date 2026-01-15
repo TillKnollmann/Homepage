@@ -109,6 +109,24 @@ window.addEventListener("load", () => {
     }
   });
 
+  const sections = document.querySelectorAll("section");
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const id = entry.target.id;
+          history.replaceState(null, "", "#" + id);
+        }
+      });
+    },
+    {
+      threshold: 0.25,
+    }
+  );
+
+  sections.forEach((section) => observer.observe(section));
+
   // Form submission
   function sendData() {
     const XHR = new XMLHttpRequest();

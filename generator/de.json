@@ -143,5 +143,5 @@
     "$contact-email-placeholder$" : "E-Mail",
     "$contact-message-placeholder$" : "Nachricht",
     "$contact-submit$" : "Senden",
-    "$impressum-title$": "Impressum"
+    "$imprint-title$": "Impressum"
 }

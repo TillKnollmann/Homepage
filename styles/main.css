@@ -30,6 +30,10 @@
     --color-button-bg-dark: #636363;
 }
 
+:target {
+  scroll-margin-top: 24px;
+}
+
 .font-container {
     font-family: 'InterVariable', system-ui, sans-serif !important;
 }
@@ -210,7 +214,7 @@
     background: radial-gradient(ellipse at center, #d1e5ff, #93add2);
 }
 
-[data-theme="dark"] #impressum-data {
+[data-theme="dark"] #imprint-data {
     fill: var(--color-text-dark)
 }
 
@@ -434,7 +438,7 @@ h2 {
         transform 0.1s;
 }
 
-#impressum-data {
+#imprint-data {
     fill: var(--color-text-light);
     width: auto;
     height: 8.5em;

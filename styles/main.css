@@ -267,6 +267,10 @@
     #overlay-content {
         margin-top: 40px !important;
     }
+
+    :target {
+        scroll-margin-top: 80px;
+    }
 }
 
 @media (min-width: 768px) {
@@ -286,8 +290,8 @@
     }
 
     #content {
-        padding-top: 40px;
-        padding-bottom: 40px;
+        padding-top: 24px;
+        padding-bottom: 24px;
         padding-left: 30px;
         padding-right: 0px;
         max-width: calc(min(100% - 300px, 800px));
@@ -637,7 +641,7 @@ h1 {
 #theme-toggle-container {
     position: sticky;
     float: right;
-    top: 13px;
+    top: 24px;
     z-index: 100;
     width: 100%;
     height: 38px;

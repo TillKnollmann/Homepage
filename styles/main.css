@@ -109,7 +109,6 @@
     color: var(--color-text-dark);
     border: 1px solid var(--color-border-dark);
     border-radius: 4px;
-    padding: 10px;
 }
 
 [data-theme="dark"] .form-group input::placeholder,
@@ -211,6 +210,10 @@
     background: radial-gradient(ellipse at center, #d1e5ff, #93add2);
 }
 
+[data-theme="dark"] #impressum-data {
+    fill: var(--color-text-dark)
+}
+
 /* Ende dark-mode */
 
 /* Sidebar und Layout */
@@ -254,11 +257,11 @@
     }
 
     #image-overlay {
-        align-items: flex-start!important;
+        align-items: flex-start !important;
     }
 
     #overlay-content {
-        margin-top: 40px!important;
+        margin-top: 40px !important;
     }
 }
 
@@ -429,6 +432,12 @@ h2 {
         color 0.2s,
         box-shadow 0.2s,
         transform 0.1s;
+}
+
+#impressum-data {
+    fill: var(--color-text-light);
+    width: auto;
+    height: 8.5em;
 }
 
 .project-button {
@@ -713,7 +722,7 @@ h1 {
 }
 
 .side-footer p {
-    margin: 0!important;
+    margin: 0 !important;
 }
 
 [data-theme="dark"] .site-footer {
